@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_title %}Kaufempfehlungen // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+
+{% block content %}
+
+    <h1>Kaufempfehlungen</h1>
+
+    <div class="recommendation_detail">
+        <a href="http://www.amazon.de/gp/product/{{ item.asin }}?ie=UTF8&amp;tag=kogakurede-21&amp;linkCode=as2&amp;camp=1638&amp;creative=6742&amp;creativeASIN={{ entry.asin }}"><img class="links" src="{{ MEDIA_URL }}{{ entry.cover }}" alt="{{ entry.title }}" /></a>
+        <h3 class="recommendation">{{ entry.title }}</h3>
+        {{ entry.body|smarttext }}
+    </div>
+
+    {% get_stat products.Entry as products_num %}
+    <p><a href="{% url kaufempfehlungen_liste %}">Alle <em>{{ products_num }}</em> Kaufempfehlungen ansehen.</a></p>
+
+{% endblock %}

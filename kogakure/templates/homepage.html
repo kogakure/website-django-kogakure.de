@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load cache %}
+
+{% block content %}
+
+    <div id="random_articles">
+        <h1 id="ninpoikkan">忍法一貫<span class="ftnote"><a class="noborder" href="#footnote">*</a></span></h1>
+        {% get_stat articles.Entry as articles_num %}
+        <p>Diese Website enthält <em>{{ articles_num }}</em> Artikel, hier sind vier zufällig ausgewählte Artikel zu sehen:</p>
+        <hr />
+        {% get_all articles.Entry 4 as random_articles order_by ? %}
+        {% for article in random_articles %}
+        <div class="block">
+            <h2 class="titel"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+            {{ article.summary|smarttext }}
+        </div>
+        {% endfor %}
+        <p class="more"><a href="{% url artikel_liste %}" class="noprint">Alle Artikel lesen&nbsp;…</a></p>
+        <hr />
+        <p id="footnote" class="footnote">* Ninpō Ikkan (jap. „Ninjutsu ist der Anfang und kennt kein Ende.“)</p>
+        <hr />
+    </div>
+    <div id="homepage_welcome">
+        {% cache 3600 welcome_text %}
+        <div class="block">
+            <h2><a href="{{ WEB_URL }}info/">Über diese Seite…</a></h2>
+            <p>Dies ist <a href="{{ WEB_URL }}info/">kogakure.de</a>. Seit 1999 kann man hier Artikel, Textsammlungen und Übersetzungen zu Themen rund um die japanischen Schattenkrieger, Spione und Krieger – die Ninja – und deren Kampfkunst Ninjutsu lesen.</p>
+        </div>
+        <hr />
+        <div class="block">
+            <h2><a href="{% url artikel "ninjutsu" %}">Neu hier?</a></h2>
+            <p>Zum ersten mal auf dieser Seite? Dann ist es am besten mit dem Artikel „<a href="{% url artikel "ninjutsu" %}">Ninjutsu</a>“ zu starten, um zu verstehen, worum es hier geht.</p>
+        </div>
+        <hr />
+        {% endcache %}
+        <div id="recent_blog" class="block">
+            <h2><a href="{% url kurzmeldungen_liste %}">Kurzmeldungen</a></h2>
+            {% get_all blog.Entry 1 as recent_blog_entry order_by -pub_date %}
+            {% for blog_entry in recent_blog_entry %}
+                <h3><a href="{{ blog_entry.get_absolute_url }}">{{ blog_entry.title }}</a></h3>
+                {{ blog_entry.summary|smarttext }}
+            {% endfor %}
+        </div>
+        <hr />
+        <p class="more"><a href="{% url kurzmeldungen_liste %}" class="noprint">Alle Kurzmeldungen lesen&nbsp;…</a></p>
+    </div>
+{% endblock %}

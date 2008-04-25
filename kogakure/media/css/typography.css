@@ -1,0 +1,133 @@
+/* Basefonts and colors */
+body { font: 80%/1.6 "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", Geneva, Helvetica, Arial, sans-serif; }
+h1, h2, h3, h4, h5, h6 {  }
+
+/* Headlines
+------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 { clear: both; font-family: Palatino, Georgia, Times, serif; font-style: normal; font-variant: normal; font-weight: normal; text-shadow: 0 1px 1px #333; }
+
+h1 { color: #E16357; font-size: 2.5em; line-height: 1.2em; margin-bottom: 0.5em; }
+h2 { color: #77AA42; font-size: 1.6em; line-height: 1.2em; margin-bottom: 0.25em; margin-top: 0.5em; }
+h2.section { color: #E16357; }
+h3 { color: #77AA42; font-size: 1.2em; line-height: 1.4em; margin-bottom: 0.125em; margin-top: 0.5em; }
+h3.recommendation { clear: none; }
+
+h1#ninpoikkan { font-family: "Hiragino Mincho Pro", serif; }
+#sidebar h2 { color: #E16357; margin: 1em 0 0.2em 0; }
+
+/* Text
+------------------------------------------------------------------------- */
+p { margin-bottom: 1.0em; }
+p.more { margin-top: 1.0em; }
+#blog p { margin: 0; padding: 0; }
+.recommendation p { font-size: 0.8em; }
+.datum { color: #999; font-size: 1.0em; margin: 0; margin-bottom: 1em; padding: 0; }
+
+/* Lists */
+ul li { background: url(img/dot-green.png) no-repeat 0 0.25em; color: inherit; list-style-position: inside; padding-left: 20px; }
+ol li { list-style-type: decimal; margin-left: 20px; }
+.warning ul li { background: url(img/dot-red.png) no-repeat 0 0.25em; color: inherit; list-style-position: inside; padding-left: 20px; }
+#content ul, #content ol { clear: both; margin: 2.0em; }
+#content ul ul, #content ol ol { margin: 0.5em 0; }
+#content ul.tip { margin: 0; padding: 0; }
+#content ul.tip li.recommendation { display: block; float: left; height: 12.0em; background: transparent; margin: 0 10px 0 0; padding: 0; width: 45%; }
+#content ul.tip li.produkt { background: transparent; padding: 0; }
+
+/* Definition Lists */
+dl { margin: 0 0 2.0em 0; }
+dt { color: #658E32; margin-top: 1.0em; }
+dd { margin-bottom: 1.0em; }
+dt:first-child { margin-top: 0; }
+dt.deutsch { color: #77AA42; float: left; font-size: 1.8em; height: 1.8em; line-height: 2.0em; margin: 0.5em 0 0 0; width: 63%; font-family: Palatino, Georgia, Times, serif; text-shadow: 0 1px 1px #333; }
+dt.deutsch a:link, dt.deutsch a:visited { border-bottom: 0; }
+dd.japanisch { color: #000; float: right; font-size: 1.8em; height: 1.8em; line-height: 2.0em; margin: 0.5em 0 0 0; width: 33%; font-family: "Hiragino Mincho Pro", serif; text-shadow: 0 1px 1px #333; text-align: right; }
+dd.beschreibung { clear: both; margin: 0 0 1.0em 0; padding: 0; display: block; }
+
+abbr, acronym, dfn { border-bottom: 1px dotted #999; cursor: help; }
+address { font-style: normal; }
+del { text-decoration: line-through; }
+ins { text-decoration: underline; }
+
+/* Links */
+a { border-bottom: 1px solid #77AA42; color: #77AA42; text-decoration: none; }
+a:visited { color: #999; }
+a:hover, a.aktiv { border-bottom: 1px solid #E16257; color: #31461A; }
+a.noborder, a:hover.noborder { border: 0; }
+h2 a, h3 a { border: 0; }
+h2 a:visited, h3 a:visited, dt a:visited { text-shadow: 0 1px 1px #000; }
+#logo a { border: 0; display: block; height: 65px; margin: 0; overflow: hidden; padding: 0; text-indent: -9999px; width: 250px; }
+
+/* Quotes */
+blockquote { color: #67933A; font-family: Palatino, Georgia, Times, serif; font-style: italic; font-size: 1.2em; line-height: 1.6em; margin: 1.0em 0 0 0; }
+blockquote p { margin-bottom: 0.5em; text-shadow: 0 1px 1px #999; }
+blockquote.statement pre { font-family: Palatino, Georgia, Times, serif; font-style: italic; font-size: 1.4em; line-height: 1.2em; }
+blockquote.statement em { color: #000; font-size: 1.2em; }
+
+cite { color: #000; display: block; font-family: Palatino, Georgia, Times, serif; font-size: 1.0em; font-style: italic; line-height: 1.6em; }
+cite.inline { color: #67933A; display: inline; }
+cite.autor { display: inline; }
+cite.sprueche { margin-bottom: 1.0em; }
+
+em { font-style: normal; font-weight: bold; }
+.recommendation em { color: #999; font-weight: normal; }
+strong { font-weight: bold; letter-spacing: 0.2em; }
+
+code { font-family: Courier, Monaco, "Andale Mono", monospace; font-size: 1.1em; }
+pre { margin: 2.0em 0; }
+
+hr { clear: both; margin: 0; padding: 1px; visibility: hidden; }
+
+/* Images
+------------------------------------------------------------------------- */
+img { background: #FFF; border: 1px solid #CCC; padding: 2px; }
+h2 img { padding: 0; }
+h2 a:hover { border: 0; }
+img.links { float: left; margin: 5px 10px 10px 0; }
+img.rechts { float: right; margin: 5px 0 10px 10px; }
+
+#formular img { border: 0; left: 1.0em; position: relative; top: 0.3em; }
+#autorbio img { border: 1px solid #CCC; float: left; margin: 5px 10px 5px 0; padding: 2px; }
+#content .tip img { float: left; margin: 0 10px 0 0; padding: 4px; }
+#content .tip h2 img { float: none; margin: 0; padding: 0; }
+
+/* Tables
+------------------------------------------------------------------------- */
+table { border: 1px solid #000; border-collapse: collapse; font-size: 0.9em; margin: 0 0 3em 0; width: 98%; }
+th, td { padding: 0.1em 1em; vertical-align: top; }
+caption { color: #000; font-size: 1.2em; font-weight: bold; margin: 1.0em 0; }
+col { border-right: 1px dotted #5C8B2F; }
+thead { background: #5C8B2F; }
+th { font-weight: bold; text-align: left; }
+.odd { background-color: #AEC597; }
+tr:hover { background-color: #000; color: #FFF; }
+thead tr:hover { color: inherit; }
+col#wirkungCol, col#wasserCol { border: none; }
+#gogyoTable th { background: #5C8B2F; }
+#gogyoTable th.center { text-align: center; }
+
+/* Forms
+------------------------------------------------------------------------- */
+form p { margin: 1em 0; }
+
+legend { display: none; }
+
+input, textarea, select { border: 1px solid #999; display: block; font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", Geneva, Helvetica, Arial, sans-serif; font-size: 1.0em; margin: 0; padding: 0.3em; width: 98%; }
+input:focus, textarea:focus { background: #F8FFF0 url(img/input-brd.jpg) repeat-y 100% 0; border: 1px solid #5C8B2F; border-right: 1px solid #5C8B2F; }
+
+p.eingabefehler input:focus, p.eingabefehler textarea:focus { background: #FFD6C4; }
+p.eingabefehler input, p.eingabefehler textarea { background: #FFD6C4 url(img/alert.png) no-repeat right top; border: 1px solid #E16357; border-right: 3px solid #E16357; }
+
+input.button { background: #EEE; border: 2px solid; border-color: #AAA #666 #666 #AAA; width: auto; }
+input.button:focus { border-color: #666 #AAA #AAA #666; }
+
+#side label { color: #E16357; display: block; font-family: Palatino, Georgia, Times, serif; font-size: 1.6em; margin: 0 0 0.2em 0; line-height: 1.2em; text-shadow: 0 1px 2px #AAA; }
+#side input { width: 50%; display: inline; }
+#side input.button { width: auto; display: inline; }
+
+#erweiterte-suche fieldset { border: 1px solid #999; margin: 0 0 1.5em 0; padding: 1.5em; width: 34.0em; }
+#erweiterte-suche legend { display: block; }
+#erweiterte-suche input { margin-bottom: 1.5em; width: 33em; }
+#erweiterte-suche select { float: left; margin: 0 1.0em 1.5em 0; width: 15.0em; }
+#erweiterte-suche .box-auswahl { float: left; }
+#erweiterte-suche .box-auswahl select { height: 10.0em; width: 18em; }
+#erweiterte-suche .button { width: auto; }

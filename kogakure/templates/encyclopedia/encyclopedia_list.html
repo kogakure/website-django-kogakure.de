@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block page_title %}Lexikon // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+
+{% block content %}
+
+    <h1>Lexikon</h1>
+    {% get_stat encyclopedia.Entry as encyclopedia_num %}
+    <p>Dieses Lexikon enthält <em>{{ encyclopedia_num }}</em> Einträge aus dem Bereich des Ninjutsu, der Kriegskunst und der japanischen Geschichte.</p>
+
+    {% if entry_list %}
+    <dl>
+        {% for entry in entry_list|dictsort:"slug" %}
+            <div class="block">
+                <dt class="deutsch"><a href="{{ entry.get_absolute_url }}" title="Link zu '{{ entry.title }}'">{{ entry.title }}</a></dt><dd class="japanisch">{{ entry.japanese }}</dd>
+                <dd class="beschreibung">
+                    {{ entry.explanation|smarttext }}
+                </dd>
+            </div>
+        {% endfor %}
+    </dl>
+    {% endif %}
+    
+{% endblock %}

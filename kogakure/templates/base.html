@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="de" xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title>{% block page_title %}kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}</title>
+        
+        <!-- Meta -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="generator" content="{{ DJANGO_VERSION }}" />
+        <meta name="robots" content="index, follow" />
+        
+        <meta name="keywords" content="Ninjutsu, Ninja, Ninpo, Schattenkrieger, Shinobi, Kunoichi, Shadowwarrior, Tengu, Bujinkan, Budo, Tai-jutsu, Taijutsu, BBD, Ryu, Ryuha, Sensei, Soke, Masaaki Hatsumi, Takamatsu, Toda, Hayes, Kampf, Kampfkunst, Krieger, Kriegskunst, Martial Arts, Selbstverteidigung, Sport, Geheimnis, Geschichte, Iga, Koga, Shidoshi, Shihan, Philosopie, Schwertkampf, Spionage, Sabotage, Guerilla, Verstecken, Waffen, Natur, Satori, Tradition, Japan, Asien, Inton, Erleuchtung, Goton-po, Budô, Bujin, Godai, Gogyo, Hojutsu, Junan Taiso, Jutsu, Jutte, Meditation, Meso, Mikkyo, Nahkampf, Shugendo, Tobi, Training, Ukemi, Waffen, Yamabushi, Sennin, Jônin, Chunin, Genin, Kamae, Kogakure, Bisento, Bo, Bokken, Kama, Ken, Kuji-in, Kuji-kiri, Kusarifundo, Kyoketsu Shoge, Metsubishi, Naginata, Kyoketsu Shoge, Shuko, Shuriken, Tanto, Tekagi, Tessen, Wurfstern, Yari, Zue" />
+        <meta name="description" content="Fachmagazin für Ninja, Ninjutsu und Kampfkunst." />
+        <meta name="content-language" content="de" />
+        <meta name="author" content="Stefan Imhoff" />
+        <meta name="publisher" content="Stefan Imhoff" />
+        
+        <!-- Favicon -->
+        <link href="{{ MEDIA_URL }}favicon.ico" rel="shortcut icon" />
+        <link href="{{ MEDIA_URL }}apple-touch-icon.jpg" rel="apple-touch-icon" />
+
+        <!-- Stylesheets -->
+        <link charset="utf-8" href="{{ MEDIA_URL }}css/print.css" type="text/css" rel="stylesheet" media="print" />
+        <link charset="utf-8" href="{{ MEDIA_URL }}css/master.css" type="text/css" rel="stylesheet" media="screen" />
+        <link charset="utf-8" href="{{ MEDIA_URL }}css/thickbox.css" type="text/css" rel="stylesheet" media="screen" />
+        <!--[if lt IE 7]><link rel="stylesheet" href="{{ MEDIA_URL }}css/ie6.css" type="text/css" media="screen" /><![endif]-->
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="{{ MEDIA_URL }}scripts/jquery.js" charset="utf-8"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}scripts/domscript.js" charset="utf-8"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}scripts/thickbox.js" charset="utf-8"></script>
+        
+        <!-- Feeds -->
+        <link rel="alternate" href="http://feeds.feedburner.com/kogakure/artikel" type="application/rss+xml" title="Artikel" />
+        <link rel="alternate" href="http://feeds.feedburner.com/kogakure/kurzmeldungen" type="application/rss+xml" title="Kurzmeldungen" />
+        <link rel="alternate" href="http://feeds.feedburner.com/kogakure/lexikon" type="application/rss+xml" title="Lexikon" />
+        <link rel="alternate" href="http://feeds.feedburner.com/kogakure/sprueche" type="application/rss+xml" title="Sprüche" />
+        <link rel="alternate" href="http://feeds.feedburner.com/kogakure/kaufempfehlungen" type="application/rss+xml" title="Kaufempfehlungen" />
+    </head>
+
+    <body>
+        <div id="page">
+            <div id="header">
+                <a title="Zur Startseite springen" href="/" accesskey="h"><img src="{{ MEDIA_URL }}css/img/logo.png" alt="Logo kogakure.de" /></a></div>
+            <div id="container">
+                <div id="main">
+                    <div id="content">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+                <div id="side">
+                    <div id="navigation">
+                        {% include "includes/search_form.html" %}
+                        {% include "includes/navigation.html" %}
+                    </div>
+                </div>
+            </div>
+            <!-- /container -->
+            <div id="footer">
+                <p>© 1999-{% now "Y" %}, <a href="http://stefanimhoff.de/">Stefan Imhoff</a>. Der Inhalt dieser Seite ist unter <a href="http://creativecommons.org/licenses/by-nc/3.0/deed.de" rel="license">Creative Commons</a> lizenziert.</p>
+                <p>Diese Seite läuft mit <a href="http://www.djangoproject.com/" title="Django | The Web framework for perfectionists with deadlines">Django</a>. Hosting bei <a href="http://www.webfaction.com?affiliate=kogakure" title="WebFaction : Hosting for an agile web">Webfaction</a>. <a href="/impressum/">Impressum</a>, <a href="/datenschutz/">Datenschutz</a>.</p>
+            </div>
+        </div>
+        <!-- /wrapper -->
+    </body>
+
+</html>

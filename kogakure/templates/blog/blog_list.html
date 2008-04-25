@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block page_title %}Kurzmeldungen // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+
+{% block content %}
+
+    <h1>Kurzmeldungen</h1>
+
+    {% if entry_list %}
+        {% for entry in entry_list %}
+            <div class="block">
+                <h2 class="titel"><a href="{{ entry.get_absolute_url }}" title="Link zu '{{ entry.title }}'">{{ entry.title }}</a></h2>
+                {{ entry.summary|smarttext }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% include "includes/paginator.html" %}
+    
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ category.name }} // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+
+{% block content %}
+
+    <h1>Artikel zum Thema „{{ category.name }}“</h1>
+
+    {% if entries %}
+    
+        {% for entry in entries %}
+            <div class="block">
+                <h2 class="titel"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2>
+                {{ entry.summary|smarttext }}
+            </div>
+        {% endfor %}
+    
+    {% else %}
+            <p>Leider gibt es keine Artikel zum Thema „{{ category.name }}“.</p>
+    {% endif %}
+
+{% endblock %}

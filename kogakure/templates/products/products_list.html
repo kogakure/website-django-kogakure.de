@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block page_title %}Kaufempfehlungen // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+
+{% block content %}
+
+    <h1>Kaufempfehlungen</h1>
+    {% get_stat products.Entry as products_num %}
+    <p>Hier führe ich <em>{{ products_num }}</em> Empfehlung{{ products_num|pluralize:"en" }} aus den Bereichen Buch und Film zu den groben Themenbereichen Ninja, Samurai, Bujutsu und Taoismus auf, die meiner Meinung nach sehr empfehlenswert sind. Einige Produkte werden zweimal aufgeführt, z.B. bei anderssprachigen Versionen. Alle hier aufgeführten Artikel sind mir bekannt, ich spreche keine Empfehlungen für unbekannte Artikel aus!</p>
+    <p>Ein Klick auf den jeweiligen Link führt zur Produktseite und Bestellmöglichkeit bei <a href="http://www.amazon.de/exec/obidos/redirect?link_code=ur2&amp;camp=1638&amp;tag=kogakurede-21&amp;creative=6742&amp;path=tg%2Fbrowse%2F-%2F301128%3Fsite-redirect%3Dde">Amazon.de</a>.</p>
+
+    {% if product_list %}
+        <ul class="tip">
+        {% for product in product_list %}
+            {% ifchanged %}<li class="produkt"><h2>{{ product.category }} <a href="{{ product.category.get_feed_url }}"><img class="noborder" src="{{ MEDIA_URL }}css/img/rss.png" width="16" height="16" alt="Feed"/></a></h2></li>{% endifchanged %}
+            <li class="recommendation"><a href="http://www.amazon.de/gp/product/{{ product.asin }}?ie=UTF8&amp;tag=kogakurede-21&amp;linkCode=as2&amp;camp=1638&amp;creative=6742&amp;creativeASIN={{ product.asin }}"><img src="{{ MEDIA_URL }}{{ product.cover }}" alt="{{ product.title }}" />{{ product.title }}</a>{{ product.body|smarttext }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}

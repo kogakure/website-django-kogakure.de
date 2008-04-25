@@ -1,0 +1,12 @@
+{% load cache %}
+{% cache 3600 navigation %}
+<h2>Navigation</h2>
+<ul class="nav">
+    <li><a title="Übersicht über alle Artikel" href="{% url inhaltsverzeichnis %}">Inhaltsverzeichnis</a></li>
+    <li><a title="Buch- und Filmempfehlungen" href="{% url kaufempfehlungen_liste %}">Kaufempfehlungen</a></li>
+    <li><a title="Lexikon mit Kampfkunstbegriffen" href="{% url lexikon_liste %}">Lexikon</a></li>
+    <li><a title="Weise Sinnsprüche und Aussagen" href="{% url sprueche_liste %}">Sprüche</a></li>
+    <li><a title="Informationen über diese Seite" href="/info/">Informationen</a></li>
+    <li><a title="Kontakt aufnehmen" href="{% url kontakt %}">Kontakt</a></li>
+</ul>
+{% endcache %}

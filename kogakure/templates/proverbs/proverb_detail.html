@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ entry.title }} // Sprüche // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+
+{% block content %}
+
+        <h1>Sprüche</h1>
+        
+        <blockquote>
+            {{ entry.body|smarttext }}
+        </blockquote>
+        <cite class="sprueche">{{ entry.author }}</cite>
+        {% get_stat proverbs.Entry as proverbs_num %}
+        <p><a href="{% url sprueche_liste %}">Alle <em>{{ proverbs_num }}</em> Spr{{ proverbs_num|pluralize:"uch,üche" }}, Zitat{{ proverbs_num|pluralize:"e" }} und Aussage{{ proverbs_num|pluralize:"n" }} lesen.</a></p>
+{% endblock %}

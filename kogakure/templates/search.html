@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Suchergebnisse</h1>
+    
+    {% if article_list or blog_list or encyclopedia_list or proverbs_list %}
+    
+        {% if q %}
+            <p>Ihre Suche nach „<em>{{ q }}</em>“ lieferte folgende Ergebnisse:</p>
+        {% endif %}
+        
+        {% if article_list %}
+            <h2 class="section">Artikel</h2>
+            {% for article in article_list %}
+                <div class="block">
+                    <h3 class="title"><a href="{{ article.get_absolute_url }}" title="Link zu '{{ article.title }}'">{{ article.title }}</a></h3>
+                    <p>{{ article.summary|smarttext|striptags|truncatewords:"25" }}</p>
+                </div>
+                <hr />
+            {% endfor %}
+        {% endif %}
+        
+        {% if blog_list %}
+            <h2 class="section">Kurzmeldungen</h2>
+            {% for entry in blog_list %}
+                <div class="block">
+                    <h3><a href="{{ entry.get_absolute_url }}" title="Link zu '{{ entry.title }}'">{{ entry.title }}</a></h3>
+                    <p>{{ entry.summary|smarttext|striptags|truncatewords:"25" }}</p>
+                </div>
+                <hr />
+            {% endfor %}
+        {% endif %}
+        
+        {% if encyclopedia_list %}
+            <h2 class="section">Lexikon</h2>
+            {% for entry in encyclopedia_list %}
+                <div class="block">
+                    <h3><a href="{{ entry.get_absolute_url }}" title="Link zu '{{ entry.title }}'">{{ entry.title }} {% if entry.japanese %}({{ entry.japanese }}){% endif %}</a></h3>
+                    <p>{{ entry.explanation|smarttext|striptags|truncatewords:"25" }}</p>
+                </div>
+                <hr />
+            {% endfor %}
+        {% endif %}
+        
+        {% if proverbs_list %}
+            <h2 class="section">Sprüche</h2>
+            {% for proverb in proverbs_list %}
+                <div class="block">
+                    <blockquote>
+                        {{ proverb.body|smarttext }}
+                    </blockquote>
+                    <cite class="sprueche">– {{ proverb.author }}</cite>
+                </div>
+                <hr />
+            {% endfor %}
+        {% endif %}
+        
+    {% else %}
+        <p>Es wurden leider keine Suchergebnisse {% if q %}zu „<em>{{ q }}</em>“{% endif %} gefunden.</p>
+    {% endif %}
+    
+{% endblock %}

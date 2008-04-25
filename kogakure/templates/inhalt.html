@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block page_title %}Inhaltsverzeichnis // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+
+{% block content %}
+
+    <h1>Inhaltsverzeichnis</h1>
+    
+    <div class="half_col">
+
+        <h2>Artikel</h2>
+        
+        {% if entry_list %}
+            <ul>
+            {% for entry in entry_list|dictsort:"title" %}
+                <li><a href="{{ entry.get_absolute_url }}" title="Link zu '{{ entry.title }}'">{{ entry.title }}</a></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        
+    </div>
+
+    <div class="half_col">
+
+        <h2>Them{{ category_list|pluralize:"a,en" }}</h2>
+
+        {% if category_list %}
+            <ul id="nav_categories" class="nav_categories">
+            {% for category in category_list|dictsort:"name" %}
+                <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h2>Statistik</h2>
+
+        <ul>
+            {% get_stat articles.Entry as articles_num %}
+            <li>Artikel: {{ articles_num }}</li>
+            {% get_stat blog.Entry as blog_num %}
+            <li>Kurzmeldung{{ blog_num|pluralize:"en" }}: {{ blog_num }}</li>
+            {% get_stat proverbs.Entry as proverbs_num %}
+            <li>Spr{{ proverbs_num|pluralize:"uch,üche" }}: {{ proverbs_num }}</li>
+            {% get_stat encyclopedia.Entry as encyclopedia_num %}
+            <li>Lexikon-Eintr{{ encyclopedia_num|pluralize:"ag,äge" }}: {{ encyclopedia_num }}</li>
+            {% get_stat products.Entry as products_num %}
+            <li>Kaufempfehlung{{ products_num|pluralize:"en" }}: {{ products_num }}</li>
+            
+        </ul>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+html { height: 100%; }
+body { background: #FFF; color: #222; height: 100%; }
+
+.noborder { border: 0; }
+.hide { display: none; }
+.show { display: block; }
+.clear { clear: both; }
+
+/* Page
+------------------------------------------------------------------------- */
+#page { max-width: 90.0em; min-height: 100%; min-width: 580px; position: relative; z-index: 2; }
+
+/* Header
+------------------------------------------------------------------------- */
+#header { background: url(img/bambus-hd.jpg) no-repeat 0 0; height: 160px; }
+#header img { border: 0; height: 60px; left: 550px; list-style-type: none; position: absolute; top: 65px; width: 200px; }
+
+/* Container
+------------------------------------------------------------------------- */
+#container { clear: both; position: relative; }
+
+/* Maincol
+------------------------------------------------------------------------- */
+#main { background: url(img/brd-top.jpg) repeat-x 0 0; float: left; width: 69%; }
+
+#content { background: url(img/sd-lft.jpg) no-repeat 0 0; min-height: 440px; padding: 30px 0 0 75px; }
+#content .half_col { float: left; width: 50%; }
+
+#random_articles { float: left; width: 64%; }
+#homepage_welcome { float: right; width: 33%; }
+#recent_blog { padding-bottom: 1.0em; }
+
+#content .note { background: #F8FFF0; border: 1px solid #5C8B2F; border-left: 3px solid #5C8B2F; border-right: 3px solid #5C8B2F; clear: both; margin: 1.0em 0; }
+#content .note p { margin: 1.0em; }
+
+#content .warning { background: #FFD6C4; border: 1px solid #E16357; border-left: 3px solid #E16357; border-right: 3px solid #E16357; clear: both; margin: 1.0em 0; }
+#content .warning p { margin: 1.0em; }
+
+#content .footnote { color: #999; font-size: 0.85em; }
+
+#content .hinweis { background: #F8FFF0; border: 1px solid #5C8B2F; border-left: 3px solid #5C8B2F; border-right: 3px solid #5C8B2F; clear: both; margin: 1.0em 0; }
+#content .hinweis p { margin: 1.0em; }
+
+#content .warnung { background: #FFD6C4; border: 1px solid #E16357; border-left: 3px solid #E16357; border-right: 3px solid #E16357; clear: both; margin: 1.0em 0; }
+#content .warnung p { margin: 1.0em; }
+
+#content .block { border-bottom: 2px dotted #DDD; margin: 0; }
+
+#content .recommendation_detail { border-bottom: 1px dotted #999; float: left; width: 100%; margin-bottom: 1.5em; }
+
+#content #excerpt { border-bottom: 2px dotted #DDD; color: #999; margin: 1.0em 0; }
+#content #meta { border-bottom: 2px dotted #ddd; margin: 1em 0; }
+
+/* Sidecol
+------------------------------------------------------------------------- */
+#side { background: url(img/sd-rgt.png) no-repeat 0 0; float: left; min-height: 440px; width: 29%; }
+
+#navigation { padding: 0 10px 0 60px; }
+
+/* Footer
+------------------------------------------------------------------------- */
+#footer { clear: both; height: 80px; padding: 30px 0 0 75px; max-width: 90.0em; min-width: 580px; }
+#footer p { color: #999; font-size: 0.85em; line-height: 1em; }

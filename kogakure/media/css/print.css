@@ -1,0 +1,60 @@
+/* Base settings
+------------------------------------------------------------------------- */
+* { border: 0; margin: 0; padding: 0; width: auto; }
+
+#header, #navigation, #side, #footer, #autorbio, #meta, .noprint { display: none; }
+
+body { background: #FFF; color: #333; padding: 1.5cm; }
+body { font: 11pt/150% "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", Geneva, Helvetica, Arial, sans-serif; text-align: left; }
+
+/* Headlines
+------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, hr { clear: both; font-family: Palatino, Georgia, Times, serif; font-style: normal; font-variant: normal; font-weight: normal; }
+h1 { font-size: 180%; margin-bottom: 10pt; }
+h2 { font-size: 130%; margin-bottom: 7pt; }
+h3 { font-size: 120%; margin-bottom: 3pt; }
+h4 { font-size: 110%; margin-bottom: 1pt; }
+
+/* Text
+------------------------------------------------------------------------- */
+p { margin-bottom: 10pt; }
+
+ul, ol { margin-bottom: 10pt; margin-left: 30pt; }
+ul.tip { margin: 0; padding: 0; }
+#content ul.tip li.recommendation { display: block; float: left; height: 12.0em; list-style-type: none; margin: 0 10px 0 0; padding: 0; width: 45%; }
+
+dl { margin-bottom: 10pt; margin-left: 0; }
+dt { font-weight: bold; }
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+blockquote { color: #999; font-family: Palatino, Georgia, Times, serif; font-style: italic; margin: 0 0 0 0.5cm; }
+cite { font-style: italic; }
+    
+abbr:after { content: " (" attr(title) ") "; }
+acronym:after { content: " (" attr(title) ") "; }
+dfn:after { content: " (" attr(title) ") "; }
+
+del { text-decoration: line-through; }
+ins { text-decoration: underline; }
+
+address { font-style: italic; }
+
+hr { border: 1px dotted #999; margin: 20pt 0; }
+
+/* Images
+------------------------------------------------------------------------- */
+img { border: 1px solid #999; padding: 2px; float: left; margin-right: 5px; }
+img.rechts { float: right; margin-left: 5px; }
+img.links { float: left; margin-right: 5px; }
+#autorbio img { border: 1px solid #999; float: left; margin-right: 5px; padding: 2px; }
+
+/* Links
+------------------------------------------------------------------------- */
+a, a:link, a:visited { background: transparent; color: #333; text-decoration: none; }
+
+/* Formular
+------------------------------------------------------------------------- */
+textarea, input { border: 1px solid #999; display: block; width: 10cm; }
+input.button { width: auto; }

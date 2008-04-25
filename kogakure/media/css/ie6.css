@@ -1,0 +1,27 @@
+/* Internet Explorer bis Version 6
+------------------------------------------------------------------------- */
+
+#overlay {
+    filter:alpha(opacity=60);
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+}
+
+* html>body .clearfix { display: inline-block; width: 100%; }
+
+/* CSS Hack fuer den IE, definiert ein anderen Versatz fuer den Footer */
+* html #footer { margin-top: 0; }
+
+ul li { padding-left: 5px; }
+
+legend { margin-bottom: 1.0em; width: 14.0em; text-align: center; }
+
+input.button { width: auto; height: 2.0em; }
+
+.half_col { float: left; width: 49.5%; }
+
+#content { float: left; }
+#side input { width: 50%; }
+
+#random_articles { width: 47%; float: left; }
+#homepage_welcome { width: 47%; float: right; }

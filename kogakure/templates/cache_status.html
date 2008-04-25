@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page_title %}Cache Status{% endblock %}
+
+{% block content %}
+<h1>Cache Status</h1>
+<div>
+    <pre>
+    uptime                {{ stats.uptime }}
+    time                  {{ stats.time }}
+    version               {{ stats.version }}
+    cpu time              user: {{ stats.rusage_user }}, system: {{ stats.rusage_system }}
+    items                 {{ stats.curr_items }} of {{ stats.total_items }}
+    memory usage          {{ stats.bytes|filesizeformat }}
+    connections           current: {{ stats.curr_connections }}, total: {{ stats.total_connections }}
+    hits                  {{ stats.get_hits }} of {{ stats.cmd_get }} ({{ hit_rate }}%)
+    cmd_set               {{ stats.cmd_set }}
+    get_misses            {{ stats.get_misses }}
+    traffic               {{ stats.bytes_read|filesizeformat }} in, {{ stats.bytes_written|filesizeformat }} out
+    </pre>
+</div>
+{% endblock %}

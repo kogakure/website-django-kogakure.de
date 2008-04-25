@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load cache %}
+
+{% block page_title %}{{ flatpage.title }} // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+
+{% cache 3600 content %}
+{% block content %}
+
+  <h1>{{ flatpage.title }}</h1>
+
+{{ flatpage.content|smarttext }}
+
+{% endblock %}
+{% endcache %}
