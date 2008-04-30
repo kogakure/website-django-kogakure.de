@@ -1,0 +1,785 @@
+# Translation kogakure.de to German
+#
+# Copyright (C) 2008,
+# This file is distributed under the same license as the kogakure.de package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kogakure.de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-04-30 21:26+0200\n"
+"PO-Revision-Date: 2008-04-29 21:47+0100\n"
+"Last-Translator: Stefan Imhoff <stefan@imhoff.name>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps/articles/feeds.py:17
+msgid "kogakure.de &ndash; Articles"
+msgstr "kogakure.de – Artikel"
+
+#: apps/articles/feeds.py:18
+msgid "kogakure.de &ndash; Newest Articles"
+msgstr "Neuste Artikel"
+
+#: apps/articles/models.py:17
+msgid "First Name"
+msgstr "Vorname"
+
+#: apps/articles/models.py:18
+msgid "Last Name"
+msgstr "Nachname"
+
+#: apps/articles/models.py:19
+msgid "Photo"
+msgstr "Foto"
+
+#: apps/articles/models.py:19
+msgid "50 Pixel (square)"
+msgstr "50 Pixel (quadratisch)"
+
+#: apps/articles/models.py:20 apps/articles/models.py:51
+#: apps/products/models.py:19
+msgid "URL"
+msgstr "URL"
+
+#: apps/articles/models.py:21
+msgid "City"
+msgstr "Ort"
+
+#: apps/articles/models.py:22
+msgid "Biography"
+msgstr "Biographie"
+
+#: apps/articles/models.py:22 apps/articles/models.py:80
+#: apps/articles/models.py:81 apps/blog/models.py:23 apps/blog/models.py:24
+#: apps/encyclopedia/models.py:25 apps/products/models.py:54
+msgid "Use Markdown"
+msgstr "Markdown benutzen"
+
+#: apps/articles/models.py:26 apps/articles/models.py:76
+#: apps/articles/models.py:116 apps/proverbs/models.py:22
+msgid "Author"
+msgstr "Autor"
+
+#: apps/articles/models.py:27
+msgid "Authors"
+msgstr "Autoren"
+
+#: apps/articles/models.py:55
+msgid "Topic"
+msgstr "Thema"
+
+#: apps/articles/models.py:56
+msgid "Topics"
+msgstr "Themen"
+
+#: apps/articles/models.py:72 apps/blog/models.py:16
+#: apps/encyclopedia/models.py:16 apps/products/models.py:44
+#: apps/proverbs/models.py:16
+msgid "Draft"
+msgstr "Entwurf"
+
+#: apps/articles/models.py:73 apps/articles/models.py:79
+#: apps/blog/models.py:17 apps/blog/models.py:22
+#: apps/encyclopedia/models.py:17 apps/encyclopedia/models.py:22
+#: apps/products/models.py:45 apps/products/models.py:50
+#: apps/proverbs/models.py:17 apps/proverbs/models.py:20
+msgid "Published"
+msgstr "Veröffentlicht"
+
+#: apps/articles/models.py:74 apps/blog/models.py:18
+#: apps/encyclopedia/models.py:18 apps/products/models.py:46
+#: apps/proverbs/models.py:18
+msgid "Closed"
+msgstr "Geschlossen"
+
+#: apps/articles/models.py:77 apps/blog/models.py:20
+#: apps/encyclopedia/models.py:20 apps/products/models.py:48
+msgid "Title"
+msgstr "Titel"
+
+#: apps/articles/models.py:78 apps/blog/models.py:21
+#: apps/encyclopedia/models.py:21 apps/products/models.py:49
+msgid "Slug"
+msgstr "URL"
+
+#: apps/articles/models.py:80 apps/blog/models.py:23
+msgid "Excerpt"
+msgstr "Auszug"
+
+#: apps/articles/models.py:81 apps/articles/models.py:88
+#: templates/articles/article_list.html:4
+#: templates/articles/article_list.html:10
+msgid "Article"
+msgstr "Artikel"
+
+#: apps/articles/models.py:82
+msgid "Translator"
+msgstr "Übersetzer"
+
+#: apps/articles/models.py:83 apps/products/models.py:24
+msgid "Categories"
+msgstr "Kategorien"
+
+#: apps/articles/models.py:89 templates/inhalt.html:14
+#: templates/search.html:18
+msgid "Articles"
+msgstr "Artikel"
+
+#: apps/articles/models.py:112 apps/blog/models.py:47
+#: apps/encyclopedia/models.py:51 apps/proverbs/models.py:41
+msgid "Date"
+msgstr "Datum"
+
+#: apps/blog/feeds.py:17
+msgid "kogakure.de &ndash; Blog Entries"
+msgstr "kogakure.de – Kurzmeldungen"
+
+#: apps/blog/feeds.py:18
+msgid "Newest Blog Entries"
+msgstr "Neuste Kurzmeldungen"
+
+#: apps/blog/models.py:24 templates/homepage.html:38 templates/search.html:29
+#: templates/blog/blog_detail.html:4 templates/blog/blog_list.html:4
+msgid "Blog"
+msgstr "Kurzmeldungen"
+
+#: apps/blog/models.py:29
+msgid "Blog Entry"
+msgstr "Kurzmeldung"
+
+#: apps/blog/models.py:30
+msgid "Blog Entries"
+msgstr "Kurzmeldungen"
+
+#: apps/contact/forms.py:12
+msgid "Name"
+msgstr "Name"
+
+#: apps/contact/forms.py:16
+msgid "Please type in your name."
+msgstr "Bitte gib deinen Namen ein."
+
+#: apps/contact/forms.py:17
+msgid "Your name is to long."
+msgstr "Dein Name ist zu lang."
+
+#: apps/contact/forms.py:18
+msgid "Your name is to short."
+msgstr "Dein Name ist zu kurz."
+
+#: apps/contact/forms.py:20
+msgid "Email"
+msgstr "E-Mail"
+
+#: apps/contact/forms.py:22
+msgid "Please type in your Email address."
+msgstr "Bitte gib deine E-Mail-Adresse ein."
+
+#: apps/contact/forms.py:23
+msgid "Please provide a correct Email address."
+msgstr "Bitte gib deine korrekte E-Mail-Adresse ein."
+
+#: apps/contact/forms.py:26
+msgid "Message"
+msgstr "Kurzmeldung"
+
+#: apps/contact/forms.py:28
+msgid "Please type in your message."
+msgstr "Bitte gib deinen Nachrichtentext ein."
+
+#: apps/contact/forms.py:35
+msgid "Please use more words for your message text."
+msgstr "Bitte gibt mehr Worte für deine Nachricht ein."
+
+#: apps/contact/views.py:25
+msgid "Contact form: domain.com"
+msgstr "Kontaktformular: kogakure.de"
+
+#: apps/encyclopedia/feeds.py:17
+msgid "kogakure.de &ndash; Encyclopedia"
+msgstr "kogakure.de – Lexikon"
+
+#: apps/encyclopedia/feeds.py:18
+msgid "Newest encyclopedia entries"
+msgstr "Neuste Lexikoneinträge"
+
+#: apps/encyclopedia/models.py:23
+msgid "Alternative title"
+msgstr "Alternativer Titel"
+
+#: apps/encyclopedia/models.py:24
+msgid "Japanese characters"
+msgstr "Japanische Zeichen"
+
+#: apps/encyclopedia/models.py:24
+msgid "Kanji, Katakana or Hiragana"
+msgstr "Kanji, Katakana oder Hiragana"
+
+#: apps/encyclopedia/models.py:25
+msgid "Explanation"
+msgstr "Erklärung"
+
+#: apps/encyclopedia/models.py:30
+msgid "Encyclopedia entry"
+msgstr "Lexikoneintrag"
+
+#: apps/encyclopedia/models.py:31
+msgid "Encyclopedia entries"
+msgstr "Lexikoneinträge"
+
+#: apps/products/feeds.py:17
+msgid "kogakure.de &ndash; Recommendations"
+msgstr "kogakure.de – Kaufempfehlungen"
+
+#: apps/products/feeds.py:18
+msgid "Newest Recommendations"
+msgstr "Neuste Kaufempfehlungen"
+
+#: apps/products/feeds.py:34
+#, python-format
+msgid "Recommendations: %s"
+msgstr "Kaufempfehlungen: %s"
+
+#: apps/products/feeds.py:37
+#, python-format
+msgid "Newest recommendations from \"%s\""
+msgstr "Neuste Produkte aus dem Bereich „%s“"
+
+#: apps/products/models.py:23 apps/products/models.py:53
+msgid "Category"
+msgstr "Kategorie"
+
+#: apps/products/models.py:51
+msgid "Cover"
+msgstr "Cover"
+
+#: apps/products/models.py:51
+msgid "60 pixel width, auto height"
+msgstr "60 Pixel Breite, automatische Höhe"
+
+#: apps/products/models.py:52
+msgid "ASIN"
+msgstr "ASIN"
+
+#: apps/products/models.py:54 templates/includes/navigation.html:11
+msgid "Information"
+msgstr "Informationen"
+
+#: apps/proverbs/feeds.py:17
+msgid "kogakure.de &ndash; Proverbs"
+msgstr "kogakure.de – Sprüche"
+
+#: apps/proverbs/feeds.py:18
+msgid "Newest Proverbs"
+msgstr "Neuste Sprüche"
+
+#: apps/proverbs/models.py:21 apps/proverbs/models.py:27
+msgid "Proverb"
+msgstr "Spruch"
+
+#: apps/proverbs/models.py:21
+msgid "Use Markdown, with quotes"
+msgstr "Markdown benutzen, mit Anführungszeichen"
+
+#: apps/proverbs/models.py:28 templates/search.html:51
+#: templates/includes/navigation.html:10
+#: templates/proverbs/proverb_detail.html:4
+#: templates/proverbs/proverb_detail.html:10
+#: templates/proverbs/proverb_list.html:4
+#: templates/proverbs/proverb_list.html:10
+msgid "Proverbs"
+msgstr "Sprüche"
+
+#: templates/404.html:5
+msgid "Error 404"
+msgstr "Fehler 404"
+
+#: templates/404.html:6
+msgid "The Server did not find the requested page!"
+msgstr "Der Server hat die angeforderte Seite nicht gefunden!"
+
+#: templates/500.html:5
+msgid "Error 500"
+msgstr "Fehler 500"
+
+#: templates/500.html:6
+msgid "The Server reported an Error!"
+msgstr "Der Server hat einen Fehler gemeldet!"
+
+#: templates/base.html:8 templates/categories.html:4 templates/contact.html:4
+#: templates/inhalt.html:4 templates/search.html:4
+#: templates/articles/article_detail.html:4
+#: templates/articles/article_list.html:4 templates/blog/blog_detail.html:4
+#: templates/blog/blog_list.html:4
+#: templates/encyclopedia/encyclopedia_detail.html:4
+#: templates/encyclopedia/encyclopedia_list.html:4
+#: templates/flatpages/default.html:7
+#: templates/products/products_detail.html:4
+#: templates/products/products_list.html:4
+#: templates/proverbs/proverb_detail.html:4
+#: templates/proverbs/proverb_list.html:4
+#: templates/seo/googleeac4fc886a6f9f8d.html:4
+msgid "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts"
+msgstr "kogakure.de – Ninja, Ninjutsu und Kampfkunst"
+
+#: templates/base.html:48
+msgid "Jump to homepage"
+msgstr "Zur Startseite springen"
+
+#: templates/base.html:48
+msgid "Logo kogakure.de"
+msgstr "Logo kogakure.de"
+
+#: templates/base.html:64
+msgid ""
+"The Content of this page is licenced under a <a href=\"http://"
+"creativecommons.org/licenses/by-nc/3.0/deed.en\" rel=\"license\">Creative "
+"Commons</a> licence.\""
+msgstr ""
+"Der Inhalt dieser Seite ist unter <a href=\"http://creativecommons.org/"
+"licenses/by-nc/3.0/deed.de\" rel=\"license\">Creative Commons</a> lizenziert."
+"\""
+
+#: templates/base.html:65
+msgid ""
+"This page runs on <a href=\"http://www.djangoproject.com/\" title=\"Django | "
+"The Web framework for perfectionists with deadlines\">Django</a>."
+msgstr ""
+"Diese Seite läuft mit <a href=\"http://www.djangoproject.com/\" title="
+"\"Django | The Web framework for perfectionists with deadlines\">Django</a>."
+
+#: templates/base.html:65
+msgid ""
+"Hosting at <a href=\"http://www.webfaction.com?affiliate=kogakure\" title="
+"\"WebFaction : Hosting for an agile web\">Webfaction</a>."
+msgstr ""
+"Hosting bei <a href=\"http://www.webfaction.com?affiliate=kogakure\" title="
+"\"WebFaction : Hosting for an agile web\">Webfaction</a>."
+
+#: templates/base.html:65
+msgid "Imprint"
+msgstr "Impressum"
+
+#: templates/base.html:65
+msgid "Privacy"
+msgstr "Datenschutz"
+
+#: templates/categories.html:6
+#, python-format
+msgid "Articles on the topic %(category.name)s"
+msgstr "Artikel zum Thema %(category.name)s"
+
+#: templates/categories.html:10
+#, python-format
+msgid "Articles on the topic '%(category.name)s'"
+msgstr "Artikel zum Thema „%(category.name)s“"
+
+#: templates/categories.html:22
+#, python-format
+msgid "Unfortunately there are no articles on the topic of '%(category.name)s'"
+msgstr "Leider gibt es keine Artikel zum Thema „%(category.name)s“"
+
+#: templates/contact.html:4 templates/contact.html.py:10
+#: templates/includes/navigation.html:12
+msgid "Contact"
+msgstr "Kontakt"
+
+#: templates/contact.html:6
+msgid "Contact form"
+msgstr "Kontaktformular"
+
+#: templates/contact.html:13
+#, python-format
+msgid ""
+"Here you can contact <a href=\"%(WEB_URL)sinfo/\">Stefan Imhoff</a>, the "
+"maintainer of this pages. I try to answer every email but can&rsquo;t give "
+"you guarantee. But first some guidelines:"
+msgstr ""
+"Hier kannst Du Kontakt mit <a href=\"%(WEB_URL)sinfo/\">Stefan Imhoff</a>, "
+"dem Betreiber der Seiten, aufnehmen. Ich versuche auf jede E-Mail zu "
+"antworten, kann dies aber nicht garantieren. Vorher noch ein paar "
+"Richtlinien:"
+
+#: templates/contact.html:16
+msgid ""
+"Keep your email <em>short</em>! (Please no complete life story on first "
+"contact)."
+msgstr ""
+"Halte die E-Mail bitte <em>kurz</em>! (Keine komplette Lebensgeschichte beim "
+"Erstkontakt)."
+
+#: templates/contact.html:17
+msgid ""
+"Write that way reading can be done <em>without effort</em> (Write "
+"paragraphs, pay attention to orthography, punctuation, upper and lower case "
+"&hellip;)."
+msgstr ""
+"Schreib so, dass das Lesen <em>nicht anstrengt</em> (Absätze machen, "
+"Rechtschreibung beachten, Zeichensetzung, Kleinschreibung/Großschreibung …)."
+
+#: templates/contact.html:18
+#, python-format
+msgid ""
+"Some questions are asked again and again. Please read the <a href=\"%"
+"(WEB_URL)sfaq/\">Frequently Asked Questions</a> to avoid those."
+msgstr ""
+"Einige Fragen werden wieder und wieder gestellt. Lies bitte vorher die <a "
+"href=\"%(WEB_URL)sfaq/\">Fragen&nbsp;&amp;&nbsp;Antworten</a> durch, um "
+"solche zu vermeiden."
+
+#: templates/contact.html:21
+msgid ""
+"To follow those simple guidelines and a kind und ein freundlicher speech may "
+"help to speed up an answer."
+msgstr ""
+"Das befolgen dieser simplen Richtlinien und ein freundlicher Ton können "
+"möglicherweise dabei helfen, eine Antwort zu beschleunigen."
+
+#: templates/contact.html:23
+msgid "There were errors!"
+msgstr "Es sind Fehler aufgetreten!"
+
+#: templates/contact.html:24
+msgid "The form coudn&rsquo;t be submitted, please check the following errors:"
+msgstr ""
+"Die Formularinhalte konnten nicht übermittelt werden, bitte überprüfe "
+"folgende Fehler:"
+
+#: templates/contact.html:42
+msgid "Contact data"
+msgstr "Kontaktdaten"
+
+#: templates/contact.html:46
+msgid "* required"
+msgstr "* Plichtfelder"
+
+#: templates/homepage.html:10
+#, python-format
+msgid ""
+"This website contains <em>%(articles_num)s</em> articles, here you can see "
+"four random articles"
+msgstr ""
+"Diese Website enthält <em>%(articles_num)s</em> Artikel, hier sind vier "
+"zufällig ausgewählte Artikel zu sehen"
+
+#: templates/homepage.html:19
+msgid "Read all articles&nbsp;&hellip;"
+msgstr "Alle Artikel lesen&nbsp;…"
+
+#: templates/homepage.html:21
+msgid "* Ninpo Ikkan (jap. 'Ninjutsu is the beginning and has now end.')"
+msgstr "* Ninpō Ikkan (jap. „Ninjutsu ist der Anfang und kennt kein Ende.“)"
+
+#: templates/homepage.html:27
+msgid "About this page &hellip;"
+msgstr "Über diese Seite …"
+
+#: templates/homepage.html:28
+#, python-format
+msgid ""
+"This is <a href=\"%(WEB_URL)sinfo/\">kogakure.de</a>. Since 1999 you can "
+"read articles, text collections and translations on the topics around the "
+"japanese shadow warriors, spies and warriors &ndash; the Ninja &ndash; and "
+"their martial art Ninjutsu."
+msgstr ""
+"Dies ist <a href=\"%(WEB_URL)sinfo/\">kogakure.de</a>. Seit 1999 kann man "
+"hier Artikel, Textsammlungen und Übersetzungen zu Themen rund um die "
+"japanischen Schattenkrieger, Spione und Krieger – die Ninja – und deren "
+"Kampfkunst Ninjutsu lesen."
+
+#: templates/homepage.html:32
+msgid "First visit?"
+msgstr "Neu hier?"
+
+#: templates/homepage.html:33
+msgid "Is this your first visit on this page?"
+msgstr "Zum ersten mal auf dieser Seite?"
+
+#: templates/homepage.html:33
+msgid "If that&rsquo;s the case you should read the article"
+msgstr "Dann ist es am besten mit dem Artikel"
+
+#: templates/homepage.html:33
+msgid "to understand what&rsquo;s all about this page."
+msgstr "zu starten, um zu verstehen, worum es hier geht."
+
+#: templates/homepage.html:46
+msgid "Read all blog entries&nbsp;&hellip;"
+msgstr "Alle Kurzmeldungen lesen&nbsp;…"
+
+#: templates/inhalt.html:4 templates/inhalt.html.py:10
+#: templates/includes/navigation.html:7
+msgid "Contents"
+msgstr "Inhaltsverzeichnis"
+
+#: templates/inhalt.html:6
+msgid "Contents of kogakure.de"
+msgstr "Inhaltsverzeichnis von kogakure.de"
+
+#: templates/inhalt.html:28
+msgid "The Topic"
+msgid_plural "The Topics"
+msgstr[0] "Thema"
+msgstr[1] "Themen"
+
+#: templates/inhalt.html:38
+msgid "Statistics"
+msgstr "Statistik"
+
+#: templates/inhalt.html:42
+#, python-format
+msgid "Article: %(counter)s"
+msgid_plural "Articles: %(counter)s"
+msgstr[0] "Artikel: %(counter)s"
+msgstr[1] "Artikel: %(counter)s"
+
+#: templates/inhalt.html:44
+#, python-format
+msgid "Blog entry: %(counter)s"
+msgid_plural "Blog entries: %(counter)s"
+msgstr[0] "Kurzmeldung: %(counter)s"
+msgstr[1] "Kurzmeldungen: %(counter)s"
+
+#: templates/inhalt.html:46
+#, python-format
+msgid "Proverb: %(counter)s"
+msgid_plural "Proverbs: %(counter)s"
+msgstr[0] "Spruch: %(counter)s"
+msgstr[1] "Sprüche: %(counter)s"
+
+#: templates/inhalt.html:48
+#, python-format
+msgid "Encyclopedia entry: %(counter)s"
+msgid_plural "Encyclopedia entries: %(counter)s"
+msgstr[0] "Lexikoneintrag: %(counter)s"
+msgstr[1] "Lexikoneinträge: %(counter)s"
+
+#: templates/inhalt.html:50
+#, python-format
+msgid "Recommendation: %(counter)s"
+msgid_plural "Recommendations: %(counter)s"
+msgstr[0] "Kaufempfehlung: %(counter)s"
+msgstr[1] "Kaufempfehlungen: %(counter)s"
+
+#: templates/search.html:4 templates/search.html.py:6 templates/search.html:9
+msgid "Search results"
+msgstr "Suchergebnisse"
+
+#: templates/search.html:14
+#, python-format
+msgid "Your search of \"<em>%(q)s</em>\" delivered following results"
+msgstr "Ihre Suche nach „<em>%(q)s</em>“ lieferte folgende Ergebnisse"
+
+#: templates/search.html:40 templates/encyclopedia/encyclopedia_detail.html:4
+#: templates/encyclopedia/encyclopedia_detail.html:10
+#: templates/encyclopedia/encyclopedia_list.html:4
+#: templates/encyclopedia/encyclopedia_list.html:10
+#: templates/includes/navigation.html:9
+msgid "Encyclopedia"
+msgstr "Lexikoneintrag"
+
+#: templates/search.html:66
+#, python-format
+msgid "No search results on \"<em>%(q)s</em>\" found."
+msgstr "Es wurden leider keine Suchergebnisse zu „<em>%(q)s</em> gefunden."
+
+#: templates/search.html:68
+msgid "No search results found."
+msgstr "Es wurden leider keine Suchergebnisse gefunden."
+
+#: templates/articles/article_detail.html:19
+msgid "Read more &hellip;"
+msgstr "Mehr lesen …"
+
+#: templates/articles/article_detail.html:20
+msgid "Similar Topic"
+msgid_plural "Similar Topics"
+msgstr[0] "Ähnliches Thema"
+msgstr[1] "Ähnliche Themen"
+
+#: templates/articles/article_detail.html:49
+msgid "About the author"
+msgstr "Über den Autor"
+
+#: templates/articles/article_detail.html:50
+msgid "Photo of"
+msgstr "Foto von"
+
+#: templates/articles/article_list.html:6
+msgid "A summary of all available articles on kogakure.de"
+msgstr "Eine Übersicht über alle auf kogakure.de verfügbaren Artikel"
+
+#: templates/articles/article_list.html:15
+#, python-format
+msgid "Link to '%(entry.title)s'\""
+msgstr "Link zu „%(entry.title)s“"
+
+#: templates/blog/blog_list.html:6
+msgid "Blog from Ninjutsu and this website"
+msgstr "Kurzmeldungen aus dem Bereich des Ninjutsu und rund um diese Website"
+
+#: templates/blog/blog_list.html:15
+#, python-format
+msgid "Link to '%(entry.title)s'"
+msgstr "Link zu „%(entry.title)s“"
+
+#: templates/encyclopedia/encyclopedia_detail.html:6
+#, python-format
+msgid "A description of %(entry.title)s"
+msgstr "Eine Beschreibung des Begriffs %(entry.title)s"
+
+#: templates/encyclopedia/encyclopedia_detail.html:20
+#, python-format
+msgid "Read one entry of the Encyclopedia."
+msgid_plural "Read all <em>%(counter)s</em> entries of the Encyclopedia."
+msgstr[0] "Den einen Eintrag des Lexikons lesen."
+msgstr[1] "Alle <em>%(counter)s</em> Einträge des Lexikons lesen."
+
+#: templates/encyclopedia/encyclopedia_list.html:12
+#, python-format
+msgid ""
+"This Encyclopedia contains <em>%(encyclopedia_num)s</em> entries of the area "
+"of Ninjutsu, the art of warfare and japanese history."
+msgstr ""
+"Dieses Lexikon enthält <em>%(encyclopedia_num)s</em> Einträge aus dem "
+"Bereich des Ninjutsu, der Kriegskunst und der japanischen Geschichte."
+
+#: templates/flatpages/default.html:5
+#, python-format
+msgid "%(flatpage.title)s of kogakure.de"
+msgstr "%(flatpage.title)s von kogakure.de"
+
+#: templates/includes/navigation.html:5
+msgid "Navigation"
+msgstr "Navigation"
+
+#: templates/includes/navigation.html:7
+msgid "Overview on all Articles"
+msgstr "Übersicht über alle Artikel"
+
+#: templates/includes/navigation.html:8
+msgid "Recommendations on books and movies"
+msgstr "Buch- und Filmempfehlungen"
+
+#: templates/includes/navigation.html:8
+#: templates/products/products_detail.html:4
+#: templates/products/products_detail.html:10
+#: templates/products/products_list.html:4
+#: templates/products/products_list.html:10
+msgid "Recommendations"
+msgstr "Kaufempfehlungen"
+
+#: templates/includes/navigation.html:9
+msgid "Encyclopedia with martial art terms"
+msgstr "Lexikon mit Kampfkunstbegriffen"
+
+#: templates/includes/navigation.html:10
+msgid "Wise aphorisms and statements"
+msgstr "Weise Sinnsprüche und Aussagen"
+
+#: templates/includes/navigation.html:11
+msgid "Information about this site"
+msgstr "Informationen über diese Seite"
+
+#: templates/includes/navigation.html:12
+msgid "Get in contact"
+msgstr "Kontakt aufnehmen"
+
+#: templates/includes/paginator.html:5
+msgid "Previous"
+msgstr "Zurück"
+
+#: templates/includes/paginator.html:7
+msgid "Next"
+msgstr "Weiter"
+
+#: templates/includes/search_form.html:5
+msgid "Search"
+msgstr "Suche"
+
+#: templates/includes/search_form.html:7
+msgid "OK"
+msgstr "Suchen"
+
+#: templates/products/products_detail.html:6
+msgid "Details on "
+msgstr "Details zu "
+
+#: templates/products/products_detail.html:19
+#, python-format
+msgid "View the recommendation"
+msgid_plural "View all <em>%(counter)s</em> recommendations"
+msgstr[0] "Die Kaufempfehlung ansehen"
+msgstr[1] "Alle <em>%(counter)s</em> Kaufempfehlungen ansehen"
+
+#: templates/products/products_list.html:6
+msgid "Recommendations of books and movies"
+msgstr "Kaufempfehlungen aus dem Bereich von Büchern und Filmen"
+
+#: templates/products/products_list.html:12
+#, python-format
+msgid "On this site I mention <em>%(counter)s</em> Recommentdation"
+msgid_plural "On this site I mention <em>%(counter)s</em> Recommentdations"
+msgstr[0] "Hier führe ich <em>%(counter)s</em> Empfehlung"
+msgstr[1] "Hier führe ich <em>%(counter)s</em> Empfehlungen"
+
+#: templates/products/products_list.html:12
+msgid ""
+"from books and movies with the topic of Ninja, Samurai, Bujutsu and Taoism, "
+"which I would recommend. Some products are duplicated as of multiple "
+"languages. I know all articles on this page and would never recommend "
+"unknown products!"
+msgstr ""
+"aus den Bereichen Buch und Film zu den groben Themenbereichen Ninja, "
+"Samurai, Bujutsu und Taoismus auf, die meiner Meinung nach sehr "
+"empfehlenswert sind. Einige Produkte werden zweimal aufgeführt, z.B. bei "
+"anderssprachigen Versionen. Alle hier aufgeführten Artikel sind mir bekannt, "
+"ich spreche keine Empfehlungen für unbekannte Artikel aus!"
+
+#: templates/products/products_list.html:13
+msgid "A mouseclick on the link will lead you to the product page at"
+msgstr ""
+"Ein Klick auf den jeweiligen Link führt zur Produktseite und "
+"Bestellmöglichkeit bei"
+
+#: templates/proverbs/proverb_detail.html:6
+msgid "A proverbs of "
+msgstr "Ein Spruch von "
+
+#: templates/proverbs/proverb_detail.html:17
+#, python-format
+msgid "Read the proverb, quote or statement"
+msgid_plural "Read all <em>%(counter)s</em> proverbs, quotes and statements"
+msgstr[0] "Den Spruch, das Zitat oder die Aussage lesen"
+msgstr[1] "Alle <em>%(counter)s</em> Sprüche, Zitate und Aussagen lesen"
+
+#: templates/proverbs/proverb_list.html:6
+msgid "A collection of proverbs, quotes and statements"
+msgstr "Eine Sammlung von Sprüchen, Zitaten und Aussagen"
+
+#: templates/proverbs/proverb_list.html:12
+#, python-format
+msgid "This collection of proverbs has one proverb, quote or statement"
+msgid_plural ""
+"This collection of proverbs has <em>%(counter)s</em> proverbs, quotes and "
+"statements"
+msgstr[0] ""
+"Diese Sprüchesammlung enthält einen Spruch, ein Zitat oder eine Aussage"
+msgstr[1] ""
+"Diese Sprüchesammlung enthält <em>%(counter)s</em> Sprüche, Zitate und "
+"Aussagen"
+
+#: templates/seo/googleeac4fc886a6f9f8d.html:8
+msgid "Verification"
+msgstr "Verifikation"
+
+#: templates/seo/googleeac4fc886a6f9f8d.html:10
+msgid ""
+"This page is only for Verfication for <a href=\"https://www.google.com/"
+"webmasters/tools/siteoverview\">Google Webmaster Tools</a>"
+msgstr ""
+"Diese Seite dient nur zur Verifikation für die <a href=\"https://www.google."
+"com/webmasters/tools/siteoverview\">Google Webmaster Tools</a>"

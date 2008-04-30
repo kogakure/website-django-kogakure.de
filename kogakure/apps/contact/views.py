@@ -10,6 +10,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.core.mail import send_mail
 from kogakure.apps.contact.forms import ContactForm
+from django.utils.translation import ugettext_lazy as _
 
 def contact(request):
     if request.method == 'POST':
@@ -21,7 +22,7 @@ def contact(request):
             meta = request.META['HTTP_USER_AGENT']
             message += '\n\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n' + meta
             send_mail(
-                'Kontaktformular: domain.com',
+                _(u'Contact form: domain.com'),
                 message, email,
                 ['email@domain.com']
             )

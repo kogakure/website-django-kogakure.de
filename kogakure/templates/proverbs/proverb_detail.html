@@ -1,17 +1,18 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block page_title %}{{ entry.title }} // Sprüche // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}{{ entry.title }} // {% trans "Proverbs" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
-{% block meta_description %}Ein Spruch von {{ entry.author }}{% endblock %}
+{% block meta_description %}{% trans "A proverbs of "%}{{ entry.author }}{% endblock %}
 
 {% block content %}
 
-        <h1>Sprüche</h1>
+        <h1>{% trans "Proverbs" %}</h1>
         
         <blockquote>
             {{ entry.body|smarttext }}
         </blockquote>
         <cite class="sprueche">{{ entry.author }}</cite>
         {% get_stat proverbs.Entry as proverbs_num %}
-        <p><a href="{% url sprueche_liste %}">Alle <em>{{ proverbs_num }}</em> Spr{{ proverbs_num|pluralize:"uch,üche" }}, Zitat{{ proverbs_num|pluralize:"e" }} und Aussage{{ proverbs_num|pluralize:"n" }} lesen.</a></p>
+        <p><a href="{% url sprueche_liste %}">{% blocktrans count proverbs_num as counter %}Read the proverb, quote or statement{% plural %}Read all <em>{{ counter }}</em> proverbs, quotes and statements{% endblocktrans %}.</a></p>
 {% endblock %}

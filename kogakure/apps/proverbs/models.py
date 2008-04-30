@@ -8,23 +8,24 @@
 import datetime
 from django.db import models
 from django.db.models import permalink
+from django.utils.translation import ugettext_lazy as _
 
 class Entry(models.Model):
     '''An proverb entry'''
     ENTRY_STATUS_CHOICES = (
-        ('D', u'Entwurf'),
-        ('P', u'Veröffentlicht'),
-        ('C', u'Geschlossen'),
+        ('D', _(u'Draft')),
+        ('P', _(u'Published')),
+        ('C', _(u'Closed')),
     )
-    pub_date = models.DateTimeField('Veröffentlicht', null=False, blank=False)
-    body = models.TextField('Spruch', null=False, blank=False, help_text='Markdown benutzen, mit Anführungszeichen')
-    author = models.CharField('Autor', null=False, blank=False, max_length=150)
+    pub_date = models.DateTimeField(_(u'Published'), null=False, blank=False)
+    body = models.TextField(_(u'Proverb'), null=False, blank=False, help_text=_(u'Use Markdown, with quotes'))
+    author = models.CharField(_(u'Author'), null=False, blank=False, max_length=150)
     status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)
     
     class Meta:
         db_table = 'proverb_entries'
-        verbose_name = 'Spruch'
-        verbose_name_plural = 'Sprüche'
+        verbose_name = _(u'Proverb')
+        verbose_name_plural = _(u'Proverbs')
         ordering = ('-pub_date',)
         get_latest_by = 'pub_date'
     
@@ -37,7 +38,7 @@ class Entry(models.Model):
         list_filter = ('pub_date',)
         search_fields = ('body',)
         fields = (
-            ('Datum', {
+            (_(u'Date'), {
                 'classes': 'collapse wide',
                 'fields': ('pub_date',), 
             }),

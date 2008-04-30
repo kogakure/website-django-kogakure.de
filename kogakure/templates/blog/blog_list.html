@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block page_title %}Kurzmeldungen // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}{% trans "Blog" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
-{% block meta_description %}Kurzmeldungen aus dem Bereich des Ninjutsu und rund um diese Website{% endblock %}
+{% block meta_description %}{% trans "Blog from Ninjutsu and this website" %}{% endblock %}
 
 {% block content %}
 
@@ -11,7 +12,7 @@
     {% if entry_list %}
         {% for entry in entry_list %}
             <div class="block">
-                <h2 class="titel"><a href="{{ entry.get_absolute_url }}" title="Link zu '{{ entry.title }}'">{{ entry.title }}</a></h2>
+                <h2 class="titel"><a href="{{ entry.get_absolute_url }}" title="{% blocktrans with entry.title as entry.title %}Link to '{{ entry.title }}'{% endblocktrans %}">{{ entry.title }}</a></h2>
                 {{ entry.summary|smarttext }}
             </div>
         {% endfor %}

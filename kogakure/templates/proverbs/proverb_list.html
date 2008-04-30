@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block page_title %}Sprüche // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}{% trans "Proverbs" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
-{% block meta_description %}Eine Sammlung von Sprüchen, Zitaten und Aussagen{% endblock %}
+{% block meta_description %}{% trans "A collection of proverbs, quotes and statements" %}{% endblock %}
 
 {% block content %}
 
-    <h1>Sprüche</h1>
+    <h1>{% trans "Proverbs" %}</h1>
     {% get_stat proverbs.Entry as proverbs_num %}
-    <p>Diese Sprüchesammlung enthält <em>{{ proverbs_num }}</em> Spr{{ proverbs_num|pluralize:"uch,üche" }}, Zitat{{ proverbs_num|pluralize:"e" }} und Aussage{{ proverbs_num|pluralize:"n" }}.</p>
+    <p>{% blocktrans count proverbs_num as counter %}This collection of proverbs has one proverb, quote or statement{% plural %}This collection of proverbs has <em>{{ counter }}</em> proverbs, quotes and statements{% endblocktrans %}.</p>
 
     {% if entry_list %}
         {% for entry in entry_list %}
@@ -16,7 +17,7 @@
                 <blockquote>
                     {{ entry.body|smarttext }}
                 </blockquote>
-                <cite class="sprueche">– {{ entry.author }}</cite>
+                <cite class="sprueche">&ndash; {{ entry.author }}</cite>
             </div>
         {% endfor %}
     {% endif %}

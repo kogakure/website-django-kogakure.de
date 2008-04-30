@@ -8,13 +8,14 @@
 import datetime
 from django.contrib.syndication.feeds import Feed
 from kogakure.apps.encyclopedia.models import Entry
+from django.utils.translation import ugettext_lazy as _
 
 class LatestEncyclopedia(Feed):
     title_template = 'feeds/title_encyclopedia.html'
     description_template = 'feeds/description_encyclopedia.html'
     
-    title = 'kogakure.de – Lexikon'
-    description = 'Neuste Lexikoneinträge'
+    title = _(u'kogakure.de &ndash; Encyclopedia')
+    description = _(u'Newest encyclopedia entries')
     link = '/lexikon/'
     
     def items(self):

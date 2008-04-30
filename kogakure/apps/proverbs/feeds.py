@@ -8,13 +8,14 @@
 import datetime
 from django.contrib.syndication.feeds import Feed
 from kogakure.apps.proverbs.models import Entry
+from django.utils.translation import ugettext_lazy as _
 
 class LatestProverbs(Feed):
     title_template = 'feeds/title_proverbs.html'
     description_template = 'feeds/description.html'
     
-    title = 'kogakure.de – Sprüche'
-    description = 'Neuste Sprüche'
+    title = _(u'kogakure.de &ndash; Proverbs')
+    description = _('Newest Proverbs')
     link = '/sprueche/'
     
     def items(self):

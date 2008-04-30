@@ -1,12 +1,13 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block page_title %}{{ category.name }} // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}{{ category.name }} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
-{% block meta_description %}Artikel zum Thema {{ category.name }}{% endblock %}
+{% block meta_description %}{% blocktrans with category.name as category.name %}Articles on the topic {{ category.name }}{% endblocktrans %}{% endblock %}
 
 {% block content %}
 
-    <h1>Artikel zum Thema „{{ category.name }}“</h1>
+    <h1>{% blocktrans with category.name as category.name %}Articles on the topic '{{ category.name }}'{% endblocktrans %}</h1>
 
     {% if entries %}
     
@@ -18,7 +19,7 @@
         {% endfor %}
     
     {% else %}
-            <p>Leider gibt es keine Artikel zum Thema „{{ category.name }}“.</p>
+            <p>{% blocktrans with category.name as category.name %}Unfortunately there are no articles on the topic of '{{ category.name }}'{% endblocktrans %}.</p>
     {% endif %}
 
 {% endblock %}

@@ -1,7 +1,9 @@
+{% load i18n %}
+
 {% if is_paginated %}
 <p class="paginator">
-    {% if has_previous %}&lt; <a href="seite-{{ previous }}">Zurück</a>{% endif %}
+    {% if has_previous %}&lt; <a href="seite-{{ previous }}">{% trans "Previous" %}</a>{% endif %}
     {% if has_previous and has_next %} • {% endif %}
-    {% if has_next %}<a href="seite-{{ next }}">Weiter</a> &gt;{% endif %}
+    {% if has_next %}<a href="seite-{{ next }}">{% trans "Next" %}</a> &gt;{% endif %}
 </p>
 {% endif %}

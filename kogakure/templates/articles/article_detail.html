@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block page_title %}{{ entry.title}} // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}{{ entry.title}} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
 {% block meta_description %}{{ entry.summary }}{% endblock %}
 
@@ -15,15 +16,15 @@
         {{ entry.body|smarttext }}
     </div>
     <div id="meta">
-        <h2>Mehr lesen…</h2>
-        <p>Ähnliche{{ entry.categories.all|pluralize:"s," }} Them{{ entry.categories.all|pluralize:"a,en" }}: 
-            {% comment %} Kategorien des Artikels {% endcomment %}
+        <h2>{% trans "Read more &hellip;" %}</h2>
+        <p>{% blocktrans count entry.categories.all|length as counter %}Similar Topic{% plural %}Similar Topics{% endblocktrans %}:
+            {% comment %} Categories of the articles {% endcomment %}
             {% for category in entry.categories.all %}
                 <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>{% if not forloop.last %}, {% endif %}
             {% endfor %}
         </p>
         <p>
-            {% comment %} Nächster und vorheriger Artikel für Admins {% endcomment %}
+            {% comment %} Next and previous article for admins {% endcomment %}
             {% if user.is_authenticated %}
                 {% if entry.get_previous_by_pub_date %}
                     &lt; <a href="{{ entry.get_previous_by_pub_date.get_absolute_url }}">{{ entry.get_previous_by_pub_date.title }}</a>
@@ -32,7 +33,7 @@
                 {% if entry.get_next_by_pub_date %}
                     <a href="{{ entry.get_next_by_pub_date.get_absolute_url }}">{{ entry.get_next_by_pub_date.title }}</a> &gt;
                 {% endif %}
-            {% comment %} Nächster und vorheriger Artikel für alle anderen {% endcomment %}
+            {% comment %} Next and previous article for the others {% endcomment %}
             {% else %}
                 {% if entry.get_previous_article %}
                     &lt; <a href="{{ entry.get_previous_article.get_absolute_url }}">{{ entry.get_previous_article.title }}</a>
@@ -45,8 +46,8 @@
         </p>
     </div>
     <div id="autorbio">
-        <h2>Über den Autor</h2>
-        <img title="{{ entry.author }}" src="{{ MEDIA_URL }}{{ entry.author.photo }}" alt="Foto von {{ entry.author }}" height="50" width="50" />
+        <h2>{% trans "About the author" %}</h2>
+        <img title="{{ entry.author }}" src="{{ MEDIA_URL }}{{ entry.author.photo }}" alt="{% trans "Photo of" %} {{ entry.author }}" height="50" width="50" />
         {{ entry.author.bio|smarttext }}
     </div>
 

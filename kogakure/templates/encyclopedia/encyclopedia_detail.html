@@ -1,12 +1,13 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block page_title %}Lexikon // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}{% trans "Encyclopedia" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
-{% block meta_description %}Eine Beschreibung des Begriffs {{ entry.title }}{% endblock %}
+{% block meta_description %}{% blocktrans with entry.title as entry.title %}A description of {{ entry.title }}{% endblocktrans %}{% endblock %}
 
 {% block content %}
 
-    <h1>Lexikon</h1>
+    <h1>{% trans "Encyclopedia" %}</h1>
 
     <dl>
         <dt class="deutsch">{{ entry.title }}</dt><dd class="japanisch">{{ entry.japanese }}</dd>
@@ -16,6 +17,6 @@
     </dl>
 
     {% get_stat encyclopedia.Entry as encyclopedia_num %}
-    <p><a href="{% url lexikon_liste %}">Alle <em>{{ encyclopedia_num }}</em> Eintr{{ encyclopedia_num|pluralize:"ag,äge" }} des Lexikons lesen.</a></p>
+    <p><a href="{% url lexikon_liste %}">{% blocktrans count encyclopedia_num as counter %}Read one entry of the Encyclopedia.{% plural %}Read all <em>{{ counter }}</em> entries of the Encyclopedia.{% endblocktrans %}</a></p>
     
 {% endblock %}

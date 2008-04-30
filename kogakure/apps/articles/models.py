@@ -10,20 +10,21 @@ import urlparse
 from django.conf import settings
 from django.db import models
 from django.db.models import permalink
+from django.utils.translation import ugettext_lazy as _
 
 class Author(models.Model):
     '''Author of the articles'''
-    first_name = models.CharField(u'Vorname', max_length=100, null=False, blank=False)
-    last_name = models.CharField(u'Nachname', max_length=100, null=False, blank=False)
-    photo = models.ImageField(u'Foto', upload_to='img/autoren', blank=True, help_text=u'50 Pixel (quadratisch)')
-    website = models.URLField(u'URL', null=True, blank=True, verify_exists=True)
-    location = models.CharField(u'Ort', max_length=200, blank=True, null=True)
-    bio = models.TextField(u'Biographie', null=True, blank=True, help_text=u'Markdown benutzen')
+    first_name = models.CharField(_(u'First Name'), max_length=100, null=False, blank=False)
+    last_name = models.CharField(_(u'Last Name'), max_length=100, null=False, blank=False)
+    photo = models.ImageField(_(u'Photo'), upload_to='img/autoren', blank=True, help_text=_(u'50 Pixel (square)'))
+    website = models.URLField(_(u'URL'), null=True, blank=True, verify_exists=True)
+    location = models.CharField(_(u'City'), max_length=200, blank=True, null=True)
+    bio = models.TextField(_(u'Biography'), null=True, blank=True, help_text=_(u'Use Markdown'))
     
     class Meta:
         db_table = 'article_authors'
-        verbose_name = u'Autor'
-        verbose_name_plural = u'Autoren'
+        verbose_name = _(u'Author')
+        verbose_name_plural = _(u'Authors')
     
     class Admin:
         list_display = (
@@ -47,12 +48,12 @@ class Author(models.Model):
 class Category(models.Model):
     '''Categories for related Articles'''
     name = models.CharField(max_length=100, null=False, blank=False, unique=True)
-    slug = models.SlugField(u'URL', unique=True, prepopulate_from=('name',), null=False, blank=False)
+    slug = models.SlugField(_(u'URL'), unique=True, prepopulate_from=('name',), null=False, blank=False)
     
     class Meta:
         db_table = 'article_categories'
-        verbose_name = u'Thema'
-        verbose_name_plural = u'Themen'
+        verbose_name = _(u'Topic')
+        verbose_name_plural = _(u'Topics')
     
     class Admin:
         list_display = ('name',)
@@ -68,24 +69,24 @@ class Category(models.Model):
 class Entry(models.Model):
     '''An article entry'''
     ENTRY_STATUS_CHOICES = (
-        ('D', u'Entwurf'),
-        ('P', u'Veröffentlicht'),
-        ('C', u'Geschlossen'),
+        ('D', _(u'Draft')),
+        ('P', _(u'Published')),
+        ('C', _(u'Closed')),
     )
-    author = models.ForeignKey(Author,  verbose_name=u'Autor', null=False, blank=False, related_name='entry_authors')
-    title = models.CharField(u'Titel', max_length=200, null=False, blank=False)
-    slug = models.SlugField(u'URL-Titel', unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
-    pub_date = models.DateTimeField(u'Veröffentlicht', null=False, blank=False)
-    summary = models.TextField(u'Auszug', null=False, blank=False, help_text=u'Markdown benutzen')
-    body = models.TextField(u'Artikel', null=False, blank=False, help_text=u'Markdown benutzen')
-    translators = models.ManyToManyField(Author, verbose_name=u'Übersetzer', null=True, blank=True)
-    categories = models.ManyToManyField(Category, verbose_name=u'Kategorien', null=True, blank=True, related_name='entry_categories')
+    author = models.ForeignKey(Author,  verbose_name=_(u'Author'), null=False, blank=False, related_name='entry_authors')
+    title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
+    slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
+    pub_date = models.DateTimeField(_(u'Published'), null=False, blank=False)
+    summary = models.TextField(_(u'Excerpt'), null=False, blank=False, help_text=_(u'Use Markdown'))
+    body = models.TextField(_(u'Article'), null=False, blank=False, help_text=_(u'Use Markdown'))
+    translators = models.ManyToManyField(Author, verbose_name=_(u'Translator'), null=True, blank=True)
+    categories = models.ManyToManyField(Category, verbose_name=_(u'Categories'), null=True, blank=True, related_name='entry_categories')
     status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)
     
     class Meta:
         db_table = 'article_entries'
-        verbose_name = 'Artikel'
-        verbose_name_plural = 'Artikel'
+        verbose_name = _(u'Article')
+        verbose_name_plural = _(u'Articles')
         ordering = ('-pub_date',)
         get_latest_by = 'pub_date'
     
@@ -108,11 +109,11 @@ class Entry(models.Model):
             'body'
         )
         fields = (
-            (u'Datum', {
+            (_(u'Date'), {
                 'classes': 'collapse wide',
                 'fields': ('pub_date',), 
             }),
-            (u'Autor', {
+            (_(u'Author'), {
                 'classes': 'collapse wide',
                 'fields': (
                     ('author', 'translators'),

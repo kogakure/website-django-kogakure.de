@@ -2,7 +2,7 @@
 Licensed under the GNU General Public License, version 3.
 http://www.gnu.org/copyleft/gpl.txt
 
-This is the source code of http://kogakure.de. 
+This is the source code of http://kogakure.de/. 
 Created by Stefan Imhoff (http://stefanimhoff.de/).
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -32,9 +32,16 @@ the tables. It also creates a superuser:
 User: test
 Password: test
 
+Syncdb will ask if you would like to create a superuser, choose (no) as the
+fixture will create a superuser.
+
+Language for the site is german, if you would like to have an english
+interface change LANGUAGE_CODE = 'de-de' to LANGUAGE_CODE = 'en'
+in settings.py.
+
 2. python manage.py runserver
 
-This starts the development server on http://127.0.0.1:8000
+This starts the development server on http://127.0.0.1:8000/
 
 You can visit the website in your browser. To log into the admin interface
 point your browser to http://127.0.0.1/admin/ and log in with the test user.

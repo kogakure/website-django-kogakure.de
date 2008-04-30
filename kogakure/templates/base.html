@@ -1,10 +1,11 @@
+{% load i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html lang="de" xml:lang="de" xmlns="http://www.w3.org/1999/xhtml">
 
     <head>
-        <title>{% block page_title %}kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}</title>
+        <title>{% block page_title %}{% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}</title>
         
         <!-- Meta -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -43,7 +44,7 @@
     <body>
         <div id="page">
             <div id="header">
-                <a title="Zur Startseite springen" href="/" accesskey="h"><img src="{{ MEDIA_URL }}css/img/logo.png" alt="Logo kogakure.de" /></a></div>
+                <a title="{% trans "Jump to homepage" %}" href="/" accesskey="h"><img src="{{ MEDIA_URL }}css/img/logo.png" alt="{% trans "Logo kogakure.de" %}" /></a></div>
             <div id="container">
                 <div id="main">
                     <div id="content">
@@ -59,8 +60,8 @@
             </div>
             <!-- /container -->
             <div id="footer">
-                <p>© 1999-{% now "Y" %}, <a href="http://stefanimhoff.de/">Stefan Imhoff</a>. Der Inhalt dieser Seite ist unter <a href="http://creativecommons.org/licenses/by-nc/3.0/deed.de" rel="license">Creative Commons</a> lizenziert.</p>
-                <p>Diese Seite läuft mit <a href="http://www.djangoproject.com/" title="Django | The Web framework for perfectionists with deadlines">Django</a>. Hosting bei <a href="http://www.webfaction.com?affiliate=kogakure" title="WebFaction : Hosting for an agile web">Webfaction</a>. <a href="/impressum/">Impressum</a>, <a href="/datenschutz/">Datenschutz</a>.</p>
+                <p>© 1999-{% now "Y" %}, <a href="http://stefanimhoff.de/">Stefan Imhoff</a>. {% blocktrans %}The Content of this page is licenced under a <a href="http://creativecommons.org/licenses/by-nc/3.0/deed.en" rel="license">Creative Commons</a> licence."{% endblocktrans %}</p>
+                <p>{% blocktrans %}This page runs on <a href="http://www.djangoproject.com/" title="Django | The Web framework for perfectionists with deadlines">Django</a>.{% endblocktrans %} {% blocktrans %}Hosting at <a href="http://www.webfaction.com?affiliate=kogakure" title="WebFaction : Hosting for an agile web">Webfaction</a>.{% endblocktrans %} <a href="/impressum/">{% trans "Imprint" %}</a>, <a href="/datenschutz/">{% trans "Privacy" %}</a>.</p>
             </div>
         </div>
         <!-- /wrapper -->

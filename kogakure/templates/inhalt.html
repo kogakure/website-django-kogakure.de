@@ -1,16 +1,17 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block page_title %}Inhaltsverzeichnis // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}{% trans "Contents" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
-{% block meta_description %}Inhaltsverzeichnis von kogakure.de{% endblock %}
+{% block meta_description %}{% trans "Contents of kogakure.de" %}{% endblock %}
 
 {% block content %}
 
-    <h1>Inhaltsverzeichnis</h1>
+    <h1>{% trans "Contents" %}</h1>
     
     <div class="half_col">
 
-        <h2>Artikel</h2>
+        <h2>{% trans "Articles" %}</h2>
         
         {% if entry_list %}
             <ul>
@@ -24,7 +25,7 @@
 
     <div class="half_col">
 
-        <h2>Them{{ category_list|pluralize:"a,en" }}</h2>
+        <h2>{% blocktrans count category_list|length as counter %}The Topic{% plural %}The Topics{% endblocktrans %}</h2>
 
         {% if category_list %}
             <ul id="nav_categories" class="nav_categories">
@@ -34,19 +35,19 @@
             </ul>
         {% endif %}
 
-        <h2>Statistik</h2>
+        <h2>{% trans "Statistics" %}</h2>
 
         <ul>
             {% get_stat articles.Entry as articles_num %}
-            <li>Artikel: {{ articles_num }}</li>
+            <li>{% blocktrans count articles_num as counter %}Article: {{ counter }}{% plural %}Articles: {{ counter }}{% endblocktrans %}</li>
             {% get_stat blog.Entry as blog_num %}
-            <li>Kurzmeldung{{ blog_num|pluralize:"en" }}: {{ blog_num }}</li>
+            <li>{% blocktrans count blog_num as counter %}Blog entry: {{ counter }}{% plural %}Blog entries: {{ counter }}{% endblocktrans %}</li>
             {% get_stat proverbs.Entry as proverbs_num %}
-            <li>Spr{{ proverbs_num|pluralize:"uch,üche" }}: {{ proverbs_num }}</li>
+            <li>{% blocktrans count proverbs_num as counter %}Proverb: {{ counter }}{% plural %}Proverbs: {{ counter }}{% endblocktrans %}</li>
             {% get_stat encyclopedia.Entry as encyclopedia_num %}
-            <li>Lexikon-Eintr{{ encyclopedia_num|pluralize:"ag,äge" }}: {{ encyclopedia_num }}</li>
+            <li>{% blocktrans count encyclopedia_num as counter %}Encyclopedia entry: {{ counter }}{% plural %}Encyclopedia entries: {{ counter }}{% endblocktrans %}</li>
             {% get_stat products.Entry as products_num %}
-            <li>Kaufempfehlung{{ products_num|pluralize:"en" }}: {{ products_num }}</li>
+            <li>{% blocktrans count products_num as counter %}Recommendation: {{ counter }}{% plural %}Recommendations: {{ counter }}{% endblocktrans %}</li>
             
         </ul>
 

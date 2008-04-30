@@ -8,13 +8,14 @@
 import datetime
 from django.contrib.syndication.feeds import Feed
 from kogakure.apps.blog.models import Entry
+from django.utils.translation import ugettext_lazy as _
 
 class LatestBlog(Feed):
     title_template = 'feeds/title.html'
     description_template = 'feeds/description.html'
     
-    title = 'kogakure.de – Kurzmeldungen'
-    description = 'Neuste Kurzmeldungen'
+    title = _(u'kogakure.de &ndash; Blog Entries')
+    description = _(u'Newest Blog Entries')
     link = '/kurzmeldungen/'
     
     def items(self):

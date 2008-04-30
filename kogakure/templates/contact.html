@@ -1,26 +1,27 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block page_title %}Kontakt // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}{% trans "Contact" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
-{% block meta_description %}Kontaktformular{% endblock %}
+{% block meta_description %}{% trans "Contact form" %}{% endblock %}
 
 {% block content %}
 
-<h1>Kontakt</h1>
+<h1>{% trans "Contact" %}</h1>
 
 {% if not form.errors %}
-    <p>Hier kannst Du Kontakt mit <a href="{{ WEB_URL }}info/">Stefan Imhoff</a>, dem Betreiber der Seiten, aufnehmen. Ich versuche auf jede E-Mail zu antworten, kann dies aber nicht garantieren. Vorher noch ein paar Richtlinien:</p>
+    <p>{% blocktrans %}Here you can contact <a href="{{ WEB_URL }}info/">Stefan Imhoff</a>, the maintainer of this pages. I try to answer every email but can&rsquo;t give you guarantee. But first some guidelines:{% endblocktrans %}</p>
     <div class="note">
     <ul>
-        <li>Halte die E-Mail bitte <em>kurz</em>! (Keine komplette Lebensgeschichte beim Erstkontakt).</li>
-        <li>Schreib so, dass das Lesen <em>nicht anstrengt</em> (Absätze machen, Rechtschreibung beachten, Zeichensetzung, Kleinschreibung/Großschreibung …).</li>
-        <li>Einige Fragen werden wieder und wieder gestellt. Lies bitte vorher die <a href="{{ WEB_URL }}faq/">Fragen&nbsp;&amp;&nbsp;Antworten</a> durch, um solche zu vermeiden.</li>
+        <li>{% trans "Keep your email <em>short</em>! (Please no complete life story on first contact)." %}</li>
+        <li>{% trans "Write that way reading can be done <em>without effort</em> (Write paragraphs, pay attention to orthography, punctuation, upper and lower case &hellip;)." %}</li>
+        <li>{% blocktrans %}Some questions are asked again and again. Please read the <a href="{{ WEB_URL }}faq/">Frequently Asked Questions</a> to avoid those.{% endblocktrans %}</li>
     </ul>
     </div>
-    <p>Das befolgen dieser simplen Richtlinien und ein freundlicher Ton können möglicherweise dabei helfen, eine Antwort zu beschleunigen.</p>
+    <p>{% trans "To follow those simple guidelines and a kind und ein freundlicher speech may help to speed up an answer." %}</p>
 {% else %}
-    <h2>Es sind Fehler aufgetreten!</h2>
-    <p>Die Formularinhalte konnten nicht übermittelt werden, bitte überprüfe folgende Fehler:</p>
+    <h2>{% trans "There were errors!" %}</h2>
+    <p>{% trans "The form coudn&rsquo;t be submitted, please check the following errors:" %}</p>
     <div class="warning">
         <ul>
         {% for error in form.name.errors %}
@@ -38,11 +39,11 @@
 
 <form action="." method="post" id="formular">
     <fieldset>
-    <legend>Kontaktdaten:</legend>
+    <legend>{% trans "Contact data" %}:</legend>
         {% for field in form %}
             <p{% if field.errors %} class="eingabefehler"{% endif %}>{{ field.label_tag }}{% if field.field.required %}*{% endif %} {{ field }}</p>
         {% endfor %}
-        <p><small>* Plichtfelder</small></p>
+        <p><small>{% trans "* required" %}</small></p>
         <p><input class="button" tabindex="4" type="submit" value="Senden" name="formmail" /></p>
 
     </fieldset>

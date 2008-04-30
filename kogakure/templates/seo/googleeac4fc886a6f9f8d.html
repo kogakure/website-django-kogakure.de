@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block page_title %}Google Webmaster Tools // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}Google Webmaster Tools // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
 {% block content %}
 
-<h1>Verifikation</h1>
+<h1>{% trans "Verification" %}</h1>
 <h2>Google Webmaster Tools</h2>
-<p>Diese Seite dient nur zur Verifikation für die <a href="https://www.google.com/webmasters/tools/siteoverview">Google Webmaster Tools</a>.</p>
+<p>{% blocktrans %}This page is only for Verfication for <a href="https://www.google.com/webmasters/tools/siteoverview">Google Webmaster Tools</a>{% endblocktrans %}.</p>
 
 {% endblock %}

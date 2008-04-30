@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
-<h1>Fehler 500</h1>
-<p>Der Server hat einen Fehler gemeldet!</p>
+<h1>{% trans "Error 500" %}</h1>
+<p>{% trans "The Server reported an Error!" %}</p>
 {% endblock %}

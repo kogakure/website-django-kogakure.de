@@ -11,16 +11,17 @@ from django.conf import settings
 from kogakure.lib.templatetags.thumbnail import thumbnail
 from django.db import models
 from django.db.models import permalink
+from django.utils.translation import ugettext_lazy as _
 
 class Category(models.Model):
-    '''Category of a Product (Book, Movie, …)'''
+    '''Category of a Product (Book, Movie, &hellip;)'''
     name = models.CharField(max_length=100, null=False, blank=False)
-    slug = models.SlugField(u'URL', unique=True, prepopulate_from=('name',), null=False, blank=False)
+    slug = models.SlugField(_(u'URL'), unique=True, prepopulate_from=('name',), null=False, blank=False)
     
     class Meta:
         db_table = 'product_categories'
-        verbose_name = u'Kategorie'
-        verbose_name_plural = u'Kategorien'
+        verbose_name = _(u'Category')
+        verbose_name_plural = _(u'Categories')
     
     class Admin:
         list_display = ('name',)
@@ -40,17 +41,17 @@ class Category(models.Model):
 class Entry(models.Model):
     '''A product'''
     ENTRY_STATUS_CHOICES = (
-        ('D', u'Entwurf'),
-        ('P', u'Veröffentlicht'),
-        ('C', u'Geschlossen'),
+        ('D', _(u'Draft')),
+        ('P', _(u'Published')),
+        ('C', _(u'Closed')),
     )
-    title = models.CharField(u'Titel', max_length=200, null=False, blank=False)
-    slug = models.SlugField(u'URL-Titel', unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
-    pub_date = models.DateTimeField(u'Veröffentlicht', null=False, blank=False)
-    cover = models.ImageField(u'Cover', upload_to='img/kaufempfehlungen', blank=False, null=False, help_text=u'60 Pixel Breite, Höhe automatisch')
-    asin = models.CharField(u'ASIN', max_length='15', null=False, blank=False)
-    category = models.ForeignKey(Category, verbose_name=u'Kategorie', null=False, blank=False)
-    body = models.TextField(u'Informationen', null=True, blank=True, help_text=u'Markdown benutzen')
+    title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
+    slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
+    pub_date = models.DateTimeField(_(u'Published'), null=False, blank=False)
+    cover = models.ImageField(_(u'Cover'), upload_to='img/kaufempfehlungen', blank=False, null=False, help_text=_(u'60 pixel width, auto height'))
+    asin = models.CharField(_(u'ASIN'), max_length='15', null=False, blank=False)
+    category = models.ForeignKey(Category, verbose_name=_(u'Category'), null=False, blank=False)
+    body = models.TextField(_(u'Information'), null=True, blank=True, help_text=_(u'Use Markdown'))
     status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)
     
     class Meta:

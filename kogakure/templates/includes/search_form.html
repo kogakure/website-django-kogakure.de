@@ -1,8 +1,9 @@
+{% load i18n %}
+
 <form action="/suche/" method="get" accept-charset="utf-8">
     <p>
-        <label for="suchmaske">Suche</label>
+        <label for="suchmaske">{% trans "Search" %}</label>
         <input id="suchmaske" type="text" name="q" value="" />
-        <input type="submit" class="button" value="Suchen" />
+        <input type="submit" class="button" value="{% trans "OK" %}" />
     </p>
-    {# <p><a href="/suche/">Erweiterte Suche</a></p> #}
 </form>

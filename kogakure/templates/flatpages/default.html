@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load cache %}
 
-{% block meta_description %}{{ flatpage.title }} von kogakure.de{% endblock %}
+{% block meta_description %}{% blocktrans with flatpage.title as flatpage.title %}{{ flatpage.title }} of kogakure.de{% endblocktrans %}{% endblock %}
 
-{% block page_title %}{{ flatpage.title }} // kogakure.de – Ninja, Ninjutsu und Kampfkunst{% endblock %}
+{% block page_title %}{{ flatpage.title }} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
 {% cache 3600 content %}
 {% block content %}

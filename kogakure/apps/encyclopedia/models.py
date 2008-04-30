@@ -8,26 +8,27 @@
 import datetime
 from django.db import models
 from django.db.models import permalink
+from django.utils.translation import ugettext_lazy as _
 
 class Entry(models.Model):
     '''An encylopedia entry'''
     ENTRY_STATUS_CHOICES = (
-        ('D', u'Entwurf'),
-        ('P', u'Veröffentlicht'),
-        ('C', u'Geschlossen'),
+        ('D', _(u'Draft')),
+        ('P', _(u'Published')),
+        ('C', _(u'Closed')),
     )
-    title = models.CharField(u'Titel', max_length=200, null=False, blank=False)
-    slug = models.SlugField(u'URL-Titel', unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
-    pub_date = models.DateTimeField(u'Veröffentlicht', null=False, blank=False)
-    title_alt = models.CharField(u'Alternativer Titel', null=True, blank=True, max_length='150')
-    japanese = models.CharField(u'Japanische Zeichen', null=True, blank=True, max_length='50', help_text=u'Kanji, Katakana oder Hiragana')
-    explanation = models.TextField(u'Erkärung', null=False, blank=False, help_text=u'Markdown benutzen')
+    title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
+    slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
+    pub_date = models.DateTimeField(_(u'Published'), null=False, blank=False)
+    title_alt = models.CharField(_(u'Alternative title'), null=True, blank=True, max_length='150')
+    japanese = models.CharField(_(u'Japanese characters'), null=True, blank=True, max_length='50', help_text=_(u'Kanji, Katakana or Hiragana'))
+    explanation = models.TextField(_(u'Explanation'), null=False, blank=False, help_text=_(u'Use Markdown'))
     status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)
     
     class Meta:
         db_table = 'encyclopedia_entries'
-        verbose_name = u'Lexikoneintrag'
-        verbose_name_plural = u'Lexikoneinträge'
+        verbose_name = _(u'Encyclopedia entry')
+        verbose_name_plural = _(u'Encyclopedia entries')
         ordering = ('-pub_date',)
         get_latest_by = 'pub_date'
     
@@ -47,7 +48,7 @@ class Entry(models.Model):
             'explanation'
         )
         fields = (
-            (u'Datum', {
+            (_(u'Date'), {
                 'classes': 'collapse wide',
                 'fields': ('pub_date',),
             }),

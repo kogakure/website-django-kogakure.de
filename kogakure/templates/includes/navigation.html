@@ -1,12 +1,14 @@
 {% load cache %}
+{% load i18n %}
+
 {% cache 3600 navigation %}
-<h2>Navigation</h2>
+<h2>{% trans "Navigation" %}</h2>
 <ul class="nav">
-    <li><a title="Übersicht über alle Artikel" href="{% url inhaltsverzeichnis %}">Inhaltsverzeichnis</a></li>
-    <li><a title="Buch- und Filmempfehlungen" href="{% url kaufempfehlungen_liste %}">Kaufempfehlungen</a></li>
-    <li><a title="Lexikon mit Kampfkunstbegriffen" href="{% url lexikon_liste %}">Lexikon</a></li>
-    <li><a title="Weise Sinnsprüche und Aussagen" href="{% url sprueche_liste %}">Sprüche</a></li>
-    <li><a title="Informationen über diese Seite" href="/info/">Informationen</a></li>
-    <li><a title="Kontakt aufnehmen" href="{% url kontakt %}">Kontakt</a></li>
+    <li><a title="{% trans "Overview on all Articles" %}" href="{% url inhaltsverzeichnis %}">{% trans "Contents" %}</a></li>
+    <li><a title="{% trans "Recommendations on books and movies" %}" href="{% url kaufempfehlungen_liste %}">{% trans "Recommendations" %}</a></li>
+    <li><a title="{% trans "Encyclopedia with martial art terms" %}" href="{% url lexikon_liste %}">{% trans "Encyclopedia" %}</a></li>
+    <li><a title="{% trans "Wise aphorisms and statements" %}" href="{% url sprueche_liste %}">{% trans "Proverbs" %}</a></li>
+    <li><a title="{% trans "Information about this site" %}" href="/info/">{% trans "Information" %}</a></li>
+    <li><a title="{% trans "Get in contact" %}" href="{% url kontakt %}">{% trans "Contact" %}</a></li>
 </ul>
 {% endcache %}

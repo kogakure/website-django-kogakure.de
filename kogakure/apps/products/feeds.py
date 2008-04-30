@@ -8,13 +8,14 @@
 import datetime
 from django.contrib.syndication.feeds import Feed
 from kogakure.apps.products.models import Entry, Category
+from django.utils.translation import ugettext_lazy as _
 
 class LatestProducts(Feed):
     title_template = 'feeds/title.html'
     description_template = 'feeds/description.html'
     
-    title = 'kogakure.de – Kaufempfehlungen'
-    description = 'Neuste Kaufempfehlungen'
+    title = _(u'kogakure.de &ndash; Recommendations')
+    description = _(u'Newest Recommendations')
     link = '/kaufempfehlungen/'
     
     def items(self):
@@ -30,10 +31,10 @@ class LatestProductsByProduct(Feed):
         return Category.objects.get(slug=bits[-1])
     
     def title(self, obj):
-        return u'Kaufempfehlungen: %s' % obj.name
+        return _(u'Recommendations: %s') % obj.name
     
     def description(self, obj):
-        return u'Neuste Produkte aus dem Bereich „%s“' % obj.name
+        return _(u'Newest recommendations from "%s"') % obj.name
     
     def link(self, obj):
         return obj.get_absolute_url()
