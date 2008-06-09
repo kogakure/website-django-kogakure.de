@@ -17,7 +17,7 @@ class Entry(models.Model):
         ('P', _(u'Published')),
         ('C', _(u'Closed')),
     )
-    pub_date = models.DateTimeField(_(u'Published'), null=False, blank=False)
+    pub_date = models.DateTimeField(_(u'Published'), default=datetime.datetime.now, null=False, blank=False)
     body = models.TextField(_(u'Proverb'), null=False, blank=False, help_text=_(u'Use Markdown, with quotes'))
     author = models.CharField(_(u'Author'), null=False, blank=False, max_length=150)
     status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)

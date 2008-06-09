@@ -19,7 +19,7 @@ class Entry(models.Model):
     )
     title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
     slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
-    pub_date = models.DateTimeField(_(u'Published'), null=False, blank=False)
+    pub_date = models.DateTimeField(_(u'Published'), default=datetime.datetime.now, null=False, blank=False)
     summary = models.TextField(_(u'Excerpt'), null=False, blank=False, help_text=_(u'Use Markdown'))
     body = models.TextField(_(u'Blog'), null=False, blank=False, help_text=_(u'Use Markdown'))
     status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)

@@ -19,7 +19,7 @@ class Entry(models.Model):
     )
     title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
     slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
-    pub_date = models.DateTimeField(_(u'Published'), null=False, blank=False)
+    pub_date = models.DateTimeField(_(u'Published'), default=datetime.datetime.now, null=False, blank=False)
     title_alt = models.CharField(_(u'Alternative title'), null=True, blank=True, max_length='150')
     japanese = models.CharField(_(u'Japanese characters'), null=True, blank=True, max_length='50', help_text=_(u'Kanji, Katakana or Hiragana'))
     explanation = models.TextField(_(u'Explanation'), null=False, blank=False, help_text=_(u'Use Markdown'))

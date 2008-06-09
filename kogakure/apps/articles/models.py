@@ -76,7 +76,7 @@ class Entry(models.Model):
     author = models.ForeignKey(Author,  verbose_name=_(u'Author'), null=False, blank=False, related_name='entry_authors')
     title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
     slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
-    pub_date = models.DateTimeField(_(u'Published'), null=False, blank=False)
+    pub_date = models.DateTimeField(_(u'Published'), default=datetime.datetime.now, null=False, blank=False)
     summary = models.TextField(_(u'Excerpt'), null=False, blank=False, help_text=_(u'Use Markdown'))
     body = models.TextField(_(u'Article'), null=False, blank=False, help_text=_(u'Use Markdown'))
     translators = models.ManyToManyField(Author, verbose_name=_(u'Translator'), null=True, blank=True)

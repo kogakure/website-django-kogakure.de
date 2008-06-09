@@ -47,7 +47,7 @@ class Entry(models.Model):
     )
     title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
     slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
-    pub_date = models.DateTimeField(_(u'Published'), null=False, blank=False)
+    pub_date = models.DateTimeField(_(u'Published'), default=datetime.datetime.now, null=False, blank=False)
     cover = models.ImageField(_(u'Cover'), upload_to='img/kaufempfehlungen', blank=False, null=False, help_text=_(u'60 pixel width, auto height'))
     asin = models.CharField(_(u'ASIN'), max_length='15', null=False, blank=False)
     category = models.ForeignKey(Category, verbose_name=_(u'Category'), null=False, blank=False)
