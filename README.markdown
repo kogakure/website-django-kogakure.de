@@ -8,8 +8,6 @@ http://www.gnu.org/copyleft/gpl.txt
 This is the source code of http://kogakure.de/. 
 Created by Stefan Imhoff (http://stefanimhoff.de/).
 
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-
 About
 -----
 
@@ -19,8 +17,6 @@ this website are the Ninja and their martial art Ninjutsu.
 Find out more about Ninjutsu today on http://bujinkan.com/.
 Visit your local dôjô. You won’t regret.
 
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-
 Information & Requirements
 --------------------------
 
@@ -28,8 +24,6 @@ It’s my first Django-Projekt. You may use the code and templates for
 educational purposes or your own projects.
 
 This site uses the Subversion-Trunk at *Django 1.0 Alpha*.
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 Installation
 ------------
