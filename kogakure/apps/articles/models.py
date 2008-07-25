@@ -26,13 +26,6 @@ class Author(models.Model):
         verbose_name = _(u'Author')
         verbose_name_plural = _(u'Authors')
     
-    class Admin:
-        list_display = (
-            'preview_image_url',
-            'last_name',
-            'first_name'
-        )
-    
     def __unicode__(self):
         return '%s %s' % (self.first_name, self.last_name)
     
@@ -48,16 +41,12 @@ class Author(models.Model):
 class Category(models.Model):
     '''Categories for related Articles'''
     name = models.CharField(max_length=100, null=False, blank=False, unique=True)
-    slug = models.SlugField(_(u'URL'), unique=True, prepopulate_from=('name',), null=False, blank=False)
+    slug = models.SlugField(_(u'URL'), unique=True, null=False, blank=False)
     
     class Meta:
         db_table = 'article_categories'
         verbose_name = _(u'Topic')
         verbose_name_plural = _(u'Topics')
-    
-    class Admin:
-        list_display = ('name',)
-        search_fields = ('name',)
     
     def __unicode__(self):
         return self.name
@@ -75,13 +64,13 @@ class Entry(models.Model):
     )
     author = models.ForeignKey(Author,  verbose_name=_(u'Author'), null=False, blank=False, related_name='entry_authors')
     title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
-    slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
+    slug = models.SlugField(_(u'Slug'), unique=True, max_length='150', null=False, blank=False)
     pub_date = models.DateTimeField(_(u'Published'), default=datetime.datetime.now, null=False, blank=False)
     summary = models.TextField(_(u'Excerpt'), null=False, blank=False, help_text=_(u'Use Markdown'))
     body = models.TextField(_(u'Article'), null=False, blank=False, help_text=_(u'Use Markdown'))
     translators = models.ManyToManyField(Author, verbose_name=_(u'Translator'), null=True, blank=True)
     categories = models.ManyToManyField(Category, verbose_name=_(u'Categories'), null=True, blank=True, related_name='entry_categories')
-    status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)
+    status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, default='P')
     
     class Meta:
         db_table = 'article_entries'
@@ -89,48 +78,6 @@ class Entry(models.Model):
         verbose_name_plural = _(u'Articles')
         ordering = ('-pub_date',)
         get_latest_by = 'pub_date'
-    
-    class Admin:
-        list_display = (
-            'title',
-            'author',
-            'status',
-            'pub_date'
-        )
-        list_filter = (
-            'categories',
-            'pub_date',
-            'author'
-        )
-        date_hierarchy = 'pub_date'
-        search_fields = (
-            'title',
-            'summary',
-            'body'
-        )
-        fields = (
-            (_(u'Date'), {
-                'classes': 'collapse wide',
-                'fields': ('pub_date',), 
-            }),
-            (_(u'Author'), {
-                'classes': 'collapse wide',
-                'fields': (
-                    ('author', 'translators'),
-                ), 
-            }),
-            (None, {
-                'classes': 'wide',
-                'fields': (
-                    'status',
-                    'title',
-                    'slug',
-                    'summary',
-                    'body',
-                    'categories'
-                )
-            }),
-        )
         
     def __unicode__(self):
         return self.title

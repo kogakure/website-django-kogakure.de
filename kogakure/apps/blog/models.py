@@ -18,11 +18,11 @@ class Entry(models.Model):
         ('C', _(u'Closed')),
     )
     title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
-    slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
+    slug = models.SlugField(_(u'Slug'), unique=True, max_length='150', null=False, blank=False)
     pub_date = models.DateTimeField(_(u'Published'), default=datetime.datetime.now, null=False, blank=False)
     summary = models.TextField(_(u'Excerpt'), null=False, blank=False, help_text=_(u'Use Markdown'))
     body = models.TextField(_(u'Blog'), null=False, blank=False, help_text=_(u'Use Markdown'))
-    status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)
+    status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, default='P')
     
     class Meta:
         db_table = 'blog_entries'
@@ -31,35 +31,6 @@ class Entry(models.Model):
         ordering = ('-pub_date',)
         get_latest_by = 'pub_date'
     
-    class Admin:
-        list_display = (
-            'title',
-            'status',
-            'pub_date'
-        )
-        list_filter = ('pub_date',)
-        search_fields = (
-            'title',
-            'summary',
-            'body'
-        )
-        fields = (
-            (_(u'Date'), {
-                'classes': 'collapse wide',
-                'fields': ('pub_date',)
-            }),
-            (None, {
-                'classes': 'wide',
-                'fields': (
-                    'status',
-                    'title',
-                    'slug',
-                    'summary',
-                    'body'
-                )
-            }),
-        )
-            
     def __unicode__(self):
         return self.title
     

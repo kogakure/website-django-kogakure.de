@@ -5,7 +5,7 @@
 # Licensed under the GNU General Public License, version 3.
 # http://www.gnu.org/copyleft/gpl.txt
 
-from django import newforms as forms
+from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 class ContactForm(forms.Form):

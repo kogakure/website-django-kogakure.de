@@ -9,6 +9,7 @@ import datetime
 from django.views.decorators.cache import cache_page
 from django.conf import settings
 from django.conf.urls.defaults import *
+from django.contrib import admin
 from django.views.generic.simple import direct_to_template, redirect_to
 from django.views.generic.list_detail import object_detail, object_list
 from kogakure.apps.articles.models import *
@@ -18,6 +19,8 @@ from kogakure.sitemaps import StaticFileSitemap
 from kogakure.apps.articles.sitemaps import ArticlesMap
 from kogakure.apps.blog.sitemaps import BlogMap
 from kogakure.apps.encyclopedia.sitemaps import EncylopediaMap
+
+admin.autodiscover()
 
 import os
 DIRNAME = os.path.dirname(__file__)
@@ -65,7 +68,7 @@ urlpatterns = patterns('',
     url(r'^themen/(?P<category_slug>[-\w]+)/$', 'kogakure.apps.articles.views.category', name='thema'),
     url(r'^kontakt/', 'kogakure.apps.contact.views.contact', name='kontakt'),
     # Admin
-    (r'^admin/', include('django.contrib.admin.urls')),
+    (r'^admin/(.*)', admin.site.root),
     # Homepage
     (r'^$', direct_to_template, {'template': 'homepage.html'}),
     # Cache Status

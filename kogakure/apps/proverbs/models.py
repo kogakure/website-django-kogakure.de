@@ -20,7 +20,7 @@ class Entry(models.Model):
     pub_date = models.DateTimeField(_(u'Published'), default=datetime.datetime.now, null=False, blank=False)
     body = models.TextField(_(u'Proverb'), null=False, blank=False, help_text=_(u'Use Markdown, with quotes'))
     author = models.CharField(_(u'Author'), null=False, blank=False, max_length=150)
-    status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)
+    status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, default='P')
     
     class Meta:
         db_table = 'proverb_entries'
@@ -29,29 +29,6 @@ class Entry(models.Model):
         ordering = ('-pub_date',)
         get_latest_by = 'pub_date'
     
-    class Admin:
-        list_display = (
-            'body',
-            'status',
-            'pub_date'
-        )
-        list_filter = ('pub_date',)
-        search_fields = ('body',)
-        fields = (
-            (_(u'Date'), {
-                'classes': 'collapse wide',
-                'fields': ('pub_date',), 
-            }),
-            (None, {
-                'classes': 'wide',
-                'fields': (
-                    'status',
-                    'body',
-                    'author'
-                )
-            }),
-        )
-            
     def __unicode__(self):
         return self.body
     

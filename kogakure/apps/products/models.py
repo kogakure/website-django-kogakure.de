@@ -16,16 +16,12 @@ from django.utils.translation import ugettext_lazy as _
 class Category(models.Model):
     '''Category of a Product (Book, Movie, &hellip;)'''
     name = models.CharField(max_length=100, null=False, blank=False)
-    slug = models.SlugField(_(u'URL'), unique=True, prepopulate_from=('name',), null=False, blank=False)
+    slug = models.SlugField(_(u'URL'), unique=True, null=False, blank=False)
     
     class Meta:
         db_table = 'product_categories'
         verbose_name = _(u'Category')
         verbose_name_plural = _(u'Categories')
-    
-    class Admin:
-        list_display = ('name',)
-        search_fields = ('name',)
     
     def __unicode__(self):
         return self.name
@@ -46,13 +42,13 @@ class Entry(models.Model):
         ('C', _(u'Closed')),
     )
     title = models.CharField(_(u'Title'), max_length=200, null=False, blank=False)
-    slug = models.SlugField(_(u'Slug'), unique=True, prepopulate_from=('title',), max_length='150', null=False, blank=False)
+    slug = models.SlugField(_(u'Slug'), unique=True, max_length='150', null=False, blank=False)
     pub_date = models.DateTimeField(_(u'Published'), default=datetime.datetime.now, null=False, blank=False)
     cover = models.ImageField(_(u'Cover'), upload_to='img/kaufempfehlungen', blank=False, null=False, help_text=_(u'60 pixel width, auto height'))
     asin = models.CharField(_(u'ASIN'), max_length='15', null=False, blank=False)
     category = models.ForeignKey(Category, verbose_name=_(u'Category'), null=False, blank=False)
     body = models.TextField(_(u'Information'), null=True, blank=True, help_text=_(u'Use Markdown'))
-    status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, radio_admin=True, default=1)
+    status = models.CharField(max_length=1, null=False, blank=False, choices=ENTRY_STATUS_CHOICES, default='P')
     
     class Meta:
         db_table = 'product_entries'
@@ -61,39 +57,6 @@ class Entry(models.Model):
         ordering = ('title',)
         get_latest_by = 'pub_date'
     
-    class Admin:
-        list_display = (
-            'preview_image_url',
-            'title',
-            'category',
-            'status',
-            'pub_date'
-        )
-        list_filter = ('category',)
-        search_fields = (
-            'title',
-            'asin',
-            'body'
-        )
-        fields = (
-            ('Datum', {
-                'classes': 'collapse wide',
-                'fields': ('pub_date',), 
-            }),
-            (None, {
-                'classes': 'wide',
-                'fields': (
-                    'status',
-                    'title',
-                    'slug',
-                    'cover',
-                    'asin',
-                    'category',
-                    'body'
-                )
-            }),
-        )
-
     def __unicode__(self):
         return self.title
     
