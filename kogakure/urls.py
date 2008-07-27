@@ -68,6 +68,7 @@ urlpatterns = patterns('',
     url(r'^themen/(?P<category_slug>[-\w]+)/$', 'kogakure.apps.articles.views.category', name='thema'),
     url(r'^kontakt/', 'kogakure.apps.contact.views.contact', name='kontakt'),
     # Admin
+    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),
     # Homepage
     (r'^$', direct_to_template, {'template': 'homepage.html'}),
