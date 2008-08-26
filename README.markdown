@@ -23,7 +23,9 @@ Information & Requirements
 It’s my first Django-Projekt. You may use the code and templates for 
 educational purposes or your own projects.
 
-This site uses the Subversion-Trunk at *Django 1.0 Alpha*.
+[Python Image Library (PIL)](http://www.pythonware.com/products/pil/ "Python Imaging Library (PIL)") is required.
+
+This site uses the Subversion-Trunk at *Django 1.0 Beta*.
 
 Installation
 ------------
