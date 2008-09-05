@@ -8,6 +8,7 @@
 import datetime
 import urlparse
 from django.conf import settings
+from kogakure.lib.templatetags.thumbnail import thumbnail
 from django.db import models
 from django.db.models import permalink
 from django.utils.translation import ugettext_lazy as _
@@ -30,10 +31,10 @@ class Author(models.Model):
         return '%s %s' % (self.first_name, self.last_name)
     
     def preview_image_url(self):
-            image_path = self.photo # URL of the image, e.g. /gallery/image.jpg
-            image_path = image_path.replace('\\','/') # Windows-Fix
-            image_path = urlparse.urljoin(settings.MEDIA_URL, image_path)
-            return '<a href="' + str(self.id) + '/"><img src="' + str(image_path) + '" /></a>'
+        image_path = thumbnail(self.photo, '50x50')
+        image_path = image_path.replace('\\','/') # Windows-Fix
+        image_path = urlparse.urljoin(settings.MEDIA_URL, image_path)
+        return '<a href="' + str(self.id) + '/"><img src="' + str(image_path) + '" /></a>'
 
     preview_image_url.short_description = 'Foto'
     preview_image_url.allow_tags = True
