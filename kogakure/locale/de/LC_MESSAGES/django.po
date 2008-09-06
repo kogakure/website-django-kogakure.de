@@ -7,13 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kogakure.de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-30 21:26+0200\n"
+"POT-Creation-Date: 2008-09-06 10:21+0200\n"
 "PO-Revision-Date: 2008-04-29 21:47+0100\n"
 "Last-Translator: Stefan Imhoff <stefan@imhoff.name>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: apps/articles/admin.py:33 apps/blog/admin.py:19
+#: apps/encyclopedia/admin.py:19 apps/products/admin.py:27
+#: apps/proverbs/admin.py:18
+msgid "Date"
+msgstr "Datum"
+
+#: apps/articles/admin.py:35 apps/articles/models.py:27
+#: apps/articles/models.py:66 apps/proverbs/models.py:22
+msgid "Author"
+msgstr "Autor"
 
 #: apps/articles/feeds.py:17
 msgid "kogakure.de &ndash; Articles"
@@ -23,115 +34,105 @@ msgstr "kogakure.de – Artikel"
 msgid "kogakure.de &ndash; Newest Articles"
 msgstr "Neuste Artikel"
 
-#: apps/articles/models.py:17
+#: apps/articles/models.py:18
 msgid "First Name"
 msgstr "Vorname"
 
-#: apps/articles/models.py:18
+#: apps/articles/models.py:19
 msgid "Last Name"
 msgstr "Nachname"
 
-#: apps/articles/models.py:19
+#: apps/articles/models.py:20
 msgid "Photo"
 msgstr "Foto"
 
-#: apps/articles/models.py:19
+#: apps/articles/models.py:20
 msgid "50 Pixel (square)"
 msgstr "50 Pixel (quadratisch)"
 
-#: apps/articles/models.py:20 apps/articles/models.py:51
+#: apps/articles/models.py:21 apps/articles/models.py:45
 #: apps/products/models.py:19
 msgid "URL"
 msgstr "URL"
 
-#: apps/articles/models.py:21
+#: apps/articles/models.py:22
 msgid "City"
 msgstr "Ort"
 
-#: apps/articles/models.py:22
+#: apps/articles/models.py:23
 msgid "Biography"
 msgstr "Biographie"
 
-#: apps/articles/models.py:22 apps/articles/models.py:80
-#: apps/articles/models.py:81 apps/blog/models.py:23 apps/blog/models.py:24
-#: apps/encyclopedia/models.py:25 apps/products/models.py:54
+#: apps/articles/models.py:23 apps/articles/models.py:70
+#: apps/articles/models.py:71 apps/blog/models.py:23 apps/blog/models.py:24
+#: apps/encyclopedia/models.py:25 apps/products/models.py:50
 msgid "Use Markdown"
 msgstr "Markdown benutzen"
 
-#: apps/articles/models.py:26 apps/articles/models.py:76
-#: apps/articles/models.py:116 apps/proverbs/models.py:22
-msgid "Author"
-msgstr "Autor"
-
-#: apps/articles/models.py:27
+#: apps/articles/models.py:28
 msgid "Authors"
 msgstr "Autoren"
 
-#: apps/articles/models.py:55
+#: apps/articles/models.py:49
 msgid "Topic"
 msgstr "Thema"
 
-#: apps/articles/models.py:56
+#: apps/articles/models.py:50
 msgid "Topics"
 msgstr "Themen"
 
-#: apps/articles/models.py:72 apps/blog/models.py:16
-#: apps/encyclopedia/models.py:16 apps/products/models.py:44
+#: apps/articles/models.py:62 apps/blog/models.py:16
+#: apps/encyclopedia/models.py:16 apps/products/models.py:40
 #: apps/proverbs/models.py:16
 msgid "Draft"
 msgstr "Entwurf"
 
-#: apps/articles/models.py:73 apps/articles/models.py:79
+#: apps/articles/models.py:63 apps/articles/models.py:69
 #: apps/blog/models.py:17 apps/blog/models.py:22
 #: apps/encyclopedia/models.py:17 apps/encyclopedia/models.py:22
-#: apps/products/models.py:45 apps/products/models.py:50
+#: apps/products/models.py:41 apps/products/models.py:46
 #: apps/proverbs/models.py:17 apps/proverbs/models.py:20
 msgid "Published"
 msgstr "Veröffentlicht"
 
-#: apps/articles/models.py:74 apps/blog/models.py:18
-#: apps/encyclopedia/models.py:18 apps/products/models.py:46
+#: apps/articles/models.py:64 apps/blog/models.py:18
+#: apps/encyclopedia/models.py:18 apps/products/models.py:42
 #: apps/proverbs/models.py:18
 msgid "Closed"
 msgstr "Geschlossen"
 
-#: apps/articles/models.py:77 apps/blog/models.py:20
-#: apps/encyclopedia/models.py:20 apps/products/models.py:48
+#: apps/articles/models.py:67 apps/blog/models.py:20
+#: apps/encyclopedia/models.py:20 apps/products/models.py:44
 msgid "Title"
 msgstr "Titel"
 
-#: apps/articles/models.py:78 apps/blog/models.py:21
-#: apps/encyclopedia/models.py:21 apps/products/models.py:49
+#: apps/articles/models.py:68 apps/blog/models.py:21
+#: apps/encyclopedia/models.py:21 apps/products/models.py:45
 msgid "Slug"
 msgstr "URL"
 
-#: apps/articles/models.py:80 apps/blog/models.py:23
+#: apps/articles/models.py:70 apps/blog/models.py:23
 msgid "Excerpt"
 msgstr "Auszug"
 
-#: apps/articles/models.py:81 apps/articles/models.py:88
+#: apps/articles/models.py:71 apps/articles/models.py:78
 #: templates/articles/article_list.html:4
 #: templates/articles/article_list.html:10
 msgid "Article"
 msgstr "Artikel"
 
-#: apps/articles/models.py:82
+#: apps/articles/models.py:72
 msgid "Translator"
 msgstr "Übersetzer"
 
-#: apps/articles/models.py:83 apps/products/models.py:24
+#: apps/articles/models.py:73 apps/products/models.py:24
 msgid "Categories"
 msgstr "Kategorien"
 
-#: apps/articles/models.py:89 templates/inhalt.html:14
+#: apps/articles/models.py:79 templates/inhalt.html:14
 #: templates/search.html:18
 msgid "Articles"
 msgstr "Artikel"
-
-#: apps/articles/models.py:112 apps/blog/models.py:47
-#: apps/encyclopedia/models.py:51 apps/proverbs/models.py:41
-msgid "Date"
-msgstr "Datum"
 
 #: apps/blog/feeds.py:17
 msgid "kogakure.de &ndash; Blog Entries"
@@ -194,6 +195,11 @@ msgstr "Bitte gib deinen Nachrichtentext ein."
 msgid "Please use more words for your message text."
 msgstr "Bitte gibt mehr Worte für deine Nachricht ein."
 
+#: apps/contact/forms.py:42
+#, python-format
+msgid "Illegal characters in your message text: %s"
+msgstr "Unerlaubte Worte in deiner Nachricht: %s"
+
 #: apps/contact/views.py:25
 msgid "Contact form: domain.com"
 msgstr "Kontaktformular: kogakure.de"
@@ -248,23 +254,23 @@ msgstr "Kaufempfehlungen: %s"
 msgid "Newest recommendations from \"%s\""
 msgstr "Neuste Produkte aus dem Bereich „%s“"
 
-#: apps/products/models.py:23 apps/products/models.py:53
+#: apps/products/models.py:23 apps/products/models.py:49
 msgid "Category"
 msgstr "Kategorie"
 
-#: apps/products/models.py:51
+#: apps/products/models.py:47
 msgid "Cover"
 msgstr "Cover"
 
-#: apps/products/models.py:51
+#: apps/products/models.py:47
 msgid "60 pixel width, auto height"
 msgstr "60 Pixel Breite, automatische Höhe"
 
-#: apps/products/models.py:52
+#: apps/products/models.py:48
 msgid "ASIN"
 msgstr "ASIN"
 
-#: apps/products/models.py:54 templates/includes/navigation.html:11
+#: apps/products/models.py:50 templates/includes/navigation.html:11
 msgid "Information"
 msgstr "Informationen"
 
@@ -325,15 +331,15 @@ msgstr "Der Server hat einen Fehler gemeldet!"
 msgid "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts"
 msgstr "kogakure.de – Ninja, Ninjutsu und Kampfkunst"
 
-#: templates/base.html:48
+#: templates/base.html:47
 msgid "Jump to homepage"
 msgstr "Zur Startseite springen"
 
-#: templates/base.html:48
+#: templates/base.html:47
 msgid "Logo kogakure.de"
 msgstr "Logo kogakure.de"
 
-#: templates/base.html:64
+#: templates/base.html:63
 msgid ""
 "The Content of this page is licenced under a <a href=\"http://"
 "creativecommons.org/licenses/by-nc/3.0/deed.en\" rel=\"license\">Creative "
@@ -343,7 +349,7 @@ msgstr ""
 "licenses/by-nc/3.0/deed.de\" rel=\"license\">Creative Commons</a> lizenziert."
 "\""
 
-#: templates/base.html:65
+#: templates/base.html:64
 msgid ""
 "This page runs on <a href=\"http://www.djangoproject.com/\" title=\"Django | "
 "The Web framework for perfectionists with deadlines\">Django</a>."
@@ -351,7 +357,7 @@ msgstr ""
 "Diese Seite läuft mit <a href=\"http://www.djangoproject.com/\" title="
 "\"Django | The Web framework for perfectionists with deadlines\">Django</a>."
 
-#: templates/base.html:65
+#: templates/base.html:64
 msgid ""
 "Hosting at <a href=\"http://www.webfaction.com?affiliate=kogakure\" title="
 "\"WebFaction : Hosting for an agile web\">Webfaction</a>."
@@ -359,11 +365,11 @@ msgstr ""
 "Hosting bei <a href=\"http://www.webfaction.com?affiliate=kogakure\" title="
 "\"WebFaction : Hosting for an agile web\">Webfaction</a>."
 
-#: templates/base.html:65
+#: templates/base.html:64
 msgid "Imprint"
 msgstr "Impressum"
 
-#: templates/base.html:65
+#: templates/base.html:64
 msgid "Privacy"
 msgstr "Datenschutz"
 
@@ -622,6 +628,7 @@ msgid "Blog from Ninjutsu and this website"
 msgstr "Kurzmeldungen aus dem Bereich des Ninjutsu und rund um diese Website"
 
 #: templates/blog/blog_list.html:15
+#: templates/encyclopedia/encyclopedia_list.html:18
 #, python-format
 msgid "Link to '%(entry.title)s'"
 msgstr "Link zu „%(entry.title)s“"

@@ -16,7 +16,7 @@ class EntryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     radio_fields = {'status': admin.HORIZONTAL}
     fieldsets = [
-        (_(u'Datum'), {'fields': ['pub_date'], 
+        (_(u'Date'), {'fields': ['pub_date'], 
                        'classes': ['wide']}),
         (None,        {'fields': ['status', 'title', 'title_alt', 'slug', 'japanese', 'explanation'],
                        'classes': ['wide']}),

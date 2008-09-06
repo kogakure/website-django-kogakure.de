@@ -30,9 +30,9 @@ class EntryAdmin(admin.ModelAdmin):
     radio_fields = {'status': admin.HORIZONTAL}
     filter_horizontal = ('categories',)
     fieldsets = [
-        (_(u'Datum'), {'fields': ['pub_date'], 
+        (_(u'Date'), {'fields': ['pub_date'], 
                        'classes': ['wide']}),
-        (_(u'Autor'), {'fields': ['author', 'translators'], 
+        (_(u'Author'), {'fields': ['author', 'translators'], 
                        'classes': ['wide collapse']}),
         (None,        {'fields': ['status', 'title', 'slug', 'summary', 'body', 'categories'], 
                        'classes': ['wide']}),

@@ -33,6 +33,13 @@ class ContactForm(forms.Form):
         num_words = len(message.split())
         if num_words < 2:
             raise forms.ValidationError(_(u'Please use more words for your message text.'))
+        stop_words = ['http://','www.']
+        used_stop_words = []
+        for word in stop_words:
+            if word in message:
+                used_stop_words.append(word)
+        used_stop_words = ', '.join(used_stop_words)
+        raise forms.ValidationError(_(u'Illegal characters in your message text: %s') % used_stop_words)
         return message
     
     
