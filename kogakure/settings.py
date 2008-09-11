@@ -110,6 +110,7 @@ INSTALLED_APPS = (
     'django.contrib.redirects',
     'django.contrib.sites',
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.sitemaps',
     'kogakure.lib',
     'kogakure.apps.articles',
