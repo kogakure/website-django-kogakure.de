@@ -25,7 +25,7 @@ educational purposes or your own projects.
 
 [Python Image Library (PIL)](http://www.pythonware.com/products/pil/ "Python Imaging Library (PIL)") is required.
 
-This site uses the Subversion-Trunk at *Django 1.0 Beta*.
+This site uses the Subversion-Trunk at *Django 1.0 Final*.
 
 Installation
 ------------
