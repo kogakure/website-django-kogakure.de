@@ -15,7 +15,7 @@ class EntryAdmin(admin.ModelAdmin):
     search_fields = ('body',)
     radio_fields = {'status': admin.HORIZONTAL}
     fieldsets = [
-        (_('Date'), {'fields': ['pub_date'],
+        (_(u'Date'), {'fields': ['pub_date'],
                       'classes': ['wide']}),
         (None,       {'fields': ['status', 'body', 'author'],
                       'classes': ['wide']}),

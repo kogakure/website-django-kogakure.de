@@ -52,8 +52,8 @@ class Entry(models.Model):
     
     class Meta:
         db_table = 'product_entries'
-        verbose_name = 'Kaufempfehlung'
-        verbose_name_plural = 'Kaufempfehlungen'
+        verbose_name = _(u'Recommendations')
+        verbose_name_plural = _(u'Recommendations')
         ordering = ('title',)
         get_latest_by = 'pub_date'
     

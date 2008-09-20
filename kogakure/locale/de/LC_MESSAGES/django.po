@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kogakure.de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-06 10:21+0200\n"
+"POT-Creation-Date: 2008-09-20 19:41+0200\n"
 "PO-Revision-Date: 2008-04-29 21:47+0100\n"
 "Last-Translator: Stefan Imhoff <stefan@imhoff.name>\n"
 "Language-Team: \n"
@@ -195,7 +195,7 @@ msgstr "Bitte gib deinen Nachrichtentext ein."
 msgid "Please use more words for your message text."
 msgstr "Bitte gibt mehr Worte für deine Nachricht ein."
 
-#: apps/contact/forms.py:42
+#: apps/contact/forms.py:43
 #, python-format
 msgid "Illegal characters in your message text: %s"
 msgstr "Unerlaubte Worte in deiner Nachricht: %s"
@@ -274,6 +274,15 @@ msgstr "ASIN"
 msgid "Information"
 msgstr "Informationen"
 
+#: apps/products/models.py:55 apps/products/models.py:56
+#: templates/includes/navigation.html:8
+#: templates/products/products_detail.html:4
+#: templates/products/products_detail.html:10
+#: templates/products/products_list.html:4
+#: templates/products/products_list.html:10
+msgid "Recommendations"
+msgstr "Kaufempfehlungen"
+
 #: apps/proverbs/feeds.py:17
 msgid "kogakure.de &ndash; Proverbs"
 msgstr "kogakure.de – Sprüche"
@@ -343,11 +352,10 @@ msgstr "Logo kogakure.de"
 msgid ""
 "The Content of this page is licenced under a <a href=\"http://"
 "creativecommons.org/licenses/by-nc/3.0/deed.en\" rel=\"license\">Creative "
-"Commons</a> licence.\""
+"Commons</a> licence."
 msgstr ""
 "Der Inhalt dieser Seite ist unter <a href=\"http://creativecommons.org/"
 "licenses/by-nc/3.0/deed.de\" rel=\"license\">Creative Commons</a> lizenziert."
-"\""
 
 #: templates/base.html:64
 msgid ""
@@ -670,14 +678,6 @@ msgstr "Übersicht über alle Artikel"
 #: templates/includes/navigation.html:8
 msgid "Recommendations on books and movies"
 msgstr "Buch- und Filmempfehlungen"
-
-#: templates/includes/navigation.html:8
-#: templates/products/products_detail.html:4
-#: templates/products/products_detail.html:10
-#: templates/products/products_list.html:4
-#: templates/products/products_list.html:10
-msgid "Recommendations"
-msgstr "Kaufempfehlungen"
 
 #: templates/includes/navigation.html:9
 msgid "Encyclopedia with martial art terms"

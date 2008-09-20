@@ -40,6 +40,6 @@ class ContactForm(forms.Form):
                 used_stop_words.append(word)
             forbidden_words = ', '.join(used_stop_words)
         if forbidden_words:
-            raise forms.ValidationError(_(u'Illegal characters in your message text: %s') % used_stop_words)
+            raise forms.ValidationError(_(u'Illegal characters in your message text: %s') % forbidden_words)
         return message
         
