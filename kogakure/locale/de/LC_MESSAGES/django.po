@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kogakure.de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-20 19:41+0200\n"
+"POT-Creation-Date: 2008-09-20 20:37+0200\n"
 "PO-Revision-Date: 2008-04-29 21:47+0100\n"
 "Last-Translator: Stefan Imhoff <stefan@imhoff.name>\n"
 "Language-Team: \n"
@@ -15,266 +15,269 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps/articles/admin.py:33 apps/blog/admin.py:19
-#: apps/encyclopedia/admin.py:19 apps/products/admin.py:27
-#: apps/proverbs/admin.py:18
+#: applications/articles/admin.py:33 applications/blog/admin.py:19
+#: applications/encyclopedia/admin.py:19 applications/products/admin.py:27
+#: applications/proverbs/admin.py:18
 msgid "Date"
 msgstr "Datum"
 
-#: apps/articles/admin.py:35 apps/articles/models.py:27
-#: apps/articles/models.py:66 apps/proverbs/models.py:22
+#: applications/articles/admin.py:35 applications/articles/models.py:27
+#: applications/articles/models.py:66 applications/proverbs/models.py:22
 msgid "Author"
 msgstr "Autor"
 
-#: apps/articles/feeds.py:17
+#: applications/articles/feeds.py:17
 msgid "kogakure.de &ndash; Articles"
 msgstr "kogakure.de – Artikel"
 
-#: apps/articles/feeds.py:18
+#: applications/articles/feeds.py:18
 msgid "kogakure.de &ndash; Newest Articles"
 msgstr "Neuste Artikel"
 
-#: apps/articles/models.py:18
+#: applications/articles/models.py:18
 msgid "First Name"
 msgstr "Vorname"
 
-#: apps/articles/models.py:19
+#: applications/articles/models.py:19
 msgid "Last Name"
 msgstr "Nachname"
 
-#: apps/articles/models.py:20
+#: applications/articles/models.py:20
 msgid "Photo"
 msgstr "Foto"
 
-#: apps/articles/models.py:20
+#: applications/articles/models.py:20
 msgid "50 Pixel (square)"
 msgstr "50 Pixel (quadratisch)"
 
-#: apps/articles/models.py:21 apps/articles/models.py:45
-#: apps/products/models.py:19
+#: applications/articles/models.py:21 applications/articles/models.py:45
+#: applications/products/models.py:19
 msgid "URL"
 msgstr "URL"
 
-#: apps/articles/models.py:22
+#: applications/articles/models.py:22
 msgid "City"
 msgstr "Ort"
 
-#: apps/articles/models.py:23
+#: applications/articles/models.py:23
 msgid "Biography"
 msgstr "Biographie"
 
-#: apps/articles/models.py:23 apps/articles/models.py:70
-#: apps/articles/models.py:71 apps/blog/models.py:23 apps/blog/models.py:24
-#: apps/encyclopedia/models.py:25 apps/products/models.py:50
+#: applications/articles/models.py:23 applications/articles/models.py:70
+#: applications/articles/models.py:71 applications/blog/models.py:23
+#: applications/blog/models.py:24 applications/encyclopedia/models.py:25
+#: applications/products/models.py:50
 msgid "Use Markdown"
 msgstr "Markdown benutzen"
 
-#: apps/articles/models.py:28
+#: applications/articles/models.py:28
 msgid "Authors"
 msgstr "Autoren"
 
-#: apps/articles/models.py:49
+#: applications/articles/models.py:49
 msgid "Topic"
 msgstr "Thema"
 
-#: apps/articles/models.py:50
+#: applications/articles/models.py:50
 msgid "Topics"
 msgstr "Themen"
 
-#: apps/articles/models.py:62 apps/blog/models.py:16
-#: apps/encyclopedia/models.py:16 apps/products/models.py:40
-#: apps/proverbs/models.py:16
+#: applications/articles/models.py:62 applications/blog/models.py:16
+#: applications/encyclopedia/models.py:16 applications/products/models.py:40
+#: applications/proverbs/models.py:16
 msgid "Draft"
 msgstr "Entwurf"
 
-#: apps/articles/models.py:63 apps/articles/models.py:69
-#: apps/blog/models.py:17 apps/blog/models.py:22
-#: apps/encyclopedia/models.py:17 apps/encyclopedia/models.py:22
-#: apps/products/models.py:41 apps/products/models.py:46
-#: apps/proverbs/models.py:17 apps/proverbs/models.py:20
+#: applications/articles/models.py:63 applications/articles/models.py:69
+#: applications/blog/models.py:17 applications/blog/models.py:22
+#: applications/encyclopedia/models.py:17
+#: applications/encyclopedia/models.py:22 applications/products/models.py:41
+#: applications/products/models.py:46 applications/proverbs/models.py:17
+#: applications/proverbs/models.py:20
 msgid "Published"
 msgstr "Veröffentlicht"
 
-#: apps/articles/models.py:64 apps/blog/models.py:18
-#: apps/encyclopedia/models.py:18 apps/products/models.py:42
-#: apps/proverbs/models.py:18
+#: applications/articles/models.py:64 applications/blog/models.py:18
+#: applications/encyclopedia/models.py:18 applications/products/models.py:42
+#: applications/proverbs/models.py:18
 msgid "Closed"
 msgstr "Geschlossen"
 
-#: apps/articles/models.py:67 apps/blog/models.py:20
-#: apps/encyclopedia/models.py:20 apps/products/models.py:44
+#: applications/articles/models.py:67 applications/blog/models.py:20
+#: applications/encyclopedia/models.py:20 applications/products/models.py:44
 msgid "Title"
 msgstr "Titel"
 
-#: apps/articles/models.py:68 apps/blog/models.py:21
-#: apps/encyclopedia/models.py:21 apps/products/models.py:45
+#: applications/articles/models.py:68 applications/blog/models.py:21
+#: applications/encyclopedia/models.py:21 applications/products/models.py:45
 msgid "Slug"
 msgstr "URL"
 
-#: apps/articles/models.py:70 apps/blog/models.py:23
+#: applications/articles/models.py:70 applications/blog/models.py:23
 msgid "Excerpt"
 msgstr "Auszug"
 
-#: apps/articles/models.py:71 apps/articles/models.py:78
+#: applications/articles/models.py:71 applications/articles/models.py:78
 #: templates/articles/article_list.html:4
 #: templates/articles/article_list.html:10
 msgid "Article"
 msgstr "Artikel"
 
-#: apps/articles/models.py:72
+#: applications/articles/models.py:72
 msgid "Translator"
 msgstr "Übersetzer"
 
-#: apps/articles/models.py:73 apps/products/models.py:24
+#: applications/articles/models.py:73 applications/products/models.py:24
 msgid "Categories"
 msgstr "Kategorien"
 
-#: apps/articles/models.py:79 templates/inhalt.html:14
+#: applications/articles/models.py:79 templates/inhalt.html:14
 #: templates/search.html:18
 msgid "Articles"
 msgstr "Artikel"
 
-#: apps/blog/feeds.py:17
+#: applications/blog/feeds.py:17
 msgid "kogakure.de &ndash; Blog Entries"
 msgstr "kogakure.de – Kurzmeldungen"
 
-#: apps/blog/feeds.py:18
+#: applications/blog/feeds.py:18
 msgid "Newest Blog Entries"
 msgstr "Neuste Kurzmeldungen"
 
-#: apps/blog/models.py:24 templates/homepage.html:38 templates/search.html:29
-#: templates/blog/blog_detail.html:4 templates/blog/blog_list.html:4
+#: applications/blog/models.py:24 templates/homepage.html:38
+#: templates/search.html:29 templates/blog/blog_detail.html:4
+#: templates/blog/blog_list.html:4
 msgid "Blog"
 msgstr "Kurzmeldungen"
 
-#: apps/blog/models.py:29
+#: applications/blog/models.py:29
 msgid "Blog Entry"
 msgstr "Kurzmeldung"
 
-#: apps/blog/models.py:30
+#: applications/blog/models.py:30
 msgid "Blog Entries"
 msgstr "Kurzmeldungen"
 
-#: apps/contact/forms.py:12
+#: applications/contact/forms.py:12
 msgid "Name"
 msgstr "Name"
 
-#: apps/contact/forms.py:16
+#: applications/contact/forms.py:16
 msgid "Please type in your name."
 msgstr "Bitte gib deinen Namen ein."
 
-#: apps/contact/forms.py:17
+#: applications/contact/forms.py:17
 msgid "Your name is to long."
 msgstr "Dein Name ist zu lang."
 
-#: apps/contact/forms.py:18
+#: applications/contact/forms.py:18
 msgid "Your name is to short."
 msgstr "Dein Name ist zu kurz."
 
-#: apps/contact/forms.py:20
+#: applications/contact/forms.py:20
 msgid "Email"
 msgstr "E-Mail"
 
-#: apps/contact/forms.py:22
+#: applications/contact/forms.py:22
 msgid "Please type in your Email address."
 msgstr "Bitte gib deine E-Mail-Adresse ein."
 
-#: apps/contact/forms.py:23
+#: applications/contact/forms.py:23
 msgid "Please provide a correct Email address."
 msgstr "Bitte gib deine korrekte E-Mail-Adresse ein."
 
-#: apps/contact/forms.py:26
+#: applications/contact/forms.py:26
 msgid "Message"
 msgstr "Kurzmeldung"
 
-#: apps/contact/forms.py:28
+#: applications/contact/forms.py:28
 msgid "Please type in your message."
 msgstr "Bitte gib deinen Nachrichtentext ein."
 
-#: apps/contact/forms.py:35
+#: applications/contact/forms.py:35
 msgid "Please use more words for your message text."
 msgstr "Bitte gibt mehr Worte für deine Nachricht ein."
 
-#: apps/contact/forms.py:43
+#: applications/contact/forms.py:43
 #, python-format
 msgid "Illegal characters in your message text: %s"
 msgstr "Unerlaubte Worte in deiner Nachricht: %s"
 
-#: apps/contact/views.py:25
+#: applications/contact/views.py:25
 msgid "Contact form: domain.com"
 msgstr "Kontaktformular: kogakure.de"
 
-#: apps/encyclopedia/feeds.py:17
+#: applications/encyclopedia/feeds.py:17
 msgid "kogakure.de &ndash; Encyclopedia"
 msgstr "kogakure.de – Lexikon"
 
-#: apps/encyclopedia/feeds.py:18
+#: applications/encyclopedia/feeds.py:18
 msgid "Newest encyclopedia entries"
 msgstr "Neuste Lexikoneinträge"
 
-#: apps/encyclopedia/models.py:23
+#: applications/encyclopedia/models.py:23
 msgid "Alternative title"
 msgstr "Alternativer Titel"
 
-#: apps/encyclopedia/models.py:24
+#: applications/encyclopedia/models.py:24
 msgid "Japanese characters"
 msgstr "Japanische Zeichen"
 
-#: apps/encyclopedia/models.py:24
+#: applications/encyclopedia/models.py:24
 msgid "Kanji, Katakana or Hiragana"
 msgstr "Kanji, Katakana oder Hiragana"
 
-#: apps/encyclopedia/models.py:25
+#: applications/encyclopedia/models.py:25
 msgid "Explanation"
 msgstr "Erklärung"
 
-#: apps/encyclopedia/models.py:30
+#: applications/encyclopedia/models.py:30
 msgid "Encyclopedia entry"
 msgstr "Lexikoneintrag"
 
-#: apps/encyclopedia/models.py:31
+#: applications/encyclopedia/models.py:31
 msgid "Encyclopedia entries"
 msgstr "Lexikoneinträge"
 
-#: apps/products/feeds.py:17
+#: applications/products/feeds.py:17
 msgid "kogakure.de &ndash; Recommendations"
 msgstr "kogakure.de – Kaufempfehlungen"
 
-#: apps/products/feeds.py:18
+#: applications/products/feeds.py:18
 msgid "Newest Recommendations"
 msgstr "Neuste Kaufempfehlungen"
 
-#: apps/products/feeds.py:34
+#: applications/products/feeds.py:34
 #, python-format
 msgid "Recommendations: %s"
 msgstr "Kaufempfehlungen: %s"
 
-#: apps/products/feeds.py:37
+#: applications/products/feeds.py:37
 #, python-format
 msgid "Newest recommendations from \"%s\""
 msgstr "Neuste Produkte aus dem Bereich „%s“"
 
-#: apps/products/models.py:23 apps/products/models.py:49
+#: applications/products/models.py:23 applications/products/models.py:49
 msgid "Category"
 msgstr "Kategorie"
 
-#: apps/products/models.py:47
+#: applications/products/models.py:47
 msgid "Cover"
 msgstr "Cover"
 
-#: apps/products/models.py:47
+#: applications/products/models.py:47
 msgid "60 pixel width, auto height"
 msgstr "60 Pixel Breite, automatische Höhe"
 
-#: apps/products/models.py:48
+#: applications/products/models.py:48
 msgid "ASIN"
 msgstr "ASIN"
 
-#: apps/products/models.py:50 templates/includes/navigation.html:11
+#: applications/products/models.py:50 templates/includes/navigation.html:11
 msgid "Information"
 msgstr "Informationen"
 
-#: apps/products/models.py:55 apps/products/models.py:56
+#: applications/products/models.py:55 applications/products/models.py:56
 #: templates/includes/navigation.html:8
 #: templates/products/products_detail.html:4
 #: templates/products/products_detail.html:10
@@ -283,23 +286,23 @@ msgstr "Informationen"
 msgid "Recommendations"
 msgstr "Kaufempfehlungen"
 
-#: apps/proverbs/feeds.py:17
+#: applications/proverbs/feeds.py:17
 msgid "kogakure.de &ndash; Proverbs"
 msgstr "kogakure.de – Sprüche"
 
-#: apps/proverbs/feeds.py:18
+#: applications/proverbs/feeds.py:18
 msgid "Newest Proverbs"
 msgstr "Neuste Sprüche"
 
-#: apps/proverbs/models.py:21 apps/proverbs/models.py:27
+#: applications/proverbs/models.py:21 applications/proverbs/models.py:27
 msgid "Proverb"
 msgstr "Spruch"
 
-#: apps/proverbs/models.py:21
+#: applications/proverbs/models.py:21
 msgid "Use Markdown, with quotes"
 msgstr "Markdown benutzen, mit Anführungszeichen"
 
-#: apps/proverbs/models.py:28 templates/search.html:51
+#: applications/proverbs/models.py:28 templates/search.html:51
 #: templates/includes/navigation.html:10
 #: templates/proverbs/proverb_detail.html:4
 #: templates/proverbs/proverb_detail.html:10

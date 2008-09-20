@@ -8,7 +8,7 @@
 from django.template import Library, Node
 from django.conf import settings
 from django.utils.safestring import mark_safe
-from kogakure.lib.markdown import markdown
+from lib.markdown import markdown
 
 register = Library()
 

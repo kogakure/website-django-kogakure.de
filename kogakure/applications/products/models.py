@@ -8,13 +8,13 @@
 import datetime
 import urlparse
 from django.conf import settings
-from kogakure.lib.templatetags.thumbnail import thumbnail
 from django.db import models
 from django.db.models import permalink
 from django.utils.translation import ugettext_lazy as _
+from lib.templatetags.thumbnail import thumbnail
 
 class Category(models.Model):
-    '''Category of a Product (Book, Movie, &hellip;)'''
+    '''Category of a Product (Book, Movie, …)'''
     name = models.CharField(max_length=100, null=False, blank=False)
     slug = models.SlugField(_(u'URL'), unique=True, null=False, blank=False)
     

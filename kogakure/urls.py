@@ -12,13 +12,13 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 from django.views.generic.simple import direct_to_template, redirect_to
 from django.views.generic.list_detail import object_detail, object_list
-from kogakure.apps.articles.models import *
-from kogakure.lib.utils import cache_status
+from articles.models import *
+from lib.utils import cache_status
 
-from kogakure.sitemaps import StaticFileSitemap
-from kogakure.apps.articles.sitemaps import ArticlesMap
-from kogakure.apps.blog.sitemaps import BlogMap
-from kogakure.apps.encyclopedia.sitemaps import EncylopediaMap
+from sitemaps import StaticFileSitemap
+from articles.sitemaps import ArticlesMap
+from blog.sitemaps import BlogMap
+from encyclopedia.sitemaps import EncylopediaMap
 
 admin.autodiscover()
 
@@ -58,15 +58,15 @@ sitemaps = {
 }
 
 urlpatterns = patterns('',
-    (r'^artikel/', include('kogakure.apps.articles.urls')),
-    (r'^kurzmeldungen/', include('kogakure.apps.blog.urls')),
-    (r'^sprueche/', include('kogakure.apps.proverbs.urls')),
-    (r'^kaufempfehlungen/', include('kogakure.apps.products.urls')),
-    (r'^lexikon/', include('kogakure.apps.encyclopedia.urls')),
-    (r'^suche/$', 'kogakure.apps.search.views.search'),
+    (r'^artikel/', include('articles.urls')),
+    (r'^kurzmeldungen/', include('blog.urls')),
+    (r'^sprueche/', include('proverbs.urls')),
+    (r'^kaufempfehlungen/', include('products.urls')),
+    (r'^lexikon/', include('encyclopedia.urls')),
+    (r'^suche/$', 'search.views.search'),
     url(r'^inhalt/', object_list, dict(inhalt_dict), name='inhaltsverzeichnis'),
-    url(r'^themen/(?P<category_slug>[-\w]+)/$', 'kogakure.apps.articles.views.category', name='thema'),
-    url(r'^kontakt/', 'kogakure.apps.contact.views.contact', name='kontakt'),
+    url(r'^themen/(?P<category_slug>[-\w]+)/$', 'articles.views.category', name='thema'),
+    url(r'^kontakt/', 'contact.views.contact', name='kontakt'),
     # Admin
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/(.*)', admin.site.root),

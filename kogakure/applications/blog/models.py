@@ -37,4 +37,3 @@ class Entry(models.Model):
     @permalink
     def get_absolute_url(self):
         return ('kurzmeldungen', (), { 'slug': self.slug })
-    

@@ -8,7 +8,7 @@
 import datetime
 from django.views.decorators.cache import cache_page
 from django.views.generic.list_detail import object_list, object_detail
-from kogakure.apps.products.models import *
+from models import *
 
 @cache_page(60 * 60)
 def generic_wrapper_list(request, *args, **kwargs):

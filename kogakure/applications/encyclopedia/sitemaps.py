@@ -7,9 +7,9 @@
 
 import datetime
 from django.contrib.sitemaps import Sitemap
-from kogakure.apps.encyclopedia.models import Entry
+from models import Entry
 
 class EncylopediaMap(Sitemap):
-    priority = '0.7'
+    priority = '0.5'
     def items(self):
         return Entry.objects.filter(status='P', pub_date__lte=datetime.datetime.now())

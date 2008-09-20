@@ -7,7 +7,7 @@
 
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from kogakure.apps.encyclopedia.models import Entry
+from models import Entry
 
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('title', 'japanese', 'explanation', 'status', 'pub_date',)
@@ -17,10 +17,9 @@ class EntryAdmin(admin.ModelAdmin):
     radio_fields = {'status': admin.HORIZONTAL}
     fieldsets = [
         (_(u'Date'), {'fields': ['pub_date'], 
-                       'classes': ['wide']}),
-        (None,        {'fields': ['status', 'title', 'title_alt', 'slug', 'japanese', 'explanation'],
-                       'classes': ['wide']}),
+                      'classes': ['wide']}),
+        (None, {'fields': ['status', 'title', 'title_alt', 'slug', 'japanese', 'explanation'],
+                'classes': ['wide']}),
     ]
 
 admin.site.register(Entry, EntryAdmin)
-    

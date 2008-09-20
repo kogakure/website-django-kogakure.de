@@ -7,7 +7,7 @@
 
 import datetime
 from django.contrib.sitemaps import Sitemap
-from kogakure.apps.blog.models import Entry
+from models import Entry
 
 class BlogMap(Sitemap):
     priority = '0.5'

@@ -7,7 +7,7 @@
 
 import datetime
 from django.conf.urls.defaults import *
-from kogakure.apps.proverbs.feeds import LatestProverbs
+from feeds import LatestProverbs
 
 proverb_dict = {
     'template_object_name': 'entry',
@@ -22,7 +22,7 @@ feeds = {
     'neuste': LatestProverbs
 }
 
-urlpatterns = patterns('kogakure.apps.proverbs.views',
+urlpatterns = patterns('proverbs.views',
     # Proverbs List
     url(r'^$', 'generic_wrapper_list', dict(proverb_dict), name='sprueche_liste'),
     # Proverbs Detail

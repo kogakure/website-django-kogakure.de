@@ -7,7 +7,7 @@
 
 import datetime
 from django.conf.urls.defaults import *
-from kogakure.apps.products.feeds import LatestProducts, LatestProductsByProduct
+from feeds import LatestProducts, LatestProductsByProduct
 
 products_dict = {
     'template_object_name': 'product',
@@ -25,7 +25,7 @@ feeds = {
     'produkt': LatestProductsByProduct
 }
 
-urlpatterns = patterns('kogakure.apps.products.views',
+urlpatterns = patterns('products.views',
     # Product Recommendations List
     url(r'^$', 'generic_wrapper_list', dict(products_dict), name='kaufempfehlungen_liste'),
     # Product Recommendations Detail

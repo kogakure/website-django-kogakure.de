@@ -8,10 +8,10 @@
 import datetime
 from django.db.models import Q
 from django.shortcuts import render_to_response
-from kogakure.apps.articles.models import Entry as Article_Entries
-from kogakure.apps.blog.models import Entry as Blog_Entries
-from kogakure.apps.encyclopedia.models import Entry as Encyclopedia_Entries
-from kogakure.apps.proverbs.models import Entry as Proverb_Entries
+from articles.models import Entry as Article_Entries
+from blog.models import Entry as Blog_Entries
+from encyclopedia.models import Entry as Encyclopedia_Entries
+from proverbs.models import Entry as Proverb_Entries
 
 from django.template import RequestContext
 

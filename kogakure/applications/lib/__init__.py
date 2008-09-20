@@ -8,6 +8,6 @@
 # Make Templatetags and Filters available to all templates
 from django.template import add_to_builtins
 
-add_to_builtins('kogakure.lib.templatetags.get_all_tag')
-add_to_builtins('kogakure.lib.templatetags.get_stat_tag')
-add_to_builtins('kogakure.lib.templatetags.smarttext_filter')
+add_to_builtins('lib.templatetags.get_all_tag')
+add_to_builtins('lib.templatetags.get_stat_tag')
+add_to_builtins('lib.templatetags.smarttext_filter')

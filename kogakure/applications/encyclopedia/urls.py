@@ -7,7 +7,7 @@
 
 import datetime
 from django.conf.urls.defaults import *
-from kogakure.apps.encyclopedia.feeds import LatestEncyclopedia
+from feeds import LatestEncyclopedia
 
 encyclopedia_dict = {
     'template_object_name': 'entry',
@@ -24,7 +24,7 @@ feeds = {
     'neuste': LatestEncyclopedia
 }
 
-urlpatterns = patterns('kogakure.apps.encyclopedia.views',
+urlpatterns = patterns('encyclopedia.views',
     
     # Encyclopedia List
     url(r'^$', 'generic_wrapper_list', dict(encyclopedia_dict), name='lexikon_liste'),

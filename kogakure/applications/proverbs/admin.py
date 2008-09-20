@@ -7,7 +7,7 @@
 
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from kogakure.apps.proverbs.models import Entry
+from models import Entry
 
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('body', 'status', 'pub_date',)
@@ -17,8 +17,8 @@ class EntryAdmin(admin.ModelAdmin):
     fieldsets = [
         (_(u'Date'), {'fields': ['pub_date'],
                       'classes': ['wide']}),
-        (None,       {'fields': ['status', 'body', 'author'],
-                      'classes': ['wide']}),
+        (None, {'fields': ['status', 'body', 'author'],
+                'classes': ['wide']}),
     ]
 
 admin.site.register(Entry, EntryAdmin)

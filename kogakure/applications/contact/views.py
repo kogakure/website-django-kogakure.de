@@ -9,8 +9,8 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.core.mail import send_mail
-from kogakure.apps.contact.forms import ContactForm
 from django.utils.translation import ugettext_lazy as _
+from forms import ContactForm
 
 def contact(request):
     if request.method == 'POST':

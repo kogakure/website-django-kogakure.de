@@ -7,8 +7,8 @@
 
 import datetime
 from django.contrib.syndication.feeds import Feed
-from kogakure.apps.blog.models import Entry
 from django.utils.translation import ugettext_lazy as _
+from models import Entry
 
 class LatestBlog(Feed):
     title_template = 'feeds/title.html'
