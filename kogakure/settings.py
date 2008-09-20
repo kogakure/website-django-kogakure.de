@@ -5,11 +5,13 @@
 # Licensed under the GNU General Public License, version 3.
 # http://www.gnu.org/copyleft/gpl.txt
 
-import os
+import os.path
+import sys
 import platform
 
 LOCAL_DEVELOPMENT = ('webXX.webfaction.com' not in platform.node())
-PROJECT_ROOT = os.path.dirname(__file__)
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'applications'))
 
 ADMINS = (('Max Mustermann', 'max@mustermann.de'),)
 MANAGERS = ADMINS
@@ -94,14 +96,23 @@ FIXTURE_DIRS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'kogakure.context_processors.media_url',
-    'kogakure.context_processors.web_url',
-    'kogakure.context_processors.django_version',
+    'lib.context_processors.media_url',
+    'lib.context_processors.web_url',
+    'lib.context_processors.django_version',
     'django.core.context_processors.auth',
     'django.core.context_processors.request',
 )
 
 INSTALLED_APPS = (
+    #kogakure
+    'lib',
+    'articles',
+    'blog',
+    'encyclopedia',
+    'products',
+    'proverbs',
+
+    # Django Core
     'django.contrib.auth',
     'django.contrib.markup',
     'django.contrib.contenttypes',
@@ -112,12 +123,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.sitemaps',
-    'kogakure.lib',
-    'kogakure.apps.articles',
-    'kogakure.apps.blog',
-    'kogakure.apps.encyclopedia',
-    'kogakure.apps.products',
-    'kogakure.apps.proverbs',
 )
 
 # Local settings

@@ -7,10 +7,9 @@
 
 import datetime
 from django.contrib.sitemaps import Sitemap
-from kogakure.apps.articles.models import Entry
+from models import Entry
 
 class ArticlesMap(Sitemap):
-    priority = '1.0'
+    priority = '0.5'
     def items(self):
         return Entry.objects.filter(status='P', pub_date__lte=datetime.datetime.now())
-    

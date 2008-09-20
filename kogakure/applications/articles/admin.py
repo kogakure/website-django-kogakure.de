@@ -7,10 +7,10 @@
 
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from kogakure.apps.articles.models import Author, Category, Entry
+from models import Author, Category, Entry
 
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('preview_image_url', 'last_name', 'first_name',)
+    list_display = ( 'preview_image_url', 'last_name', 'first_name',)
 
 admin.site.register(Author, AuthorAdmin)
 
@@ -31,12 +31,11 @@ class EntryAdmin(admin.ModelAdmin):
     filter_horizontal = ('categories',)
     fieldsets = [
         (_(u'Date'), {'fields': ['pub_date'], 
-                       'classes': ['wide']}),
+                      'classes': ['wide']}),
         (_(u'Author'), {'fields': ['author', 'translators'], 
-                       'classes': ['wide collapse']}),
-        (None,        {'fields': ['status', 'title', 'slug', 'summary', 'body', 'categories'], 
-                       'classes': ['wide']}),
+                        'classes': ['wide collapse']}),
+        (None, {'fields': ['status', 'title', 'slug', 'summary', 'body', 'categories'], 
+                'classes': ['wide']}),
     ]
 
 admin.site.register(Entry, EntryAdmin)
-    

@@ -7,7 +7,7 @@
 
 import datetime
 from django.conf.urls.defaults import *
-from kogakure.apps.articles.feeds import LatestArticles
+from feeds import LatestArticles
 
 article_dict = {
     'template_object_name': 'entry',
@@ -25,7 +25,7 @@ feeds = {
     'neuste': LatestArticles,
 }
 
-urlpatterns = patterns('kogakure.apps.articles.views',
+urlpatterns = patterns('articles.views',
     # Article Pagination
     (r'^seite-(?P<page>[0-9]+)/$', 'generic_wrapper_list', dict(article_dict)),
     # Article List

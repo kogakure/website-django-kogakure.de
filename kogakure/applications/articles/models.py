@@ -8,7 +8,7 @@
 import datetime
 import urlparse
 from django.conf import settings
-from kogakure.lib.templatetags.thumbnail import thumbnail
+from lib.templatetags.thumbnail import thumbnail
 from django.db import models
 from django.db.models import permalink
 from django.utils.translation import ugettext_lazy as _
@@ -79,7 +79,7 @@ class Entry(models.Model):
         verbose_name_plural = _(u'Articles')
         ordering = ('-pub_date',)
         get_latest_by = 'pub_date'
-        
+    
     def __unicode__(self):
         return self.title
     
@@ -92,4 +92,3 @@ class Entry(models.Model):
 
     def get_previous_article(self):
         return self.get_previous_by_pub_date(pub_date__lte=datetime.datetime.now(), status='P')
-        
