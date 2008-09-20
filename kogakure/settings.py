@@ -104,7 +104,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 INSTALLED_APPS = (
-    #kogakure
+    # kogakure
     'lib',
     'articles',
     'blog',
