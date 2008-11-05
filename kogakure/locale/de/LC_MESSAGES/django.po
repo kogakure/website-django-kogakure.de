@@ -596,7 +596,7 @@ msgstr "Ihre Suche nach „<em>%(q)s</em>“ lieferte folgende Ergebnisse"
 #: templates/encyclopedia/encyclopedia_list.html:10
 #: templates/includes/navigation.html:9
 msgid "Encyclopedia"
-msgstr "Lexikoneintrag"
+msgstr "Lexikon"
 
 #: templates/search.html:66
 #, python-format
