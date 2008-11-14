@@ -52,7 +52,7 @@ in settings.py. To start the server do:
 This starts the development server on [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 You can visit the website in your browser. To log into the admin interface
-point your browser to [http://127.0.0.1/admin/](http://127.0.0.1/admin/) and log in with the test user.
+point your browser to [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) and log in with the test user.
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
