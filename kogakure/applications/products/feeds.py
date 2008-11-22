@@ -7,6 +7,7 @@
 
 import datetime
 from django.contrib.syndication.feeds import Feed
+from django.core.exceptions import ObjectDoesNotExist
 from django.utils.translation import ugettext_lazy as _
 from models import Entry, Category
 
