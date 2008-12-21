@@ -10,6 +10,7 @@ import sys
 
 # Basic Settings
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+MEDIA_ROOT = '%s/media' % PROJECT_ROOT
 sys.path.insert(0, os.path.join(PROJECT_ROOT, 'applications'))
 
 # Debug Settings
