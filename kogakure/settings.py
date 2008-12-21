@@ -80,7 +80,7 @@ if not hasattr(globals(), 'SECRET_KEY'):
 
 # Import Local settings
 try:
-    from local_settings import *
+    from settings_local import *
 except ImportError:
     try:
         from mod_python import apache
