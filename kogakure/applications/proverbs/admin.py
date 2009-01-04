@@ -10,9 +10,9 @@ from django.utils.translation import ugettext_lazy as _
 from models import Entry
 
 class EntryAdmin(admin.ModelAdmin):
-    list_display = ('body', 'status', 'pub_date',)
+    list_display = ('body', 'author', 'status', 'pub_date',)
     list_filter = ('pub_date',)
-    search_fields = ('body',)
+    search_fields = ('body', 'author',)
     radio_fields = {'status': admin.HORIZONTAL}
     fieldsets = [
         (_(u'Date'), {'fields': ['pub_date'],
