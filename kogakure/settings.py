@@ -10,7 +10,8 @@ import sys
 
 # Basic Settings
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-MEDIA_ROOT = '%s/media' % PROJECT_ROOT
+PROJECT_NAME = os.path.split(PROJECT_ROOT)[-1]
+MEDIA_ROOT = '%s/media/' % PROJECT_ROOT
 sys.path.insert(0, os.path.join(PROJECT_ROOT, 'applications'))
 
 # Debug Settings
@@ -25,7 +26,7 @@ DEFAULT_CHARSET = 'utf-8'
 
 # Site Settings
 SITE_ID = 1
-ROOT_URLCONF = 'kogakure.urls'
+ROOT_URLCONF = '%s.urls' % PROJECT_NAME
 APPEND_SLASH = False
 REMOVE_WWW = False
 
