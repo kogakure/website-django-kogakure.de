@@ -69,7 +69,7 @@ urlpatterns = patterns('',
     url(r'^kontakt/', 'contact.views.contact', name='kontakt'),
     # Admin
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^admin/(.*)', admin.site.root),
+    (r'^admin/', include(admin.site.urls)),
     # Homepage
     (r'^$', direct_to_template, {'template': 'homepage.html'}),
     # Cache Status
