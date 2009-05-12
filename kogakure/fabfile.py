@@ -3,7 +3,7 @@
 
 # This is a deployment script for "Fabric", a python-based tool like
 # Capistrano. You can get it at http://www.nongnu.org/fab/
-# Change the values in set() and start the command with "fab", e.g.
+# Change the values in with config.xyz and start the command with "fab", e.g.
 # fab restart_server
 
 config.fab_hosts = ['hostname.com']
