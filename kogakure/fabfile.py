@@ -6,20 +6,17 @@
 # Change the values in set() and start the command with "fab", e.g.
 # fab restart_server
 
-set(
-    fab_hosts = ['hostname.com'],
-    fab_user = 'username',
-    server_path = '/path/to/bin',
-    project_path = '/path/to/django/project/root',
-    memcached_ip = '127.0.0.1', # IP of memcached
-    memcached_port = '1234', # Port of memcached
-    memcached_size = '20', # in MByte
-)
+config.fab_hosts = ['hostname.com']
+config.server_path = '/path/to/bin'
+config.project_path = '/path/to/django/project/root'
+config.memcached_ip = '127.0.0.1' # IP of memcached
+config.memcached_port = '1234' # Port of memcached
+config.memcached_size = '20' # in MByte
 
 def deploy():
     "Push local changes to server, pull changes on server, restart server"
     local('git push;', fail='warn')
-    run('cd $(project_path)/; git pull', fail='warn')
+    run('cd $(project_path)/; git pull; delpyc', fail='warn')
     restart_server()
     
 def stop_server():
