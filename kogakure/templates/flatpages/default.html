@@ -8,7 +8,7 @@
 
 {% block content %}
 
-    {% cache 3600 flatpage_content %}
+    {% cache 3600 content flatpage.pk %}
 
         <h1>{{ flatpage.title }}</h1>
 
@@ -17,3 +17,4 @@
     {% endcache %}
     
 {% endblock %}
+
