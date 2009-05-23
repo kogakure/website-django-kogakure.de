@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 
 {% block page_title %}{% trans "Recommendations" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
@@ -7,18 +8,22 @@
 
 {% block content %}
 
-    <h1>{% trans "Recommendations" %}</h1>
-    {% get_stat products.Entry as products_num %}
-    <p>{% blocktrans count products_num as counter %}On this site I mention <em>{{ counter }}</em> Recommentdation{% plural %}On this site I mention <em>{{ counter }}</em> Recommentdations{% endblocktrans %} {% trans "from books and movies with the topic of Ninja, Samurai, Bujutsu and Taoism, which I would recommend. Some products are duplicated as of multiple languages. I know all articles on this page and would never recommend unknown products!" %}</p>
-    <p>{% trans "A mouseclick on the link will lead you to the product page at" %} <a href="http://www.amazon.de/exec/obidos/redirect?link_code=ur2&amp;camp=1638&amp;tag=kogakurede-21&amp;creative=6742&amp;path=tg%2Fbrowse%2F-%2F301128%3Fsite-redirect%3Dde">Amazon.de</a>.</p>
+    {% cache 3600 product_entry_list %}
+    
+        <h1>{% trans "Recommendations" %}</h1>
+        {% get_stat products.Entry as products_num %}
+        <p>{% blocktrans count products_num as counter %}On this site I mention <em>{{ counter }}</em> Recommentdation{% plural %}On this site I mention <em>{{ counter }}</em> Recommentdations{% endblocktrans %} {% trans "from books and movies with the topic of Ninja, Samurai, Bujutsu and Taoism, which I would recommend. Some products are duplicated as of multiple languages. I know all articles on this page and would never recommend unknown products!" %}</p>
+        <p>{% trans "A mouseclick on the link will lead you to the product page at" %} <a href="http://www.amazon.de/exec/obidos/redirect?link_code=ur2&amp;camp=1638&amp;tag=kogakurede-21&amp;creative=6742&amp;path=tg%2Fbrowse%2F-%2F301128%3Fsite-redirect%3Dde">Amazon.de</a>.</p>
 
-    {% if product_list %}
-        <ul class="tip">
-        {% for product in product_list %}
-            {% ifchanged %}<li class="produkt"><h2>{{ product.category }} <a href="{{ product.category.get_feed_url }}"><img class="noborder" src="{{ MEDIA_URL }}css/img/rss.png" width="16" height="16" alt="Feed"/></a></h2></li>{% endifchanged %}
-            <li class="recommendation"><a href="http://www.amazon.de/gp/product/{{ product.asin }}?ie=UTF8&amp;tag=kogakurede-21&amp;linkCode=as2&amp;camp=1638&amp;creative=6742&amp;creativeASIN={{ product.asin }}"><img src="{{ MEDIA_URL }}{{ product.cover }}" alt="{{ product.title }}" />{{ product.title }}</a>{{ product.body|smarttext }}</li>
-        {% endfor %}
-        </ul>
-    {% endif %}
+        {% if product_list %}
+            <ul class="tip">
+            {% for product in product_list %}
+                {% ifchanged %}<li class="produkt"><h2>{{ product.category }} <a href="{{ product.category.get_feed_url }}"><img class="noborder" src="{{ MEDIA_URL }}css/img/rss.png" width="16" height="16" alt="Feed"/></a></h2></li>{% endifchanged %}
+                <li class="recommendation"><a href="http://www.amazon.de/gp/product/{{ product.asin }}?ie=UTF8&amp;tag=kogakurede-21&amp;linkCode=as2&amp;camp=1638&amp;creative=6742&amp;creativeASIN={{ product.asin }}"><img src="{{ MEDIA_URL }}{{ product.cover }}" alt="{{ product.title }}" />{{ product.title }}</a>{{ product.body|smarttext }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+    {% endcache %}
 
 {% endblock %}

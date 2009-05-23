@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 
 {% block page_title %}{% trans "Contents" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
@@ -7,35 +8,41 @@
 
 {% block content %}
 
-    <h1>{% trans "Contents" %}</h1>
+    {% cache 3600 inhalt %}
     
-    <div class="half_col">
+        <h1>{% trans "Contents" %}</h1>
+    
+        <div class="half_col">
 
-        <h2>{% trans "Articles" %}</h2>
+            <h2>{% trans "Articles" %}</h2>
         
-        {% if entry_list %}
-            <ul>
-            {% for entry in entry_list|dictsort:"title" %}
-                <li><a href="{{ entry.get_absolute_url }}" title="Link zu '{{ entry.title }}'">{{ entry.title }}</a></li>
-            {% endfor %}
-            </ul>
-        {% endif %}
+            {% if entry_list %}
+                <ul>
+                {% for entry in entry_list|dictsort:"title" %}
+                    <li><a href="{{ entry.get_absolute_url }}" title="Link zu '{{ entry.title }}'">{{ entry.title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
         
-    </div>
+        </div>
 
-    <div class="half_col">
+        <div class="half_col">
 
-        <h2>{% blocktrans count category_list|length as counter %}The Topic{% plural %}The Topics{% endblocktrans %}</h2>
+            <h2>{% blocktrans count category_list|length as counter %}The Topic{% plural %}The Topics{% endblocktrans %}</h2>
 
-        {% if category_list %}
-            <ul id="nav_categories" class="nav_categories">
-            {% for category in category_list|dictsort:"name" %}
-                <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
-            {% endfor %}
-            </ul>
-        {% endif %}
+            {% if category_list %}
+                <ul id="nav_categories" class="nav_categories">
+                {% for category in category_list|dictsort:"name" %}
+                    <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
 
-        <h2>{% trans "Statistics" %}</h2>
+            <h2>{% trans "Statistics" %}</h2>
+    
+    {% endcache %}
+
+    {% cache 3600 inhalt_stats %}
 
         <ul>
             {% get_stat articles.Entry as articles_num %}
@@ -50,7 +57,9 @@
             <li>{% blocktrans count products_num as counter %}Recommendation: {{ counter }}{% plural %}Recommendations: {{ counter }}{% endblocktrans %}</li>
             
         </ul>
-
+    
+    {% endcache %}
+    
     </div>
 
 {% endblock %}

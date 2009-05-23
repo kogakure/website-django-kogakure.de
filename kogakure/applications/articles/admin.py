@@ -39,3 +39,4 @@ class EntryAdmin(admin.ModelAdmin):
     ]
 
 admin.site.register(Entry, EntryAdmin)
+    

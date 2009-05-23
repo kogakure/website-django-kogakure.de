@@ -4,3 +4,10 @@
 # (ɔ) Copyleft 2007-2008 Stefan Imhoff
 # Licensed under the GNU General Public License, version 3.
 # http://www.gnu.org/copyleft/gpl.txt
+
+from django.db.models.signals import post_save, post_delete
+from encyclopedia.models import Entry
+from encyclopedia.signals import purge_cache
+
+post_save.connect(purge_cache, sender=Entry)
+post_delete.connect(purge_cache, sender=Entry)

@@ -30,4 +30,4 @@ class EntryAdmin(admin.ModelAdmin):
                 'classes': ['wide']}),
     ]
 
-admin.site.register(Entry, EntryAdmin)
+admin.site.register(Entry, EntryAdmin)    

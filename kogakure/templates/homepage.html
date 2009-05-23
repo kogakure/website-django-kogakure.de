@@ -5,10 +5,16 @@
 {% block content %}
 
     <div id="random_articles">
-        <h1 id="ninpoikkan">忍法一貫<span class="ftnote"><a class="noborder" href="#footnote">*</a></span></h1>
-        {% get_stat articles.Entry as articles_num %}
-        <p>{% blocktrans %}This website contains <em>{{ articles_num }}</em> articles, here you can see four random articles{% endblocktrans %}:</p>
-        <hr />
+
+        {% cache 3600 homepage_count %}
+        
+            <h1 id="ninpoikkan">忍法一貫<span class="ftnote"><a class="noborder" href="#footnote">*</a></span></h1>
+            {% get_stat articles.Entry as articles_num %}
+            <p>{% blocktrans %}This website contains <em>{{ articles_num }}</em> articles, here you can see four random articles{% endblocktrans %}:</p>
+            <hr />
+        
+        {% endcache %}
+        
         {% get_all articles.Entry 4 as random_articles order_by ? %}
         {% for article in random_articles %}
         <div class="block">
@@ -22,18 +28,22 @@
         <hr />
     </div>
     <div id="homepage_welcome">
+
         {% cache 3600 welcome_text %}
-        <div class="block">
-            <h2><a href="{{ WEB_URL }}info/">{% trans "About this page &hellip;" %}</a></h2>
-            <p>{% blocktrans %}This is <a href="{{ WEB_URL }}info/">kogakure.de</a>. Since 1999 you can read articles, text collections and translations on the topics around the japanese shadow warriors, spies and warriors &ndash; the Ninja &ndash; and their martial art Ninjutsu.{% endblocktrans %}</p>
-        </div>
-        <hr />
-        <div class="block">
-            <h2><a href="{% url artikel "ninjutsu" %}">{% trans "First visit?" %}</a></h2>
-            <p>{% trans "Is this your first visit on this page?" %} {% trans "If that&rsquo;s the case you should read the article" %} „<a href="{% url artikel "ninjutsu" %}">Ninjutsu</a>“ {% trans "to understand what&rsquo;s all about this page." %}</p>
-        </div>
-        <hr />
+
+            <div class="block">
+                <h2><a href="{{ WEB_URL }}info/">{% trans "About this page &hellip;" %}</a></h2>
+                <p>{% blocktrans %}This is <a href="{{ WEB_URL }}info/">kogakure.de</a>. Since 1999 you can read articles, text collections and translations on the topics around the japanese shadow warriors, spies and warriors &ndash; the Ninja &ndash; and their martial art Ninjutsu.{% endblocktrans %}</p>
+            </div>
+            <hr />
+            <div class="block">
+                <h2><a href="{% url artikel "ninjutsu" %}">{% trans "First visit?" %}</a></h2>
+                <p>{% trans "Is this your first visit on this page?" %} {% trans "If that&rsquo;s the case you should read the article" %} „<a href="{% url artikel "ninjutsu" %}">Ninjutsu</a>“ {% trans "to understand what&rsquo;s all about this page." %}</p>
+            </div>
+            <hr />
+
         {% endcache %}
+
         <div id="recent_blog" class="block">
             <h2><a href="{% url kurzmeldungen_liste %}">{% trans "Blog" %}</a></h2>
             {% get_all blog.Entry 1 as recent_blog_entry order_by -pub_date %}

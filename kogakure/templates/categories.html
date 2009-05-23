@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 
 {% block page_title %}{{ category.name }} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
@@ -7,19 +8,23 @@
 
 {% block content %}
 
-    <h1>{% blocktrans with category.name as category.name %}Articles on the topic '{{ category.name }}'{% endblocktrans %}</h1>
+    {% cache 3600 category_list %}
 
-    {% if entries %}
+        <h1>{% blocktrans with category.name as category.name %}Articles on the topic '{{ category.name }}'{% endblocktrans %}</h1>
+
+        {% if entries %}
     
-        {% for entry in entries %}
-            <div class="block">
-                <h2 class="titel"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2>
-                {{ entry.summary|smarttext }}
-            </div>
-        {% endfor %}
+            {% for entry in entries %}
+                <div class="block">
+                    <h2 class="titel"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2>
+                    {{ entry.summary|smarttext }}
+                </div>
+            {% endfor %}
     
-    {% else %}
-            <p>{% blocktrans with category.name as category.name %}Unfortunately there are no articles on the topic of '{{ category.name }}'{% endblocktrans %}.</p>
-    {% endif %}
+        {% else %}
+                <p>{% blocktrans with category.name as category.name %}Unfortunately there are no articles on the topic of '{{ category.name }}'{% endblocktrans %}.</p>
+        {% endif %}
+
+    {% endcache %}
 
 {% endblock %}

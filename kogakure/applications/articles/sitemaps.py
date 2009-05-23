@@ -13,3 +13,4 @@ class ArticlesMap(Sitemap):
     priority = '0.5'
     def items(self):
         return Entry.objects.filter(status='P', pub_date__lte=datetime.datetime.now())
+    

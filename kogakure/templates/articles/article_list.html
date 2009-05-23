@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 
 {% block page_title %}{% trans "Article" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
@@ -7,18 +8,22 @@
 
 {% block content %}
 
-    <h1>{% trans "Article" %}</h1>
+    {% cache 3600 article_entry_list %}
+    
+        <h1>{% trans "Article" %}</h1>
 
-    {% if entry_list %}
-        {% for entry in entry_list|dictsort:"pub_date" %}
-            <div class="block">
-                <h2 class="titel"><a href="{{ entry.get_absolute_url }}" title="{% blocktrans with entry.title as entry.title %}Link to '{{ entry.title }}'"{% endblocktrans %}">{{ entry.title }}</a></h2>
-                {{ entry.summary|smarttext }}
-            </div>
-            <hr />
-        {% endfor %}
-    {% endif %}
+        {% if entry_list %}
+            {% for entry in entry_list|dictsort:"pub_date" %}
+                <div class="block">
+                    <h2 class="titel"><a href="{{ entry.get_absolute_url }}" title="{% blocktrans with entry.title as entry.title %}Link to '{{ entry.title }}'{% endblocktrans %}">{{ entry.title }}</a></h2>
+                    {{ entry.summary|smarttext }}
+                </div>
+                <hr />
+            {% endfor %}
+        {% endif %}
 
-    {% include "includes/paginator.html" %}
+        {% include "includes/paginator.html" %}
+
+    {% endcache %}
     
 {% endblock %}

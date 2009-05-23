@@ -92,3 +92,4 @@ class Entry(models.Model):
 
     def get_previous_article(self):
         return self.get_previous_by_pub_date(pub_date__lte=datetime.datetime.now(), status='P')
+        

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 
 {% block page_title %}{% trans "Recommendations" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
@@ -7,15 +8,19 @@
 
 {% block content %}
 
-    <h1>{% trans "Recommendations" %}</h1>
+    {% cache 3600 product_entry entry.pk %}
+    
+        <h1>{% trans "Recommendations" %}</h1>
 
-    <div class="recommendation_detail">
-        <a href="http://www.amazon.de/gp/product/{{ item.asin }}?ie=UTF8&amp;tag=kogakurede-21&amp;linkCode=as2&amp;camp=1638&amp;creative=6742&amp;creativeASIN={{ entry.asin }}"><img class="links" src="{{ MEDIA_URL }}{{ entry.cover }}" alt="{{ entry.title }}" /></a>
-        <h3 class="recommendation">{{ entry.title }}</h3>
-        {{ entry.body|smarttext }}
-    </div>
+        <div class="recommendation_detail">
+            <a href="http://www.amazon.de/gp/product/{{ item.asin }}?ie=UTF8&amp;tag=kogakurede-21&amp;linkCode=as2&amp;camp=1638&amp;creative=6742&amp;creativeASIN={{ entry.asin }}"><img class="links" src="{{ MEDIA_URL }}{{ entry.cover }}" alt="{{ entry.title }}" /></a>
+            <h3 class="recommendation">{{ entry.title }}</h3>
+            {{ entry.body|smarttext }}
+        </div>
 
-    {% get_stat products.Entry as products_num %}
-    <p><a href="{% url kaufempfehlungen_liste %}">{% blocktrans count products_num as counter %}View the recommendation{% plural %}View all <em>{{ counter }}</em> recommendations{% endblocktrans %}.</a></p>
+        {% get_stat products.Entry as products_num %}
+        <p><a href="{% url kaufempfehlungen_liste %}">{% blocktrans count products_num as counter %}View the recommendation{% plural %}View all <em>{{ counter }}</em> recommendations{% endblocktrans %}.</a></p>
+
+    {% endcache %}
 
 {% endblock %}

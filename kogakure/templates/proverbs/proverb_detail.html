@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 
 {% block page_title %}{{ entry.title }} // {% trans "Proverbs" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
@@ -7,12 +8,18 @@
 
 {% block content %}
 
+    {% cache 3600 proverb_entry entry.pk %}
+    
         <h1>{% trans "Proverbs" %}</h1>
-        
+
         <blockquote>
             {{ entry.body|smarttext }}
         </blockquote>
         <cite class="sprueche">{{ entry.author }}</cite>
         {% get_stat proverbs.Entry as proverbs_num %}
         <p><a href="{% url sprueche_liste %}">{% blocktrans count proverbs_num as counter %}Read the proverb, quote or statement{% plural %}Read all <em>{{ counter }}</em> proverbs, quotes and statements{% endblocktrans %}.</a></p>
+
+    {% endcache %}
+
 {% endblock %}
+

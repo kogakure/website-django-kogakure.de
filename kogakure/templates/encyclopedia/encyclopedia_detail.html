@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 
 {% block page_title %}{% trans "Encyclopedia" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
@@ -7,16 +8,20 @@
 
 {% block content %}
 
-    <h1>{% trans "Encyclopedia" %}</h1>
+    {% cache 3600 encyclopedia_entry entry.pk %}
+    
+        <h1>{% trans "Encyclopedia" %}</h1>
 
-    <dl>
-        <dt class="deutsch">{{ entry.title }}</dt><dd class="japanisch">{{ entry.japanese }}</dd>
-        <dd class="beschreibung">
-            {{ entry.explanation|smarttext }}
-        </dd>
-    </dl>
+        <dl>
+            <dt class="deutsch">{{ entry.title }}</dt><dd class="japanisch">{{ entry.japanese }}</dd>
+            <dd class="beschreibung">
+                {{ entry.explanation|smarttext }}
+            </dd>
+        </dl>
 
-    {% get_stat encyclopedia.Entry as encyclopedia_num %}
-    <p><a href="{% url lexikon_liste %}">{% blocktrans count encyclopedia_num as counter %}Read one entry of the Encyclopedia.{% plural %}Read all <em>{{ counter }}</em> entries of the Encyclopedia.{% endblocktrans %}</a></p>
+        {% get_stat encyclopedia.Entry as encyclopedia_num %}
+        <p><a href="{% url lexikon_liste %}">{% blocktrans count encyclopedia_num as counter %}Read one entry of the Encyclopedia.{% plural %}Read all <em>{{ counter }}</em> entries of the Encyclopedia.{% endblocktrans %}</a></p>
+
+    {% endcache %}
     
 {% endblock %}

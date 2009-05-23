@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kogakure.de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-20 20:37+0200\n"
-"PO-Revision-Date: 2008-04-29 21:47+0100\n"
+"POT-Creation-Date: 2009-05-23 20:13+0200\n"
+"PO-Revision-Date: 2009-05-23 19:53+0200\n"
 "Last-Translator: Stefan Imhoff <stefan@imhoff.name>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgid "Date"
 msgstr "Datum"
 
 #: applications/articles/admin.py:35 applications/articles/models.py:27
-#: applications/articles/models.py:66 applications/proverbs/models.py:22
+#: applications/articles/models.py:66 applications/proverbs/models.py:24
 msgid "Author"
 msgstr "Autor"
 
@@ -84,7 +84,7 @@ msgstr "Themen"
 
 #: applications/articles/models.py:62 applications/blog/models.py:16
 #: applications/encyclopedia/models.py:16 applications/products/models.py:40
-#: applications/proverbs/models.py:16
+#: applications/proverbs/models.py:18
 msgid "Draft"
 msgstr "Entwurf"
 
@@ -92,14 +92,14 @@ msgstr "Entwurf"
 #: applications/blog/models.py:17 applications/blog/models.py:22
 #: applications/encyclopedia/models.py:17
 #: applications/encyclopedia/models.py:22 applications/products/models.py:41
-#: applications/products/models.py:46 applications/proverbs/models.py:17
-#: applications/proverbs/models.py:20
+#: applications/products/models.py:46 applications/proverbs/models.py:19
+#: applications/proverbs/models.py:22
 msgid "Published"
 msgstr "Veröffentlicht"
 
 #: applications/articles/models.py:64 applications/blog/models.py:18
 #: applications/encyclopedia/models.py:18 applications/products/models.py:42
-#: applications/proverbs/models.py:18
+#: applications/proverbs/models.py:20
 msgid "Closed"
 msgstr "Geschlossen"
 
@@ -118,8 +118,8 @@ msgid "Excerpt"
 msgstr "Auszug"
 
 #: applications/articles/models.py:71 applications/articles/models.py:78
-#: templates/articles/article_list.html:4
-#: templates/articles/article_list.html:10
+#: templates/articles/article_list.html:5
+#: templates/articles/article_list.html:13
 msgid "Article"
 msgstr "Artikel"
 
@@ -131,7 +131,7 @@ msgstr "Übersetzer"
 msgid "Categories"
 msgstr "Kategorien"
 
-#: applications/articles/models.py:79 templates/inhalt.html:14
+#: applications/articles/models.py:79 templates/inhalt.html:17
 #: templates/search.html:18
 msgid "Articles"
 msgstr "Artikel"
@@ -144,9 +144,9 @@ msgstr "kogakure.de – Kurzmeldungen"
 msgid "Newest Blog Entries"
 msgstr "Neuste Kurzmeldungen"
 
-#: applications/blog/models.py:24 templates/homepage.html:38
-#: templates/search.html:29 templates/blog/blog_detail.html:4
-#: templates/blog/blog_list.html:4
+#: applications/blog/models.py:24 templates/homepage.html:48
+#: templates/search.html:29 templates/blog/blog_detail.html:5
+#: templates/blog/blog_list.html:5 templates/blog/blog_list.html.py:13
 msgid "Blog"
 msgstr "Kurzmeldungen"
 
@@ -239,20 +239,20 @@ msgstr "Lexikoneintrag"
 msgid "Encyclopedia entries"
 msgstr "Lexikoneinträge"
 
-#: applications/products/feeds.py:17
+#: applications/products/feeds.py:18
 msgid "kogakure.de &ndash; Recommendations"
 msgstr "kogakure.de – Kaufempfehlungen"
 
-#: applications/products/feeds.py:18
+#: applications/products/feeds.py:19
 msgid "Newest Recommendations"
 msgstr "Neuste Kaufempfehlungen"
 
-#: applications/products/feeds.py:34
+#: applications/products/feeds.py:35
 #, python-format
 msgid "Recommendations: %s"
 msgstr "Kaufempfehlungen: %s"
 
-#: applications/products/feeds.py:37
+#: applications/products/feeds.py:38
 #, python-format
 msgid "Newest recommendations from \"%s\""
 msgstr "Neuste Produkte aus dem Bereich „%s“"
@@ -279,10 +279,10 @@ msgstr "Informationen"
 
 #: applications/products/models.py:55 applications/products/models.py:56
 #: templates/includes/navigation.html:8
-#: templates/products/products_detail.html:4
-#: templates/products/products_detail.html:10
-#: templates/products/products_list.html:4
-#: templates/products/products_list.html:10
+#: templates/products/products_detail.html:5
+#: templates/products/products_detail.html:13
+#: templates/products/products_list.html:5
+#: templates/products/products_list.html:13
 msgid "Recommendations"
 msgstr "Kaufempfehlungen"
 
@@ -294,20 +294,20 @@ msgstr "kogakure.de – Sprüche"
 msgid "Newest Proverbs"
 msgstr "Neuste Sprüche"
 
-#: applications/proverbs/models.py:21 applications/proverbs/models.py:27
+#: applications/proverbs/models.py:23 applications/proverbs/models.py:29
 msgid "Proverb"
 msgstr "Spruch"
 
-#: applications/proverbs/models.py:21
+#: applications/proverbs/models.py:23
 msgid "Use Markdown, with quotes"
 msgstr "Markdown benutzen, mit Anführungszeichen"
 
-#: applications/proverbs/models.py:28 templates/search.html:51
+#: applications/proverbs/models.py:30 templates/search.html:51
 #: templates/includes/navigation.html:10
-#: templates/proverbs/proverb_detail.html:4
-#: templates/proverbs/proverb_detail.html:10
-#: templates/proverbs/proverb_list.html:4
-#: templates/proverbs/proverb_list.html:10
+#: templates/proverbs/proverb_detail.html:5
+#: templates/proverbs/proverb_detail.html:13
+#: templates/proverbs/proverb_list.html:5
+#: templates/proverbs/proverb_list.html:13
 msgid "Proverbs"
 msgstr "Sprüche"
 
@@ -327,18 +327,18 @@ msgstr "Fehler 500"
 msgid "The Server reported an Error!"
 msgstr "Der Server hat einen Fehler gemeldet!"
 
-#: templates/base.html:8 templates/categories.html:4 templates/contact.html:4
-#: templates/inhalt.html:4 templates/search.html:4
-#: templates/articles/article_detail.html:4
-#: templates/articles/article_list.html:4 templates/blog/blog_detail.html:4
-#: templates/blog/blog_list.html:4
-#: templates/encyclopedia/encyclopedia_detail.html:4
-#: templates/encyclopedia/encyclopedia_list.html:4
+#: templates/base.html:8 templates/categories.html:5 templates/contact.html:4
+#: templates/inhalt.html:5 templates/search.html:4
+#: templates/articles/article_detail.html:5
+#: templates/articles/article_list.html:5 templates/blog/blog_detail.html:5
+#: templates/blog/blog_list.html:5
+#: templates/encyclopedia/encyclopedia_detail.html:5
+#: templates/encyclopedia/encyclopedia_list.html:5
 #: templates/flatpages/default.html:7
-#: templates/products/products_detail.html:4
-#: templates/products/products_list.html:4
-#: templates/proverbs/proverb_detail.html:4
-#: templates/proverbs/proverb_list.html:4
+#: templates/products/products_detail.html:5
+#: templates/products/products_list.html:5
+#: templates/proverbs/proverb_detail.html:5
+#: templates/proverbs/proverb_list.html:5
 #: templates/seo/googleeac4fc886a6f9f8d.html:4
 msgid "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts"
 msgstr "kogakure.de – Ninja, Ninjutsu und Kampfkunst"
@@ -384,17 +384,17 @@ msgstr "Impressum"
 msgid "Privacy"
 msgstr "Datenschutz"
 
-#: templates/categories.html:6
+#: templates/categories.html:7
 #, python-format
 msgid "Articles on the topic %(category.name)s"
 msgstr "Artikel zum Thema %(category.name)s"
 
-#: templates/categories.html:10
+#: templates/categories.html:13
 #, python-format
 msgid "Articles on the topic '%(category.name)s'"
 msgstr "Artikel zum Thema „%(category.name)s“"
 
-#: templates/categories.html:22
+#: templates/categories.html:25
 #, python-format
 msgid "Unfortunately there are no articles on the topic of '%(category.name)s'"
 msgstr "Leider gibt es keine Artikel zum Thema „%(category.name)s“"
@@ -473,7 +473,7 @@ msgstr "Kontaktdaten"
 msgid "* required"
 msgstr "* Plichtfelder"
 
-#: templates/homepage.html:10
+#: templates/homepage.html:13
 #, python-format
 msgid ""
 "This website contains <em>%(articles_num)s</em> articles, here you can see "
@@ -482,19 +482,19 @@ msgstr ""
 "Diese Website enthält <em>%(articles_num)s</em> Artikel, hier sind vier "
 "zufällig ausgewählte Artikel zu sehen"
 
-#: templates/homepage.html:19
+#: templates/homepage.html:25
 msgid "Read all articles&nbsp;&hellip;"
 msgstr "Alle Artikel lesen&nbsp;…"
 
-#: templates/homepage.html:21
+#: templates/homepage.html:27
 msgid "* Ninpo Ikkan (jap. 'Ninjutsu is the beginning and has now end.')"
 msgstr "* Ninpō Ikkan (jap. „Ninjutsu ist der Anfang und kennt kein Ende.“)"
 
-#: templates/homepage.html:27
+#: templates/homepage.html:35
 msgid "About this page &hellip;"
 msgstr "Über diese Seite …"
 
-#: templates/homepage.html:28
+#: templates/homepage.html:36
 #, python-format
 msgid ""
 "This is <a href=\"%(WEB_URL)sinfo/\">kogakure.de</a>. Since 1999 you can "
@@ -507,74 +507,74 @@ msgstr ""
 "japanischen Schattenkrieger, Spione und Krieger – die Ninja – und deren "
 "Kampfkunst Ninjutsu lesen."
 
-#: templates/homepage.html:32
+#: templates/homepage.html:40
 msgid "First visit?"
 msgstr "Neu hier?"
 
-#: templates/homepage.html:33
+#: templates/homepage.html:41
 msgid "Is this your first visit on this page?"
 msgstr "Zum ersten mal auf dieser Seite?"
 
-#: templates/homepage.html:33
+#: templates/homepage.html:41
 msgid "If that&rsquo;s the case you should read the article"
 msgstr "Dann ist es am besten mit dem Artikel"
 
-#: templates/homepage.html:33
+#: templates/homepage.html:41
 msgid "to understand what&rsquo;s all about this page."
 msgstr "zu starten, um zu verstehen, worum es hier geht."
 
-#: templates/homepage.html:46
+#: templates/homepage.html:56
 msgid "Read all blog entries&nbsp;&hellip;"
 msgstr "Alle Kurzmeldungen lesen&nbsp;…"
 
-#: templates/inhalt.html:4 templates/inhalt.html.py:10
+#: templates/inhalt.html:5 templates/inhalt.html.py:13
 #: templates/includes/navigation.html:7
 msgid "Contents"
 msgstr "Inhaltsverzeichnis"
 
-#: templates/inhalt.html:6
+#: templates/inhalt.html:7
 msgid "Contents of kogakure.de"
 msgstr "Inhaltsverzeichnis von kogakure.de"
 
-#: templates/inhalt.html:28
+#: templates/inhalt.html:31
 msgid "The Topic"
 msgid_plural "The Topics"
 msgstr[0] "Thema"
 msgstr[1] "Themen"
 
-#: templates/inhalt.html:38
+#: templates/inhalt.html:41
 msgid "Statistics"
 msgstr "Statistik"
 
-#: templates/inhalt.html:42
+#: templates/inhalt.html:49
 #, python-format
 msgid "Article: %(counter)s"
 msgid_plural "Articles: %(counter)s"
 msgstr[0] "Artikel: %(counter)s"
 msgstr[1] "Artikel: %(counter)s"
 
-#: templates/inhalt.html:44
+#: templates/inhalt.html:51
 #, python-format
 msgid "Blog entry: %(counter)s"
 msgid_plural "Blog entries: %(counter)s"
 msgstr[0] "Kurzmeldung: %(counter)s"
 msgstr[1] "Kurzmeldungen: %(counter)s"
 
-#: templates/inhalt.html:46
+#: templates/inhalt.html:53
 #, python-format
 msgid "Proverb: %(counter)s"
 msgid_plural "Proverbs: %(counter)s"
 msgstr[0] "Spruch: %(counter)s"
 msgstr[1] "Sprüche: %(counter)s"
 
-#: templates/inhalt.html:48
+#: templates/inhalt.html:55
 #, python-format
 msgid "Encyclopedia entry: %(counter)s"
 msgid_plural "Encyclopedia entries: %(counter)s"
 msgstr[0] "Lexikoneintrag: %(counter)s"
 msgstr[1] "Lexikoneinträge: %(counter)s"
 
-#: templates/inhalt.html:50
+#: templates/inhalt.html:57
 #, python-format
 msgid "Recommendation: %(counter)s"
 msgid_plural "Recommendations: %(counter)s"
@@ -590,10 +590,10 @@ msgstr "Suchergebnisse"
 msgid "Your search of \"<em>%(q)s</em>\" delivered following results"
 msgstr "Ihre Suche nach „<em>%(q)s</em>“ lieferte folgende Ergebnisse"
 
-#: templates/search.html:40 templates/encyclopedia/encyclopedia_detail.html:4
-#: templates/encyclopedia/encyclopedia_detail.html:10
-#: templates/encyclopedia/encyclopedia_list.html:4
-#: templates/encyclopedia/encyclopedia_list.html:10
+#: templates/search.html:40 templates/encyclopedia/encyclopedia_detail.html:5
+#: templates/encyclopedia/encyclopedia_detail.html:13
+#: templates/encyclopedia/encyclopedia_list.html:5
+#: templates/encyclopedia/encyclopedia_list.html:13
 #: templates/includes/navigation.html:9
 msgid "Encyclopedia"
 msgstr "Lexikon"
@@ -607,56 +607,59 @@ msgstr "Es wurden leider keine Suchergebnisse zu „<em>%(q)s</em> gefunden."
 msgid "No search results found."
 msgstr "Es wurden leider keine Suchergebnisse gefunden."
 
-#: templates/articles/article_detail.html:19
+#: templates/articles/article_detail.html:23
 msgid "Read more &hellip;"
 msgstr "Mehr lesen …"
 
-#: templates/articles/article_detail.html:20
+#: templates/articles/article_detail.html:24
 msgid "Similar Topic"
 msgid_plural "Similar Topics"
 msgstr[0] "Ähnliches Thema"
 msgstr[1] "Ähnliche Themen"
 
-#: templates/articles/article_detail.html:49
+#: templates/articles/article_detail.html:54
 msgid "About the author"
 msgstr "Über den Autor"
 
-#: templates/articles/article_detail.html:50
+#: templates/articles/article_detail.html:55
 msgid "Photo of"
 msgstr "Foto von"
 
-#: templates/articles/article_list.html:6
+#: templates/articles/article_list.html:7
 msgid "A summary of all available articles on kogakure.de"
 msgstr "Eine Übersicht über alle auf kogakure.de verfügbaren Artikel"
 
-#: templates/articles/article_list.html:15
-#, python-format
-msgid "Link to '%(entry.title)s'\""
-msgstr "Link zu „%(entry.title)s“"
-
-#: templates/blog/blog_list.html:6
-msgid "Blog from Ninjutsu and this website"
-msgstr "Kurzmeldungen aus dem Bereich des Ninjutsu und rund um diese Website"
-
-#: templates/blog/blog_list.html:15
-#: templates/encyclopedia/encyclopedia_list.html:18
+#: templates/articles/article_list.html:18 templates/blog/blog_list.html:18
+#: templates/encyclopedia/encyclopedia_list.html:21
 #, python-format
 msgid "Link to '%(entry.title)s'"
 msgstr "Link zu „%(entry.title)s“"
 
-#: templates/encyclopedia/encyclopedia_detail.html:6
+#: templates/blog/blog_list.html:7
+msgid "Blog from Ninjutsu and this website"
+msgstr "Kurzmeldungen aus dem Bereich des Ninjutsu und rund um diese Website"
+
+#: templates/encyclopedia/encyclopedia_detail.html:7
 #, python-format
 msgid "A description of %(entry.title)s"
 msgstr "Eine Beschreibung des Begriffs %(entry.title)s"
 
-#: templates/encyclopedia/encyclopedia_detail.html:20
+#: templates/encyclopedia/encyclopedia_detail.html:23
 #, python-format
 msgid "Read one entry of the Encyclopedia."
 msgid_plural "Read all <em>%(counter)s</em> entries of the Encyclopedia."
 msgstr[0] "Den einen Eintrag des Lexikons lesen."
 msgstr[1] "Alle <em>%(counter)s</em> Einträge des Lexikons lesen."
 
-#: templates/encyclopedia/encyclopedia_list.html:12
+#: templates/encyclopedia/encyclopedia_list.html:7
+msgid ""
+"An Encyclopedia with japanese terms of the area of Ninjutsu, the art of "
+"warfare and japanese history"
+msgstr ""
+"Ein Lexikon mit japanischen Begriffen aus dem Bereich des Ninjutsu, "
+"der Kriegskunst und der japanischen Geschichte"
+
+#: templates/encyclopedia/encyclopedia_list.html:15
 #, python-format
 msgid ""
 "This Encyclopedia contains <em>%(encyclopedia_num)s</em> entries of the area "
@@ -714,29 +717,29 @@ msgstr "Suche"
 msgid "OK"
 msgstr "Suchen"
 
-#: templates/products/products_detail.html:6
+#: templates/products/products_detail.html:7
 msgid "Details on "
 msgstr "Details zu "
 
-#: templates/products/products_detail.html:19
+#: templates/products/products_detail.html:22
 #, python-format
 msgid "View the recommendation"
 msgid_plural "View all <em>%(counter)s</em> recommendations"
 msgstr[0] "Die Kaufempfehlung ansehen"
 msgstr[1] "Alle <em>%(counter)s</em> Kaufempfehlungen ansehen"
 
-#: templates/products/products_list.html:6
+#: templates/products/products_list.html:7
 msgid "Recommendations of books and movies"
 msgstr "Kaufempfehlungen aus dem Bereich von Büchern und Filmen"
 
-#: templates/products/products_list.html:12
+#: templates/products/products_list.html:15
 #, python-format
 msgid "On this site I mention <em>%(counter)s</em> Recommentdation"
 msgid_plural "On this site I mention <em>%(counter)s</em> Recommentdations"
 msgstr[0] "Hier führe ich <em>%(counter)s</em> Empfehlung"
 msgstr[1] "Hier führe ich <em>%(counter)s</em> Empfehlungen"
 
-#: templates/products/products_list.html:12
+#: templates/products/products_list.html:15
 msgid ""
 "from books and movies with the topic of Ninja, Samurai, Bujutsu and Taoism, "
 "which I would recommend. Some products are duplicated as of multiple "
@@ -749,28 +752,28 @@ msgstr ""
 "anderssprachigen Versionen. Alle hier aufgeführten Artikel sind mir bekannt, "
 "ich spreche keine Empfehlungen für unbekannte Artikel aus!"
 
-#: templates/products/products_list.html:13
+#: templates/products/products_list.html:16
 msgid "A mouseclick on the link will lead you to the product page at"
 msgstr ""
 "Ein Klick auf den jeweiligen Link führt zur Produktseite und "
 "Bestellmöglichkeit bei"
 
-#: templates/proverbs/proverb_detail.html:6
+#: templates/proverbs/proverb_detail.html:7
 msgid "A proverbs of "
 msgstr "Ein Spruch von "
 
-#: templates/proverbs/proverb_detail.html:17
+#: templates/proverbs/proverb_detail.html:20
 #, python-format
 msgid "Read the proverb, quote or statement"
 msgid_plural "Read all <em>%(counter)s</em> proverbs, quotes and statements"
 msgstr[0] "Den Spruch, das Zitat oder die Aussage lesen"
 msgstr[1] "Alle <em>%(counter)s</em> Sprüche, Zitate und Aussagen lesen"
 
-#: templates/proverbs/proverb_list.html:6
+#: templates/proverbs/proverb_list.html:7
 msgid "A collection of proverbs, quotes and statements"
 msgstr "Eine Sammlung von Sprüchen, Zitaten und Aussagen"
 
-#: templates/proverbs/proverb_list.html:12
+#: templates/proverbs/proverb_list.html:15
 #, python-format
 msgid "This collection of proverbs has one proverb, quote or statement"
 msgid_plural ""

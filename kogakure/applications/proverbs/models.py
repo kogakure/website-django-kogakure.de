@@ -6,6 +6,8 @@
 # http://www.gnu.org/copyleft/gpl.txt
 
 import datetime
+
+from django.core.cache import cache
 from django.db import models
 from django.db.models import permalink
 from django.utils.translation import ugettext_lazy as _
@@ -35,3 +37,4 @@ class Entry(models.Model):
     @permalink
     def get_absolute_url(self):
         return ('sprueche', (), { 'object_id': self.id })
+    

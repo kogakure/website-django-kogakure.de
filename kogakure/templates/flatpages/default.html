@@ -6,12 +6,14 @@
 
 {% block page_title %}{{ flatpage.title }} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
-{% cache 3600 content %}
 {% block content %}
 
-  <h1>{{ flatpage.title }}</h1>
+    {% cache 3600 flatpage_content %}
 
-{{ flatpage.content|smarttext }}
+        <h1>{{ flatpage.title }}</h1>
 
+        {{ flatpage.content|smarttext }}
+
+    {% endcache %}
+    
 {% endblock %}
-{% endcache %}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 
 {% block page_title %}{% trans "Proverbs" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
@@ -7,19 +8,23 @@
 
 {% block content %}
 
-    <h1>{% trans "Proverbs" %}</h1>
-    {% get_stat proverbs.Entry as proverbs_num %}
-    <p>{% blocktrans count proverbs_num as counter %}This collection of proverbs has one proverb, quote or statement{% plural %}This collection of proverbs has <em>{{ counter }}</em> proverbs, quotes and statements{% endblocktrans %}.</p>
+    {% cache 3600 proverb_entry_list %}
 
-    {% if entry_list %}
-        {% for entry in entry_list %}
-            <div class="block">
-                <blockquote>
-                    {{ entry.body|smarttext }}
-                </blockquote>
-                <cite class="sprueche">&ndash; {{ entry.author }}</cite>
-            </div>
-        {% endfor %}
-    {% endif %}
+        <h1>{% trans "Proverbs" %}</h1>
+        {% get_stat proverbs.Entry as proverbs_num %}
+        <p>{% blocktrans count proverbs_num as counter %}This collection of proverbs has one proverb, quote or statement{% plural %}This collection of proverbs has <em>{{ counter }}</em> proverbs, quotes and statements{% endblocktrans %}.</p>
+
+        {% if entry_list %}
+            {% for entry in entry_list %}
+                <div class="block">
+                    <blockquote>
+                        {{ entry.body|smarttext }}
+                    </blockquote>
+                    <cite class="sprueche">&ndash; {{ entry.author }}</cite>
+                </div>
+            {% endfor %}
+        {% endif %}
+    
+    {% endcache %}
     
 {% endblock %}

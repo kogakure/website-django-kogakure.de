@@ -1,27 +1,32 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load cache %}
 
 {% block page_title %}{% trans "Encyclopedia" %} // {% trans "kogakure.de &ndash; Ninja, Ninjutsu and Martial Arts" %}{% endblock %}
 
-{% block meta_description %}Ein Lexikon mit japanischen Begriffen aus dem Bereich des Ninjutsu, der Kriegskunst und der japanischen Geschichte{% endblock %}
+{% block meta_description %}{% trans "An Encyclopedia with japanese terms of the area of Ninjutsu, the art of warfare and japanese history" %}{% endblock %}
 
 {% block content %}
 
-    <h1>{% trans "Encyclopedia" %}</h1>
-    {% get_stat encyclopedia.Entry as encyclopedia_num %}
-    <p>{% blocktrans %}This Encyclopedia contains <em>{{ encyclopedia_num }}</em> entries of the area of Ninjutsu, the art of warfare and japanese history.{% endblocktrans %}</p>
+    {% cache 3600 encyclopedia_entry_list %}
 
-    {% if entry_list %}
-    <dl>
-        {% for entry in entry_list|dictsort:"slug" %}
-            <div class="block">
-                <dt class="deutsch"><a href="{{ entry.get_absolute_url }}" title="{% blocktrans with entry.title as entry.title %}Link to '{{ entry.title }}'{% endblocktrans %}">{{ entry.title }}</a></dt><dd class="japanisch">{{ entry.japanese }}</dd>
-                <dd class="beschreibung">
-                    {{ entry.explanation|smarttext }}
-                </dd>
-            </div>
-        {% endfor %}
-    </dl>
-    {% endif %}
+        <h1>{% trans "Encyclopedia" %}</h1>
+        {% get_stat encyclopedia.Entry as encyclopedia_num %}
+        <p>{% blocktrans %}This Encyclopedia contains <em>{{ encyclopedia_num }}</em> entries of the area of Ninjutsu, the art of warfare and japanese history.{% endblocktrans %}</p>
+
+        {% if entry_list %}
+        <dl>
+            {% for entry in entry_list|dictsort:"slug" %}
+                <div class="block">
+                    <dt class="deutsch"><a href="{{ entry.get_absolute_url }}" title="{% blocktrans with entry.title as entry.title %}Link to '{{ entry.title }}'{% endblocktrans %}">{{ entry.title }}</a></dt><dd class="japanisch">{{ entry.japanese }}</dd>
+                    <dd class="beschreibung">
+                        {{ entry.explanation|smarttext }}
+                    </dd>
+                </div>
+            {% endfor %}
+        </dl>
+        {% endif %}
+
+    {% endcache %}
     
 {% endblock %}
