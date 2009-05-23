@@ -10,7 +10,7 @@
 
     {% cache 3600 blog_entry_list %}
 
-        <h1><h1>{% trans "Blog" %}</h1></h1>
+        <h1>{% trans "Blog" %}</h1>
 
         {% if entry_list %}
             {% for entry in entry_list %}
