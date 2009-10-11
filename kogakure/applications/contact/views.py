@@ -18,12 +18,11 @@ def contact(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data.get('email', 'noreply@domain.com')
+            email_plus_name = '%s <%s>' % (name, email)
             message = form.cleaned_data['message']
-            meta = request.META['HTTP_USER_AGENT']
-            message += '\n\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n' + meta
             send_mail(
                 _(u'Contact form: domain.com'),
-                message, email,
+                message, email_plus_name,
                 ['email@domain.com']
             )
             return HttpResponseRedirect('/email/verschickt/')
