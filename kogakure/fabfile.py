@@ -18,24 +18,24 @@ env.memcached_size = '20' # in MByte
 def deploy():
     "Push local changes to server, pull changes on server, restart server"
     local('git push;')
-    run('cd $(project_path)/; git pull; delpyc' % env, pty=True)
+    run('cd %(project_path)s/; git pull; delpyc' % env, pty=True)
     restart_server()
     
 def stop_server():
     "Stop Apache"
-    run('$(server_path)/stop' % env, pty=True)
+    run('%(server_path)s/stop' % env, pty=True)
 
 def start_server():
     "Start apache"
-    run('$(server_path)/start' % env, pty=True)
+    run('%(server_path)s/start' % env, pty=True)
 
 def restart_server():
     "Restart Apache"
-    run('$(server_path)/stop' % env, pty=True)
-    run('$(server_path)/start' % env, pty=True)
+    run('%(server_path)s/stop' % env, pty=True)
+    run('%(server_path)s/start' % env, pty=True)
 
 def restart_memcached():
     "Restart Memcached, restart server"
-    run('kill `pgrep -u $LOGNAME memcached`' % env, pty=True)
+    run('kill `pgrep -u $LOGNAME memcached`')
     run('/usr/local/bin/memcached -d -l $(memcached_ip) -m $(memcached_size) -p $(memcached_port)' % env, pty=True)
     restart_server()
